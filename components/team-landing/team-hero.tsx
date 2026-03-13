@@ -48,14 +48,14 @@ export function TeamHero({ locale }: TeamHeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative flex items-center justify-center overflow-hidden pt-20 pb-8 min-h-[90vh]"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/20" />
 
       {/* Animated grid pattern */}
       <div
-        className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+        className="absolute inset-0 opacity-[0.03] dark:opacity-[0.06]"
         style={{
           backgroundImage: `
             linear-gradient(to right, currentColor 1px, transparent 1px),
@@ -65,10 +65,10 @@ export function TeamHero({ locale }: TeamHeroProps) {
         }}
       />
 
-      {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/5 via-transparent to-transparent rounded-full blur-3xl" />
+      {/* Radial glow — more visible in dark mode */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full blur-3xl opacity-20 dark:opacity-30 bg-gradient-to-br from-chart-1/20 via-transparent to-chart-3/10" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
           <motion.div
@@ -78,7 +78,7 @@ export function TeamHero({ locale }: TeamHeroProps) {
           >
             <Badge
               variant="secondary"
-              className="mb-6 px-4 py-1.5 text-sm font-medium"
+              className="mb-6 px-5 py-2 text-sm font-medium border border-border"
             >
               {t.badge}
             </Badge>
@@ -93,7 +93,7 @@ export function TeamHero({ locale }: TeamHeroProps) {
           >
             {t.headline}
             <br />
-            <span className="text-muted-foreground">{t.headlineSub}</span>
+            <span className="text-gradient">{t.headlineSub}</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -114,7 +114,7 @@ export function TeamHero({ locale }: TeamHeroProps) {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <a href="#teams">
-              <Button size="lg" className="min-h-touch text-base px-8 group">
+              <Button size="lg" className="min-h-touch text-base px-8 group glow-on-hover">
                 {t.cta1}
                 <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -132,7 +132,7 @@ export function TeamHero({ locale }: TeamHeroProps) {
 
           {/* Stats row */}
           <motion.div
-            className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto"
+            className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}

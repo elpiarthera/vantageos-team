@@ -77,10 +77,10 @@ export function TeamUseCases({ locale }: TeamUseCasesProps) {
   const t = content[locale];
 
   return (
-    <section className="py-24 md:py-32 bg-muted/30">
+    <section className="py-16 md:py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

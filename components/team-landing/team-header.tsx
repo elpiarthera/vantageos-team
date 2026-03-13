@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navLinks = {
@@ -40,10 +41,13 @@ interface TeamHeaderProps {
 export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
   const t = headerContent[locale];
   const links = navLinks[locale];
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -54,6 +58,10 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 
   const toggleLocale = () => {
     onLocaleChange(locale === 'en' ? 'fr' : 'en');
+  };
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   return (
@@ -91,7 +99,22 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2">
+            {mounted && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleTheme}
+                className="size-9 p-0"
+              >
+                {theme === 'dark' ? (
+                  <Sun className="size-4" />
+                ) : (
+                  <Moon className="size-4" />
+                )}
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            )}
             <Button
               variant="ghost"
               size="sm"
@@ -107,18 +130,33 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
           </div>
 
           {/* Mobile menu button */}
-          <button
-            type="button"
-            className="md:hidden p-2 -mr-2 text-muted-foreground hover:text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            <span className="sr-only">Open menu</span>
-            {isMobileMenuOpen ? (
-              <X className="size-6" />
-            ) : (
-              <Menu className="size-6" />
+          <div className="md:hidden flex items-center gap-1">
+            {mounted && (
+              <button
+                type="button"
+                className="p-2 text-muted-foreground hover:text-foreground"
+                onClick={toggleTheme}
+              >
+                {theme === 'dark' ? (
+                  <Sun className="size-5" />
+                ) : (
+                  <Moon className="size-5" />
+                )}
+              </button>
             )}
-          </button>
+            <button
+              type="button"
+              className="p-2 -mr-2 text-muted-foreground hover:text-foreground"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <span className="sr-only">Open menu</span>
+              {isMobileMenuOpen ? (
+                <X className="size-6" />
+              ) : (
+                <Menu className="size-6" />
+              )}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -129,7 +167,7 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border"
+            className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border"
           >
             <div className="px-4 py-4 space-y-1">
               {links.map((link) => (

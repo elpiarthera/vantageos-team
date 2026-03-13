@@ -119,7 +119,7 @@ export function TeamFaq({ locale }: TeamFaqProps) {
     : faqList;
 
   return (
-    <section id="faq" className="py-24 md:py-32">
+    <section id="faq" className="py-16 md:py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
