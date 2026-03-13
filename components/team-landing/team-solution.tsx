@@ -6,9 +6,9 @@ import type { Locale } from './team-landing-page';
 
 const content = {
   en: {
-    title: 'A Complete AI Team, Fully Managed',
+    title: 'You send a task. You get a result. That is it.',
     subtitle:
-      'VantageOS Team gives you 16 specialized departments -- supervised by Laurent Perello. You send tasks. You get results. That is it.',
+      '16 specialized teams. 79 agents. 160 skills. Every deliverable reviewed by a C-level tech executive with 25 years of experience. Not an algorithm. A person.',
     benefits: [
       {
         icon: Clock,
@@ -41,9 +41,9 @@ const content = {
     ],
   },
   fr: {
-    title: 'Une équipe IA complète, entièrement gérée',
+    title: 'Vous envoyez une t\u00e2che. Vous recevez le r\u00e9sultat. C\u2019est tout.',
     subtitle:
-      'VantageOS Team met à votre disposition 16 départements spécialisés -- supervisés par Laurent Perello. Vous envoyez des tâches. Vous recevez les résultats. C\'est tout.',
+      '16 \u00e9quipes sp\u00e9cialis\u00e9es. 79 agents. 160 comp\u00e9tences. Chaque livrable revu par un dirigeant tech avec 25 ans d\u2019exp\u00e9rience. Pas un algorithme. Une personne.',
     benefits: [
       {
         icon: Clock,

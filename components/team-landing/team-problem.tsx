@@ -7,10 +7,10 @@ import type { Locale } from './team-landing-page';
 
 const content = {
   en: {
-    title: 'You Are Drowning in Tasks',
-    titleAccent: 'That Don\'t Make Money',
+    title: 'You do everything yourself.',
+    titleAccent: 'That is the problem.',
     subtitle:
-      'You spend 30-50% of your time on follow-ups, emails, reporting, formatting, research, admin. Hiring is expensive. AI tools? You tried. You gave up after two weeks.',
+      'Follow-ups. Emails. Reporting. Formatting. Research. Admin. You know the list. You tried AI tools \u2014 gave up after two weeks. You tried hiring \u2014 gave up after the first invoice.',
     problems: [
       {
         icon: Clock,
@@ -33,13 +33,13 @@ const content = {
         description: 'Not another tool. Not another login. Someone who just does the work.',
       },
     ],
-    closing: 'There is a better way.',
+    closing: 'You do not need a better tool. You need a team that works without you.',
   },
   fr: {
-    title: 'Vous êtes noyé sous les tâches',
-    titleAccent: 'qui ne génèrent pas de revenu',
+    title: 'Vous faites tout vous-m\u00eame.',
+    titleAccent: 'C\u2019est \u00e7a, le probl\u00e8me.',
     subtitle:
-      'Vous passez 30 à 50 % de votre temps sur des relances, emails, reporting, mise en forme, recherche, suivi administratif. Embaucher coûte cher. Les outils IA ? Vous avez essayé. Vous avez abandonné au bout de deux semaines.',
+      'Relances. Emails. Reporting. Mise en forme. Recherche. Administratif. Vous connaissez la liste. Vous avez essay\u00e9 les outils IA \u2014 abandonn\u00e9 au bout de deux semaines. Vous avez essay\u00e9 de recruter \u2014 abandonn\u00e9 apr\u00e8s la premi\u00e8re facture.',
     problems: [
       {
         icon: Clock,
@@ -62,7 +62,7 @@ const content = {
         description: "Pas un outil de plus. Pas un login de plus. Quelqu'un qui fait le travail.",
       },
     ],
-    closing: 'Il y a une meilleure solution.',
+    closing: 'Vous n\u2019avez pas besoin d\u2019un meilleur outil. Vous avez besoin d\u2019une \u00e9quipe qui tourne sans vous.',
   },
 };
 

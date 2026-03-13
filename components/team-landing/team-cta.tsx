@@ -7,8 +7,8 @@ import type { Locale } from './team-landing-page';
 
 const content = {
   en: {
-    title: 'Your Team, Ready Monday',
-    subtitle: '16 teams. 79 agents. 160 skills. An executive in the loop.',
+    title: 'Monday morning. Your team is already working.',
+    subtitle: 'No hiring. No training. No onboarding drama. Just results.',
     price: 'Starting at EUR 490/month',
     cta: 'Get Started Now',
     steps: [
@@ -20,8 +20,8 @@ const content = {
     contact: 'Or email directly:',
   },
   fr: {
-    title: 'Votre équipe, prête lundi',
-    subtitle: '16 équipes. 79 agents. 160 compétences. Un dirigeant dans la boucle.',
+    title: 'Lundi matin. Votre \u00e9quipe travaille d\u00e9j\u00e0.',
+    subtitle: 'Pas de recrutement. Pas de formation. Pas de drame d\u2019onboarding. Juste des r\u00e9sultats.',
     price: 'À partir de 490 EUR/mois',
     cta: 'Démarrer maintenant',
     steps: [

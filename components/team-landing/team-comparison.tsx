@@ -7,7 +7,7 @@ import type { Locale } from './team-landing-page';
 const content = {
   en: {
     title: 'How We Compare',
-    subtitle: 'See how VantageOS Team stacks up against hiring or other AI services.',
+    subtitle: 'The math is simple. The difference is not.',
     vsHiring: {
       title: 'vs. Hiring a Junior Employee',
       headers: ['', 'Junior Employee', 'VantageOS Team'],
@@ -35,7 +35,7 @@ const content = {
   },
   fr: {
     title: 'Comparaison',
-    subtitle: 'Voyez comment VantageOS Team se compare à l\'embauche ou aux autres services IA.',
+    subtitle: 'Le calcul est simple. La diff\u00e9rence, non.',
     vsHiring: {
       title: 'vs. un employé junior',
       headers: ['', 'Employé junior', 'VantageOS Team'],

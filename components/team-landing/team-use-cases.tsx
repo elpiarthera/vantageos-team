@@ -8,8 +8,8 @@ import type { Locale } from './team-landing-page';
 
 const content = {
   en: {
-    title: 'Real Results, Real Clients',
-    subtitle: 'What VantageOS Team delivers in practice.',
+    title: 'This is what a Tuesday looks like.',
+    subtitle: 'Not theory. Not projections. Actual output.',
     cases: [
       {
         category: 'Consulting',
@@ -38,8 +38,8 @@ const content = {
     ],
   },
   fr: {
-    title: 'Résultats réels, clients réels',
-    subtitle: 'Ce que VantageOS Team livre en pratique.',
+    title: 'Voici \u00e0 quoi ressemble un mardi.',
+    subtitle: 'Pas de th\u00e9orie. Pas de projections. Du concret.',
     cases: [
       {
         category: 'Consulting',
