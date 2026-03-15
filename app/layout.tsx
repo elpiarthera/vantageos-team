@@ -16,13 +16,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://team.vantageos.agency"),
   title:
-    "VantageOS Team — Your Complete AI Team | 16 Teams, 79 Agents, 160 Skills",
+    "VantageOS Team — Your Complete AI Team | 16 Teams, 77 Agents, 192 Skills",
   description:
-    "Hire a complete AI team starting at EUR 490/month. 16 specialized departments, 79 AI agents, 160 skills — supervised by a tech executive with 25 years of experience. No tool to learn. Cancel anytime.",
+    "Hire a complete AI team starting at EUR 490/month. 16 specialized departments, 77 AI agents, 192 skills — supervised by a tech executive with 25 years of experience. No tool to learn. Cancel anytime.",
   openGraph: {
     title: "VantageOS Team — Your Complete AI Team",
     description:
-      "16 departments, 79 agents, 160 skills. Send tasks by email, get results back. Starting at EUR 490/month.",
+      "16 departments, 77 agents, 192 skills. Send tasks by email, get results back. Starting at EUR 490/month.",
     type: "website",
     url: "https://team.vantageos.agency",
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "VantageOS Team — Your Complete AI Team",
     description:
-      "16 departments, 79 agents, 160 skills. Starting at EUR 490/month.",
+      "16 departments, 77 agents, 192 skills. Starting at EUR 490/month.",
     images: ["/og-team.png"],
   },
   alternates: {

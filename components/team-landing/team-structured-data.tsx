@@ -9,7 +9,7 @@ const structuredData = {
       url: 'https://vantage.studio/team',
       logo: 'https://vantage.studio/logo.png',
       description:
-        'VantageOS Team: Your complete AI team. 16 specialized departments, 79 AI agents, 160 skills, supervised by a tech executive with 25 years of experience.',
+        'VantageOS Team: Your complete AI team. 16 specialized departments, 77 AI agents, 192 skills, supervised by a tech executive with 25 years of experience.',
       founder: {
         '@type': 'Person',
         name: 'Laurent Perello',
@@ -31,7 +31,7 @@ const structuredData = {
         name: 'Perello Consulting',
       },
       description:
-        'Fully managed AI team service. 16 specialized departments, 79 AI agents, 160 skills. Send tasks by email, get results back. No tool to learn.',
+        'Fully managed AI team service. 16 specialized departments, 77 AI agents, 192 skills. Send tasks by email, get results back. No tool to learn.',
       serviceType: 'AI Team as a Service',
       areaServed: {
         '@type': 'Place',
@@ -153,7 +153,7 @@ const structuredData = {
       url: 'https://vantage.studio/team',
       logo: 'https://vantage.studio/logo.png',
       description:
-        'VantageOS Team : votre équipe IA complète. 16 départements spécialisés, 79 agents IA, 160 compétences, supervisés par un dirigeant tech avec 25 ans d\'expérience.',
+        'VantageOS Team : votre équipe IA complète. 16 départements spécialisés, 77 agents IA, 192 compétences, supervisés par un dirigeant tech avec 25 ans d\'expérience.',
       founder: {
         '@type': 'Person',
         name: 'Laurent Perello',
@@ -175,7 +175,7 @@ const structuredData = {
         name: 'Perello Consulting',
       },
       description:
-        'Service d\'équipe IA entièrement géré. 16 départements spécialisés, 79 agents IA, 160 compétences. Envoyez des tâches par email, recevez les résultats.',
+        'Service d\'équipe IA entièrement géré. 16 départements spécialisés, 77 agents IA, 192 compétences. Envoyez des tâches par email, recevez les résultats.',
       serviceType: 'Équipe IA as a Service',
       areaServed: {
         '@type': 'Place',
