@@ -45,6 +45,7 @@ interface Plan {
   setupIncludes: string;
   popular?: boolean;
   premium?: boolean;
+  commitment?: boolean;
 }
 
 const plans: Record<Locale, Plan[]> = {
@@ -55,6 +56,7 @@ const plans: Record<Locale, Plan[]> = {
       prices: { '10h': 490, '20h': 790, '40h': 990 },
       setupFee: 490,
       setupIncludes: 'Intake form, tool connection, first-week calibration',
+      commitment: true,
     },
     {
       name: 'Studio',
@@ -63,6 +65,7 @@ const plans: Record<Locale, Plan[]> = {
       setupFee: 790,
       setupIncludes: 'Intake call (60 min), brand/voice capture, full knowledge base',
       popular: true,
+      commitment: true,
     },
     {
       name: 'Agency',
@@ -85,6 +88,7 @@ const plans: Record<Locale, Plan[]> = {
       setupFee: 490,
       setupIncludes: 'Technical intake, repo access setup, dev workflow calibration',
       premium: true,
+      commitment: true,
     },
   ],
   fr: [
@@ -94,6 +98,7 @@ const plans: Record<Locale, Plan[]> = {
       prices: { '10h': 490, '20h': 790, '40h': 990 },
       setupFee: 490,
       setupIncludes: 'Formulaire d\'intégration, connexion des outils, calibration première semaine',
+      commitment: true,
     },
     {
       name: 'Studio',
@@ -102,6 +107,7 @@ const plans: Record<Locale, Plan[]> = {
       setupFee: 790,
       setupIncludes: 'Appel d\'intégration (60 min), capture de voix/marque, base de connaissances complète',
       popular: true,
+      commitment: true,
     },
     {
       name: 'Agency',
@@ -124,6 +130,7 @@ const plans: Record<Locale, Plan[]> = {
       setupFee: 490,
       setupIncludes: 'Intake technique, accès repo, calibration workflow dev',
       premium: true,
+      commitment: true,
     },
   ],
 };
@@ -140,6 +147,7 @@ const content = {
     exclVat: 'All prices excl. VAT.',
     mostPopular: 'Most Popular',
     premiumLabel: 'Premium',
+    commitmentLabel: '3-month commitment',
     cta: 'Get Started',
   },
   fr: {
@@ -153,6 +161,7 @@ const content = {
     exclVat: 'Tous les prix sont exprimés hors taxes.',
     mostPopular: 'Le plus populaire',
     premiumLabel: 'Premium',
+    commitmentLabel: 'Engagement 3 mois',
     cta: 'Démarrer',
   },
 };
@@ -223,6 +232,7 @@ export function TeamPricing({ locale }: TeamPricingProps) {
           {planList.map((plan, index) => (
             <motion.div
               key={plan.name}
+              className="overflow-visible"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -230,8 +240,9 @@ export function TeamPricing({ locale }: TeamPricingProps) {
             >
               <Card
                 className={cn(
-                  'relative h-full',
+                  'relative h-full overflow-visible',
                   plan.popular && 'border-primary shadow-lg',
+                  (plan.popular || plan.premium) && 'mt-4',
                 )}
               >
                 {plan.popular && (
@@ -256,6 +267,11 @@ export function TeamPricing({ locale }: TeamPricingProps) {
                         EUR{t.perMonth}
                       </span>
                     </div>
+                    {plan.commitment && (
+                      <p className="text-xs text-muted-foreground">
+                        {t.commitmentLabel}
+                      </p>
+                    )}
                     <p className="text-sm text-muted-foreground">
                       {plan.teams}
                     </p>
