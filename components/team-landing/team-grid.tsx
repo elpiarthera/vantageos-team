@@ -26,7 +26,7 @@ import {
   Zap,
 } from 'lucide-react';
 import type { Locale } from './team-landing-page';
-import { TEAM_DETAILS } from '@/lib/team-agents';
+import { TEAM_DETAILS, TEAM_DETAILS_FR } from '@/lib/team-agents';
 
 interface TeamItem {
   icon: typeof Settings;
@@ -130,7 +130,7 @@ export function TeamGrid({ locale }: TeamGridProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {teamList.map((team, index) => {
             const isExpanded = expandedTeam === team.nameKey;
-            const details = TEAM_DETAILS[team.nameKey];
+            const details = (locale === 'fr' ? TEAM_DETAILS_FR : TEAM_DETAILS)[team.nameKey];
 
             return (
               <motion.div
