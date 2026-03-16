@@ -15,8 +15,8 @@ const content = {
       { label: 'FAQ', href: '#faq' },
     ],
     legalLinks: [
-      { label: 'Privacy Policy', href: '/privacy' },
-      { label: 'Legal Notice', href: '/legal' },
+      { label: 'Privacy Policy', href: '/en/privacy' },
+      { label: 'Legal Notice', href: '/en/legal' },
     ],
     contact: 'Contact',
     switchLabel: 'Fran\u00e7ais',
@@ -31,8 +31,8 @@ const content = {
       { label: 'FAQ', href: '#faq' },
     ],
     legalLinks: [
-      { label: 'Politique de confidentialit\u00e9', href: '/privacy' },
-      { label: 'Mentions l\u00e9gales', href: '/legal' },
+      { label: 'Politique de confidentialit\u00e9', href: '/fr/privacy' },
+      { label: 'Mentions l\u00e9gales', href: '/fr/legal' },
     ],
     contact: 'Contact',
     switchLabel: 'English',

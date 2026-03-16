@@ -14,6 +14,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: locale === 'fr'
       ? 'Politique de confidentialit\u00e9 et protection des donn\u00e9es personnelles de VantageOS Team.'
       : 'Privacy policy and personal data protection for VantageOS Team.',
+    alternates: {
+      canonical: `https://vantageos-team.vercel.app/${locale}/privacy`,
+      languages: { en: '/en/privacy', fr: '/fr/privacy' },
+    },
   };
 }
 

@@ -93,7 +93,7 @@ export default async function Image() {
             }}
           >
             <div style={{ fontSize: 48, fontWeight: 700, color: "#8b5cf6", display: "flex" }}>
-              77
+              79
             </div>
             <div style={{ fontSize: 18, color: "#94a3b8", display: "flex" }}>Agents</div>
           </div>
@@ -105,7 +105,7 @@ export default async function Image() {
             }}
           >
             <div style={{ fontSize: 48, fontWeight: 700, color: "#8b5cf6", display: "flex" }}>
-              208
+              211
             </div>
             <div style={{ fontSize: 18, color: "#94a3b8", display: "flex" }}>Skills</div>
           </div>
