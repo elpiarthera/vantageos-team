@@ -291,7 +291,7 @@ export function TeamPricing({ locale }: TeamPricingProps) {
                     </div>
                   </div>
 
-                  <a href="mailto:lp@alorsonsort.com" className="block">
+                  <a href="mailto:laurent@perello.fr" className="block">
                     <Button
                       variant={plan.popular ? 'default' : 'outline'}
                       className="w-full min-h-touch"

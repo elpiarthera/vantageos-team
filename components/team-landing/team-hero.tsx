@@ -11,13 +11,13 @@ const content = {
     headline: 'Stop hiring. Start delegating.',
     headlineSub: 'From \u20ac490/month',
     subheadline:
-      '16 teams. 77 agents. 192 skills. Supervised by a C-level tech executive. You send an email \u2014 you get the work done.',
+      '16 teams. 79 agents. 208 skills. Supervised by a C-level tech executive. You send an email \u2014 you get the work done.',
     cta1: 'Choose Your Team',
     cta2: 'See Pricing',
     stats: [
       { value: '16', label: 'Teams', icon: Users },
-      { value: '77', label: 'Agents', icon: Bot },
-      { value: '160', label: 'Skills', icon: Sparkles },
+      { value: '79', label: 'Agents', icon: Bot },
+      { value: '208', label: 'Skills', icon: Sparkles },
       { value: '25y', label: 'Experience', icon: Clock },
     ],
   },
@@ -26,13 +26,13 @@ const content = {
     headline: 'Arr\u00eatez de recruter. Commencez \u00e0 d\u00e9l\u00e9guer.',
     headlineSub: '\u00c0 partir de 490 \u20ac/mois',
     subheadline:
-      '16 \u00e9quipes. 77 agents. 192 comp\u00e9tences. Supervis\u00e9es par un dirigeant tech. Vous envoyez un email \u2014 le travail est fait.',
+      '16 \u00e9quipes. 79 agents. 208 comp\u00e9tences. Supervis\u00e9es par un dirigeant tech. Vous envoyez un email \u2014 le travail est fait.',
     cta1: 'Choisir votre \u00e9quipe',
     cta2: 'Voir les tarifs',
     stats: [
       { value: '16', label: '\u00c9quipes', icon: Users },
-      { value: '77', label: 'Agents', icon: Bot },
-      { value: '160', label: 'Comp\u00e9tences', icon: Sparkles },
+      { value: '79', label: 'Agents', icon: Bot },
+      { value: '208', label: 'Comp\u00e9tences', icon: Sparkles },
       { value: '25 ans', label: 'Exp\u00e9rience', icon: Clock },
     ],
   },

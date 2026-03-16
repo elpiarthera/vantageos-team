@@ -13,6 +13,7 @@ import { TeamUseCases } from '@/components/team-landing/team-use-cases';
 import { TeamEmailPrivacy } from '@/components/team-landing/team-email-privacy';
 import { TeamTargetAudience } from '@/components/team-landing/team-target-audience';
 import { TeamFaq } from '@/components/team-landing/team-faq';
+import { TeamFounder } from '@/components/team-landing/team-founder';
 import { TeamCta } from '@/components/team-landing/team-cta';
 import { TeamFooter } from '@/components/team-landing/team-footer';
 import { TeamStructuredData } from '@/components/team-landing/team-structured-data';
@@ -41,6 +42,7 @@ export function TeamLandingPage({ initialLocale = 'fr' }: TeamLandingPageProps) 
         <TeamUseCases locale={locale} />
         <TeamEmailPrivacy locale={locale} />
         <TeamTargetAudience locale={locale} />
+        <TeamFounder locale={locale} />
         <TeamFaq locale={locale} />
         <TeamCta locale={locale} />
       </main>

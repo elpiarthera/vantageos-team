@@ -2,10 +2,32 @@ import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
-    sitemap: "https://team.vantageos.agency/sitemap.xml",
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+      {
+        userAgent: "GPTBot",
+        allow: "/",
+      },
+      {
+        userAgent: "ClaudeBot",
+        allow: "/",
+      },
+      {
+        userAgent: "PerplexityBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Amazonbot",
+        allow: "/",
+      },
+      {
+        userAgent: "GoogleOther",
+        allow: "/",
+      },
+    ],
+    sitemap: "https://vantageos-team.vercel.app/sitemap.xml",
   };
 }

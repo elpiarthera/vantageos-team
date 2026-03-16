@@ -32,9 +32,9 @@ const faqs: Record<Locale, FaqItem[]> = {
   en: [
     // General
     { category: 'General', question: 'I am not technical. Is that a problem?', answer: 'No. You do not touch any tool. You send an email, you get a result. If you know how to use Gmail, you know how to use VantageOS Team.' },
-    { category: 'General', question: 'What exactly is VantageOS Team?', answer: 'A fully managed AI team service. You get access to 16 specialized departments (marketing, sales, dev, content, SEO, etc.) with 77 AI agents and 192 skills, all supervised by Laurent Perello.' },
-    { category: 'General', question: 'Who is Laurent Perello?', answer: 'A tech executive with 25 years of experience spanning Web1, Web2, Web3 (Arthera blockchain), and now AI. He reviews every deliverable before it reaches you.' },
-    { category: 'General', question: 'Is this like hiring a virtual assistant?', answer: 'No. A virtual assistant is one person with limited skills. VantageOS Team is 16 specialized departments with 77 agents. And every output is reviewed by a C-level executive.' },
+    { category: 'General', question: 'What exactly is VantageOS Team?', answer: 'A fully managed AI team service. You get access to 16 specialized departments (marketing, sales, dev, content, SEO, etc.) with 79 AI agents and 208 skills, all supervised by Laurent Perello.' },
+    { category: 'General', question: 'Who is Laurent Perello?', answer: 'A tech executive with 25 years of experience spanning Web1, Web2, Web3, and now AI. He reviews every deliverable before it reaches you.' },
+    { category: 'General', question: 'Is this like hiring a virtual assistant?', answer: 'No. A virtual assistant is one person with limited skills. VantageOS Team is 16 specialized departments with 79 agents. And every output is reviewed by a C-level executive.' },
     { category: 'General', question: 'Do I need to learn a new tool?', answer: 'No. You communicate via email or Telegram. No platform to learn. No login required.' },
     { category: 'General', question: 'What languages do you support?', answer: 'French and English natively. The Translation team can handle any language pair.' },
     // Service
@@ -68,9 +68,9 @@ const faqs: Record<Locale, FaqItem[]> = {
   fr: [
     // Général
     { category: 'Général', question: 'Je ne suis pas technique. C\'est un problème ?', answer: 'Non. Vous ne touchez à aucun outil. Vous envoyez un email, vous recevez le résultat. Si vous savez utiliser Gmail, vous savez utiliser VantageOS Team.' },
-    { category: 'Général', question: 'Qu\'est-ce que VantageOS Team exactement ?', answer: 'Un service d\'équipe IA entièrement géré. Vous accédez à 16 départements spécialisés (marketing, vente, dev, contenu, SEO, etc.) avec 77 agents IA et 192 compétences, le tout supervisé par Laurent Perello.' },
-    { category: 'Général', question: 'Qui est Laurent Perello ?', answer: 'Un dirigeant tech avec 25 ans d\'expérience du Web1 au Web3 (blockchain Arthera), et maintenant l\'IA. Il revoit chaque livrable avant qu\'il ne vous parvienne.' },
-    { category: 'Général', question: 'C\'est comme un assistant virtuel ?', answer: 'Non. Un assistant virtuel est une personne avec des compétences limitées. VantageOS Team, c\'est 16 départements spécialisés avec 77 agents. Et chaque résultat est revu par un dirigeant C-level.' },
+    { category: 'Général', question: 'Qu\'est-ce que VantageOS Team exactement ?', answer: 'Un service d\'équipe IA entièrement géré. Vous accédez à 16 départements spécialisés (marketing, vente, dev, contenu, SEO, etc.) avec 79 agents IA et 208 compétences, le tout supervisé par Laurent Perello.' },
+    { category: 'Général', question: 'Qui est Laurent Perello ?', answer: 'Un dirigeant tech avec 25 ans d\'expérience du Web1 au Web3, et maintenant l\'IA. Il revoit chaque livrable avant qu\'il ne vous parvienne.' },
+    { category: 'Général', question: 'C\'est comme un assistant virtuel ?', answer: 'Non. Un assistant virtuel est une personne avec des compétences limitées. VantageOS Team, c\'est 16 départements spécialisés avec 79 agents. Et chaque résultat est revu par un dirigeant C-level.' },
     { category: 'Général', question: 'Dois-je apprendre un nouvel outil ?', answer: 'Non. Vous communiquez par email ou Telegram. Pas de plateforme à apprendre. Pas de login requis.' },
     { category: 'Général', question: 'Quelles langues sont supportées ?', answer: 'Français et anglais nativement. L\'équipe Traduction peut gérer toute paire de langues.' },
     // Service

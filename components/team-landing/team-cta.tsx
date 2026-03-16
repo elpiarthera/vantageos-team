@@ -87,7 +87,7 @@ export function TeamCta({ locale }: TeamCtaProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <a href="mailto:lp@alorsonsort.com">
+          <a href="mailto:laurent@perello.fr">
             <Button size="lg" className="min-h-touch text-base px-10 group">
               {t.cta}
               <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
@@ -96,10 +96,10 @@ export function TeamCta({ locale }: TeamCtaProps) {
           <p className="mt-6 text-sm text-muted-foreground">
             {t.contact}{' '}
             <a
-              href="mailto:lp@alorsonsort.com"
+              href="mailto:laurent@perello.fr"
               className="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
             >
-              lp@alorsonsort.com
+              laurent@perello.fr
             </a>
           </p>
           <p className="mt-2 text-sm text-muted-foreground">

@@ -14,19 +14,29 @@ const content = {
       { label: 'Pricing', href: '#pricing' },
       { label: 'FAQ', href: '#faq' },
     ],
+    legalLinks: [
+      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Legal Notice', href: '/legal' },
+    ],
     contact: 'Contact',
-    switchLabel: 'Français',
+    switchLabel: 'Fran\u00e7ais',
+    lastUpdated: 'Last updated: March 2026',
   },
   fr: {
-    tagline: 'Votre équipe IA complète. À partir de 490 EUR/mois.',
-    copyright: 'Perello Consulting / ElPi Corp. Tous droits réservés.',
+    tagline: 'Votre \u00e9quipe IA compl\u00e8te. \u00c0 partir de 490 EUR/mois.',
+    copyright: 'Perello Consulting / ElPi Corp. Tous droits r\u00e9serv\u00e9s.',
     links: [
-      { label: 'Équipes', href: '#teams' },
+      { label: '\u00c9quipes', href: '#teams' },
       { label: 'Tarifs', href: '#pricing' },
       { label: 'FAQ', href: '#faq' },
     ],
+    legalLinks: [
+      { label: 'Politique de confidentialit\u00e9', href: '/privacy' },
+      { label: 'Mentions l\u00e9gales', href: '/legal' },
+    ],
     contact: 'Contact',
     switchLabel: 'English',
+    lastUpdated: 'Derni\u00e8re mise \u00e0 jour\u00a0: mars 2026',
   },
 };
 
@@ -75,10 +85,10 @@ export function TeamFooter({ locale, onLocaleChange }: TeamFooterProps) {
             <p className="font-medium mb-2">{t.contact}</p>
             <p className="text-muted-foreground">
               <a
-                href="mailto:lp@alorsonsort.com"
+                href="mailto:laurent@perello.fr"
                 className="hover:text-foreground transition-colors"
               >
-                lp@alorsonsort.com
+                laurent@perello.fr
               </a>
             </p>
             <p className="text-muted-foreground">
@@ -97,9 +107,25 @@ export function TeamFooter({ locale, onLocaleChange }: TeamFooterProps) {
         <Separator className="mb-8" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} {t.copyright}
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p className="text-sm text-muted-foreground">
+              &copy; {new Date().getFullYear()} {t.copyright}
+            </p>
+            <div className="flex items-center gap-4">
+              {t.legalLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground">
+              {t.lastUpdated}
+            </p>
+          </div>
           <Button
             variant="ghost"
             size="sm"
