@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Users, Bot, Sparkles, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { AgentTicker } from './agent-ticker';
 
 const content = {
   en: {
@@ -146,6 +147,15 @@ export function TeamHero({ locale }: TeamHeroProps) {
                 <p className="text-sm text-muted-foreground">{stat.label}</p>
               </div>
             ))}
+          </motion.div>
+
+          {/* Agent name ticker */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <AgentTicker />
           </motion.div>
         </div>
       </div>
