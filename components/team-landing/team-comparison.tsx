@@ -13,7 +13,7 @@ const content = {
       headers: ['', 'Junior Employee', 'VantageOS Team'],
       rows: [
         ['Annual cost', 'EUR 28,000-42,000', 'EUR 5,880 (part-time)'],
-        ['Skills', '1 person, 1 profile', '16 teams, 79 agents, 208 skills'],
+        ['Skills', '1 person, 1 profile', '16 teams, 79 agents, 211 skills'],
         ['Availability', '35h/week, 5 weeks holiday', 'Up to 7/7'],
         ['Notice period', '1-3 months', 'None'],
         ['Training', 'Your responsibility', 'Built-in'],
@@ -41,7 +41,7 @@ const content = {
       headers: ['', 'Employé junior', 'VantageOS Team'],
       rows: [
         ['Coût annuel', '28 000 - 42 000 EUR', '5 880 EUR (mi-temps)'],
-        ['Compétences', '1 personne, 1 profil', '16 équipes, 79 agents, 208 compétences'],
+        ['Compétences', '1 personne, 1 profil', '16 équipes, 79 agents, 211 compétences'],
         ['Disponibilité', '35h/semaine, 5 semaines de congés', 'Jusqu\'à 7j/7'],
         ['Préavis', '1 à 3 mois', 'Aucun'],
         ['Formation', 'À votre charge', 'Incluse'],
