@@ -8,7 +8,7 @@ const content = {
   en: {
     title: 'You send a task. You get a result. That is it.',
     subtitle:
-      '16 specialized teams. 79 agents. 211 skills. Every deliverable reviewed by a C-level tech executive with 25 years of experience. Not an algorithm. A person.',
+      '16 specialized teams. 80 agents. 214 skills. Every deliverable reviewed by a C-level tech executive with 25 years of experience. Not an algorithm. A person.',
     benefits: [
       {
         icon: Clock,
@@ -43,7 +43,7 @@ const content = {
   fr: {
     title: 'Vous envoyez une t\u00e2che. Vous recevez le r\u00e9sultat. C\u2019est tout.',
     subtitle:
-      '16 \u00e9quipes sp\u00e9cialis\u00e9es. 79 agents. 211 comp\u00e9tences. Chaque livrable revu par un dirigeant tech avec 25 ans d\u2019exp\u00e9rience. Pas un algorithme. Une personne.',
+      '16 \u00e9quipes sp\u00e9cialis\u00e9es. 80 agents. 214 comp\u00e9tences. Chaque livrable revu par un dirigeant tech avec 25 ans d\u2019exp\u00e9rience. Pas un algorithme. Une personne.',
     benefits: [
       {
         icon: Clock,

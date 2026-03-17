@@ -13,7 +13,7 @@ const content = {
       headers: ['', 'Junior Employee', 'VantageOS Team'],
       rows: [
         ['Annual cost', 'EUR 28,000-42,000', 'EUR 5,880 (part-time)'],
-        ['Skills', '1 person, 1 profile', '16 teams, 79 agents, 211 skills'],
+        ['Skills', '1 person, 1 profile', '16 teams, 80 agents, 214 skills'],
         ['Availability', '35h/week, 5 weeks holiday', 'Up to 7/7'],
         ['Notice period', '1-3 months', 'None'],
         ['Training', 'Your responsibility', 'Built-in'],
@@ -24,7 +24,7 @@ const content = {
       title: 'vs. Junior.so',
       headers: ['', 'Junior.so', 'VantageOS Team'],
       rows: [
-        ['What you get', '1 AI employee', '16 teams, 79 agents'],
+        ['What you get', '1 AI employee', '16 teams, 80 agents'],
         ['Price', '$2,000/mo', 'From EUR 490/mo'],
         ['Human oversight', 'None', 'C-level tech executive'],
         ['Language', 'English only', 'French + English'],
@@ -41,7 +41,7 @@ const content = {
       headers: ['', 'Employé junior', 'VantageOS Team'],
       rows: [
         ['Coût annuel', '28 000 - 42 000 EUR', '5 880 EUR (mi-temps)'],
-        ['Compétences', '1 personne, 1 profil', '16 équipes, 79 agents, 211 compétences'],
+        ['Compétences', '1 personne, 1 profil', '16 équipes, 80 agents, 214 compétences'],
         ['Disponibilité', '35h/semaine, 5 semaines de congés', 'Jusqu\'à 7j/7'],
         ['Préavis', '1 à 3 mois', 'Aucun'],
         ['Formation', 'À votre charge', 'Incluse'],
@@ -52,7 +52,7 @@ const content = {
       title: 'vs. Junior.so',
       headers: ['', 'Junior.so', 'VantageOS Team'],
       rows: [
-        ['Ce que vous obtenez', '1 employé IA', '16 équipes, 79 agents'],
+        ['Ce que vous obtenez', '1 employé IA', '16 équipes, 80 agents'],
         ['Prix', '2 000 $/mois', 'À partir de 490 EUR/mois'],
         ['Supervision humaine', 'Aucune', 'Dirigeant tech C-level'],
         ['Langue', 'Anglais uniquement', 'Français + anglais'],
