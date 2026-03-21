@@ -31,7 +31,7 @@ const content = {
       },
       {
         category: 'Operations',
-        quote: '80 agents, 214 skills, 16 teams built from scratch in 7 days.',
+        quote: '81 agents, 273 skills, 16 teams built from scratch in 7 days.',
         author: 'ElPi Corp internal build',
         metric: '7-day deployment',
       },
@@ -61,7 +61,7 @@ const content = {
       },
       {
         category: 'Opérations',
-        quote: '80 agents, 214 compétences, 16 équipes construites de zéro en 7 jours.',
+        quote: '81 agents, 273 compétences, 16 équipes construites de zéro en 7 jours.',
         author: 'Build interne ElPi Corp',
         metric: 'Déploiement en 7 jours',
       },

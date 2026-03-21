@@ -3,9 +3,9 @@ import type { Locale } from './team-landing-page';
 // All FAQ questions for complete FAQPage schema
 const allFaqsEn = [
   { q: 'I am not technical. Is that a problem?', a: 'No. You do not touch any tool. You send an email, you get a result. If you know how to use Gmail, you know how to use VantageOS Team.' },
-  { q: 'What exactly is VantageOS Team?', a: 'A fully managed AI team service. You get access to 16 specialized departments (marketing, sales, dev, content, SEO, etc.) with 80 AI agents and 214 skills, all supervised by Laurent Perello.' },
+  { q: 'What exactly is VantageOS Team?', a: 'A fully managed AI team service. You get access to 16 specialized departments (marketing, sales, dev, content, SEO, etc.) with 81 AI agents and 273 skills, all supervised by Laurent Perello.' },
   { q: 'Who is Laurent Perello?', a: 'A tech executive with 25 years of experience spanning Web1, Web2, Web3, and now AI. He reviews every deliverable before it reaches you.' },
-  { q: 'Is this like hiring a virtual assistant?', a: 'No. A virtual assistant is one person with limited skills. VantageOS Team is 16 specialized departments with 80 agents. And every output is reviewed by a C-level executive.' },
+  { q: 'Is this like hiring a virtual assistant?', a: 'No. A virtual assistant is one person with limited skills. VantageOS Team is 16 specialized departments with 81 agents. And every output is reviewed by a C-level executive.' },
   { q: 'Do I need to learn a new tool?', a: 'No. You communicate via email or Telegram. No platform to learn. No login required.' },
   { q: 'What languages do you support?', a: 'French and English natively. The Translation team can handle any language pair.' },
   { q: 'How do I send tasks?', a: 'By email, Telegram, or Google Meet transcript. No special app needed.' },
@@ -35,9 +35,9 @@ const allFaqsEn = [
 
 const allFaqsFr = [
   { q: 'Je ne suis pas technique. C\'est un probl\u00e8me ?', a: 'Non. Vous ne touchez \u00e0 aucun outil. Vous envoyez un email, vous recevez le r\u00e9sultat. Si vous savez utiliser Gmail, vous savez utiliser VantageOS Team.' },
-  { q: 'Qu\'est-ce que VantageOS Team exactement ?', a: 'Un service d\'\u00e9quipe IA enti\u00e8rement g\u00e9r\u00e9. Vous acc\u00e9dez \u00e0 16 d\u00e9partements sp\u00e9cialis\u00e9s (marketing, vente, dev, contenu, SEO, etc.) avec 80 agents IA et 214 comp\u00e9tences, le tout supervis\u00e9 par Laurent Perello.' },
+  { q: 'Qu\'est-ce que VantageOS Team exactement ?', a: 'Un service d\'\u00e9quipe IA enti\u00e8rement g\u00e9r\u00e9. Vous acc\u00e9dez \u00e0 16 d\u00e9partements sp\u00e9cialis\u00e9s (marketing, vente, dev, contenu, SEO, etc.) avec 81 agents IA et 273 comp\u00e9tences, le tout supervis\u00e9 par Laurent Perello.' },
   { q: 'Qui est Laurent Perello ?', a: 'Un dirigeant tech avec 25 ans d\'exp\u00e9rience du Web1 au Web3, et maintenant l\'IA. Il revoit chaque livrable avant qu\'il ne vous parvienne.' },
-  { q: 'C\'est comme un assistant virtuel ?', a: 'Non. Un assistant virtuel est une personne avec des comp\u00e9tences limit\u00e9es. VantageOS Team, c\'est 16 d\u00e9partements sp\u00e9cialis\u00e9s avec 80 agents. Et chaque r\u00e9sultat est revu par un dirigeant C-level.' },
+  { q: 'C\'est comme un assistant virtuel ?', a: 'Non. Un assistant virtuel est une personne avec des comp\u00e9tences limit\u00e9es. VantageOS Team, c\'est 16 d\u00e9partements sp\u00e9cialis\u00e9s avec 81 agents. Et chaque r\u00e9sultat est revu par un dirigeant C-level.' },
   { q: 'Dois-je apprendre un nouvel outil ?', a: 'Non. Vous communiquez par email ou Telegram. Pas de plateforme \u00e0 apprendre. Pas de login requis.' },
   { q: 'Quelles langues sont support\u00e9es ?', a: 'Fran\u00e7ais et anglais nativement. L\'\u00e9quipe Traduction peut g\u00e9rer toute paire de langues.' },
   { q: 'Comment envoyer des t\u00e2ches ?', a: 'Par email, Telegram ou compte-rendu Google Meet. Aucune application sp\u00e9ciale n\u00e9cessaire.' },
@@ -93,7 +93,7 @@ const structuredData = {
       url: baseUrl,
       logo: `${baseUrl}/opengraph-image`,
       description:
-        'VantageOS Team: Your complete AI team. 16 specialized departments, 80 AI agents, 214 skills, supervised by a tech executive with 25 years of experience.',
+        'VantageOS Team: Your complete AI team. 16 specialized departments, 81 AI agents, 273 skills, supervised by a tech executive with 25 years of experience.',
       founder: {
         '@type': 'Person',
         name: 'Laurent Perello',
@@ -117,7 +117,7 @@ const structuredData = {
         name: 'Perello Consulting',
       },
       description:
-        'Fully managed AI team service. 16 specialized departments, 80 AI agents, 214 skills. Send tasks by email, get results back. No tool to learn.',
+        'Fully managed AI team service. 16 specialized departments, 81 AI agents, 273 skills. Send tasks by email, get results back. No tool to learn.',
       serviceType: 'AI Team as a Service',
       areaServed: {
         '@type': 'Place',
@@ -241,7 +241,7 @@ const structuredData = {
       '@type': 'WebPage',
       name: 'VantageOS Team \u2014 Your Complete AI Team',
       url: baseUrl,
-      description: 'Hire a complete AI team starting at EUR 490/month. 16 specialized departments, 80 AI agents, 214 skills.',
+      description: 'Hire a complete AI team starting at EUR 490/month. 16 specialized departments, 81 AI agents, 273 skills.',
       datePublished: '2026-03-01',
       dateModified: '2026-03-16',
       inLanguage: 'en',
@@ -260,7 +260,7 @@ const structuredData = {
       url: baseUrl,
       logo: `${baseUrl}/opengraph-image`,
       description:
-        'VantageOS Team : votre \u00e9quipe IA compl\u00e8te. 16 d\u00e9partements sp\u00e9cialis\u00e9s, 80 agents IA, 214 comp\u00e9tences, supervis\u00e9s par un dirigeant tech avec 25 ans d\'exp\u00e9rience.',
+        'VantageOS Team : votre \u00e9quipe IA compl\u00e8te. 16 d\u00e9partements sp\u00e9cialis\u00e9s, 81 agents IA, 273 comp\u00e9tences, supervis\u00e9s par un dirigeant tech avec 25 ans d\'exp\u00e9rience.',
       founder: {
         '@type': 'Person',
         name: 'Laurent Perello',
@@ -284,7 +284,7 @@ const structuredData = {
         name: 'Perello Consulting',
       },
       description:
-        'Service d\'\u00e9quipe IA enti\u00e8rement g\u00e9r\u00e9. 16 d\u00e9partements sp\u00e9cialis\u00e9s, 80 agents IA, 214 comp\u00e9tences. Envoyez des t\u00e2ches par email, recevez les r\u00e9sultats.',
+        'Service d\'\u00e9quipe IA enti\u00e8rement g\u00e9r\u00e9. 16 d\u00e9partements sp\u00e9cialis\u00e9s, 81 agents IA, 273 comp\u00e9tences. Envoyez des t\u00e2ches par email, recevez les r\u00e9sultats.',
       serviceType: '\u00c9quipe IA as a Service',
       areaServed: {
         '@type': 'Place',
@@ -404,7 +404,7 @@ const structuredData = {
       '@type': 'WebPage',
       name: 'VantageOS Team \u2014 Votre \u00e9quipe IA compl\u00e8te',
       url: baseUrl,
-      description: 'Votre \u00e9quipe IA compl\u00e8te \u00e0 partir de 490 EUR/mois. 16 d\u00e9partements, 80 agents IA, 214 comp\u00e9tences.',
+      description: 'Votre \u00e9quipe IA compl\u00e8te \u00e0 partir de 490 EUR/mois. 16 d\u00e9partements, 81 agents IA, 273 comp\u00e9tences.',
       datePublished: '2026-03-01',
       dateModified: '2026-03-16',
       inLanguage: 'fr',
