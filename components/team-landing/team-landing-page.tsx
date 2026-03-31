@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { IntakeForm } from "@/components/team-landing/intake-form";
+import { TeamCaseStudy } from "@/components/team-landing/team-case-study";
 import { TeamComparison } from "@/components/team-landing/team-comparison";
 import { TeamCta } from "@/components/team-landing/team-cta";
 import { TeamDemo } from "@/components/team-landing/team-demo";
@@ -49,6 +50,7 @@ export function TeamLandingPage({
 				<TeamDemo locale={locale} />
 				<TeamHowItWorks locale={locale} />
 				<TeamUseCases locale={locale} initialStats={initialStats} />
+				<TeamCaseStudy locale={locale} initialStats={initialStats} />
 				<div className="flex justify-center py-8">
 					<button
 						type="button"
