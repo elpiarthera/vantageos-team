@@ -8,6 +8,7 @@ import {
 	CollapsibleContent,
 	CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import type { RegistryStats } from "@/lib/registry";
 import { useRegistryStats } from "@/lib/registry";
 import { cn } from "@/lib/utils";
 import type { Locale } from "./team-landing-page";
@@ -403,12 +404,13 @@ function buildFaqs(
 
 interface TeamFaqProps {
 	locale: Locale;
+	initialStats?: RegistryStats;
 }
 
-export function TeamFaq({ locale }: TeamFaqProps) {
+export function TeamFaq({ locale, initialStats }: TeamFaqProps) {
 	const [openIndex, setOpenIndex] = useState<number | null>(0);
 	const [activeCategory, setActiveCategory] = useState<string | null>(null);
-	const stats = useRegistryStats();
+	const stats = useRegistryStats(initialStats);
 	const teamsVal = stats ? String(stats.totalTeams) : "...";
 	const agentsVal = stats ? String(stats.totalAgents) : "...";
 	const skillsVal = stats ? String(stats.totalSkills) : "...";

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { RegistryStats } from "@/lib/registry";
 import { useRegistryStats } from "@/lib/registry";
 import type { Locale } from "./team-landing-page";
 
@@ -135,10 +136,11 @@ function ComparisonTable({
 
 interface TeamComparisonProps {
 	locale: Locale;
+	initialStats?: RegistryStats;
 }
 
-export function TeamComparison({ locale }: TeamComparisonProps) {
-	const stats = useRegistryStats();
+export function TeamComparison({ locale, initialStats }: TeamComparisonProps) {
+	const stats = useRegistryStats(initialStats);
 	const teamsVal = stats ? String(stats.totalTeams) : "...";
 	const agentsVal = stats ? String(stats.totalAgents) : "...";
 	const skillsVal = stats ? String(stats.totalSkills) : "...";

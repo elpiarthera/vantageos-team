@@ -113,10 +113,17 @@ const ACTIVE_TEAMS: TeamsStatusArg = { status: "active" };
 
 /**
  * useRegistryStats — real-time hook that subscribes to VantageRegistry counts.
- * Returns null while loading.
+ *
+ * Accepts an optional `initialStats` parameter (server-fetched via RSC).
+ * While Convex WebSocket data is still loading, returns `initialStats` instead
+ * of null — preventing the "..." flash and React hydration mismatch #418.
+ * Once Convex data arrives, real-time values take over transparently.
+ *
  * Must be used inside <ConvexClientProvider>.
  */
-export function useRegistryStats(): RegistryStats | null {
+export function useRegistryStats(
+	initialStats?: RegistryStats,
+): RegistryStats | null {
 	const agents = useQuery(
 		agentsList as FunctionReference<"query", "public", StatusArg, unknown[]>,
 		ACTIVE_AGENTS,
@@ -145,7 +152,7 @@ export function useRegistryStats(): RegistryStats | null {
 		plugins === undefined ||
 		teams === undefined
 	) {
-		return null;
+		return initialStats ?? null;
 	}
 
 	return {

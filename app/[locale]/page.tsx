@@ -1,13 +1,21 @@
-import { TeamLandingPage } from "@/components/team-landing/team-landing-page";
 import { setRequestLocale } from "next-intl/server";
+import { TeamLandingPage } from "@/components/team-landing/team-landing-page";
+import { fetchRegistryStats } from "@/lib/registry-server";
 
 type Props = {
-  params: Promise<{ locale: string }>;
+	params: Promise<{ locale: string }>;
 };
 
 export default async function Home({ params }: Props) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+	const { locale } = await params;
+	setRequestLocale(locale);
 
-  return <TeamLandingPage initialLocale={locale as "en" | "fr"} />;
+	const initialStats = await fetchRegistryStats();
+
+	return (
+		<TeamLandingPage
+			initialLocale={locale as "en" | "fr"}
+			initialStats={initialStats}
+		/>
+	);
 }

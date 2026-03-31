@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Bot, Clock, Sparkles, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import type { RegistryStats } from "@/lib/registry";
 import { useRegistryStats } from "@/lib/registry";
 import { AgentTicker } from "./agent-ticker";
 
@@ -52,11 +53,12 @@ const content = {
 
 interface TeamHeroProps {
 	locale: "en" | "fr";
+	initialStats?: RegistryStats;
 }
 
-export function TeamHero({ locale }: TeamHeroProps) {
+export function TeamHero({ locale, initialStats }: TeamHeroProps) {
 	const t = content[locale];
-	const stats = useRegistryStats();
+	const stats = useRegistryStats(initialStats);
 
 	const teamsVal = stats ? String(stats.totalTeams) : "...";
 	const agentsVal = stats ? String(stats.totalAgents) : "...";

@@ -1,5 +1,6 @@
 "use client";
 
+import type { RegistryStats } from "@/lib/registry";
 import { useRegistryStats } from "@/lib/registry";
 import type { Locale } from "./team-landing-page";
 
@@ -603,10 +604,14 @@ function buildStructuredData(teams: string, agents: string, skills: string) {
 
 interface TeamStructuredDataProps {
 	locale: Locale;
+	initialStats?: RegistryStats;
 }
 
-export function TeamStructuredData({ locale }: TeamStructuredDataProps) {
-	const stats = useRegistryStats();
+export function TeamStructuredData({
+	locale,
+	initialStats,
+}: TeamStructuredDataProps) {
+	const stats = useRegistryStats(initialStats);
 	const teamsVal = stats ? String(stats.totalTeams) : "16";
 	const agentsVal = stats ? String(stats.totalAgents) : "80+";
 	const skillsVal = stats ? String(stats.totalSkills) : "200+";

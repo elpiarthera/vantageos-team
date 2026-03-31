@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import type { RegistryStats } from "@/lib/registry";
 import { useRegistryStats } from "@/lib/registry";
 import type { Locale } from "./team-landing-page";
 
@@ -78,10 +79,11 @@ function buildContent(agents: string, skills: string, teams: string) {
 
 interface TeamUseCasesProps {
 	locale: Locale;
+	initialStats?: RegistryStats;
 }
 
-export function TeamUseCases({ locale }: TeamUseCasesProps) {
-	const stats = useRegistryStats();
+export function TeamUseCases({ locale, initialStats }: TeamUseCasesProps) {
+	const stats = useRegistryStats(initialStats);
 	const agentsVal = stats ? String(stats.totalAgents) : "...";
 	const skillsVal = stats ? String(stats.totalSkills) : "...";
 	const teamsVal = stats ? String(stats.totalTeams) : "...";

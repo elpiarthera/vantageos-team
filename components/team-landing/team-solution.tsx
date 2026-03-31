@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Brain, Clock, DoorOpen, Wrench } from "lucide-react";
+import type { RegistryStats } from "@/lib/registry";
 import { useRegistryStats } from "@/lib/registry";
 import type { Locale } from "./team-landing-page";
 
@@ -89,11 +90,12 @@ const content = {
 
 interface TeamSolutionProps {
 	locale: Locale;
+	initialStats?: RegistryStats;
 }
 
-export function TeamSolution({ locale }: TeamSolutionProps) {
+export function TeamSolution({ locale, initialStats }: TeamSolutionProps) {
 	const t = content[locale];
-	const stats = useRegistryStats();
+	const stats = useRegistryStats(initialStats);
 
 	const teamsVal = stats ? String(stats.totalTeams) : "...";
 	const agentsVal = stats ? String(stats.totalAgents) : "...";
