@@ -8,7 +8,7 @@ import type { Locale } from "./team-landing-page";
 
 const content = {
 	en: {
-		title: "You send a task. You get a result. That is it.",
+		title: "Send an email or a WhatsApp message. Get the work done.",
 		subtitle: (teams: string, agents: string, skills: string) =>
 			`${teams} specialized teams. ${agents} agents. ${skills} skills. Every deliverable reviewed by a C-level tech executive with 25 years of experience. Not an algorithm. A person.`,
 		benefits: [
@@ -47,8 +47,7 @@ const content = {
 		],
 	},
 	fr: {
-		title:
-			"Vous envoyez une t\u00e2che. Vous recevez le r\u00e9sultat. C\u2019est tout.",
+		title: "Envoyez un email ou un message WhatsApp. Recevez le travail fini.",
 		subtitle: (teams: string, agents: string, skills: string) =>
 			`${teams} \u00e9quipes sp\u00e9cialis\u00e9es. ${agents} agents. ${skills} comp\u00e9tences. Chaque livrable revu par un dirigeant tech avec 25 ans d\u2019exp\u00e9rience. Pas un algorithme. Une personne.`,
 		benefits: [

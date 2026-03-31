@@ -11,10 +11,11 @@ import { AgentTicker } from "./agent-ticker";
 const content = {
 	en: {
 		badge: "Founding clients: setup fee waived",
-		headline: "Stop hiring. Start delegating.",
-		headlineSub: "From \u20ac490/month",
+		headline: "Not a tool. Not a freelancer. Your team.",
+		headlineSub:
+			"A full AI team, supervised by a tech executive. From \u20ac490/month.",
 		subheadline: (teams: string, agents: string, skills: string) =>
-			`${teams} teams. ${agents} agents. ${skills} skills. Supervised by a C-level tech executive. You send an email \u2014 you get the work done.`,
+			`${teams} teams. ${agents} agents. ${skills} skills. You send an email \u2014 you get the work done.`,
 		cta1: "Choose Your Team",
 		cta2: "See Pricing",
 		statLabels: [
@@ -31,10 +32,11 @@ const content = {
 	},
 	fr: {
 		badge: "Clients fondateurs : frais de setup offerts",
-		headline: "Arr\u00eatez de recruter. Commencez \u00e0 d\u00e9l\u00e9guer.",
-		headlineSub: "\u00c0 partir de 490 \u20ac/mois",
+		headline: "Pas un outil. Pas un freelance. Votre \u00e9quipe.",
+		headlineSub:
+			"Une \u00e9quipe IA compl\u00e8te, supervis\u00e9e par un dirigeant tech. \u00c0 partir de 490 \u20ac/mois.",
 		subheadline: (teams: string, agents: string, skills: string) =>
-			`${teams} \u00e9quipes. ${agents} agents. ${skills} comp\u00e9tences. Supervis\u00e9es par un dirigeant tech. Vous envoyez un email \u2014 le travail est fait.`,
+			`${teams} \u00e9quipes. ${agents} agents. ${skills} comp\u00e9tences. Vous envoyez un email \u2014 le travail est fait.`,
 		cta1: "Choisir votre \u00e9quipe",
 		cta2: "Voir les tarifs",
 		statLabels: [
@@ -105,17 +107,25 @@ export function TeamHero({ locale, initialStats }: TeamHeroProps) {
 
 					{/* Headline */}
 					<motion.h1
-						className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+						className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.1 }}
 					>
 						{t.headline}
-						<br />
-						<span className="text-gradient">{t.headlineSub}</span>
 					</motion.h1>
 
-					{/* Subheadline */}
+					{/* Subtitle — supervised by a tech executive, pricing */}
+					<motion.p
+						className="text-xl sm:text-2xl font-semibold text-foreground max-w-2xl mx-auto mb-4"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5, delay: 0.15 }}
+					>
+						{t.headlineSub}
+					</motion.p>
+
+					{/* Subheadline — dynamic stats */}
 					<motion.p
 						className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
 						initial={{ opacity: 0, y: 20 }}
