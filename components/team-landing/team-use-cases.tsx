@@ -39,6 +39,13 @@ function buildContent(agents: string, skills: string, teams: string) {
 					author: "ElPi Corp internal build",
 					metric: "7-day deployment",
 				},
+				{
+					category: "Meeting Summaries",
+					quote:
+						"Share a Google Meet transcript or invite your AI team to the meeting. You receive: structured summary, decisions made, action items, follow-up emails.",
+					author: "VantageOS Team — async workflow",
+					metric: "Zero manual notes",
+				},
 			],
 		},
 		fr: {
@@ -71,6 +78,13 @@ function buildContent(agents: string, skills: string, teams: string) {
 					quote: `${agents} agents, ${skills} comp\u00e9tences, ${teams} \u00e9quipes construites de z\u00e9ro en 7 jours.`,
 					author: "Build interne ElPi Corp",
 					metric: "D\u00e9ploiement en 7 jours",
+				},
+				{
+					category: "Comptes-rendus de r\u00e9union",
+					quote:
+						"Partagez la transcription Google Meet ou invitez votre \u00e9quipe IA \u00e0 la r\u00e9union. Vous recevez\u00a0: r\u00e9sum\u00e9 structur\u00e9, d\u00e9cisions prises, actions \u00e0 mener, emails de suivi.",
+					author: "VantageOS Team \u2014 workflow asynchrone",
+					metric: "Z\u00e9ro prise de notes",
 				},
 			],
 		},

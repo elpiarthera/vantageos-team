@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { IntakeForm } from "@/components/team-landing/intake-form";
 import { TeamComparison } from "@/components/team-landing/team-comparison";
 import { TeamCta } from "@/components/team-landing/team-cta";
-import { TeamEmailPrivacy } from "@/components/team-landing/team-email-privacy";
 import { TeamFaq } from "@/components/team-landing/team-faq";
 import { TeamFooter } from "@/components/team-landing/team-footer";
 import { TeamFounder } from "@/components/team-landing/team-founder";
@@ -31,6 +31,10 @@ export function TeamLandingPage({
 	initialStats,
 }: TeamLandingPageProps) {
 	const [locale, setLocale] = useState<Locale>(initialLocale);
+	const [intakeOpen, setIntakeOpen] = useState(false);
+
+	const openIntake = () => setIntakeOpen(true);
+	const closeIntake = () => setIntakeOpen(false);
 
 	return (
 		<div className="min-h-screen bg-background overflow-x-hidden">
@@ -38,20 +42,24 @@ export function TeamLandingPage({
 			<TeamHeader locale={locale} onLocaleChange={setLocale} />
 			<main>
 				<TeamHero locale={locale} initialStats={initialStats} />
+				<TeamTargetAudience locale={locale} />
 				<TeamProblem locale={locale} />
 				<TeamSolution locale={locale} initialStats={initialStats} />
-				<TeamGrid locale={locale} />
 				<TeamHowItWorks locale={locale} />
-				<TeamPricing locale={locale} />
-				<TeamComparison locale={locale} initialStats={initialStats} />
 				<TeamUseCases locale={locale} initialStats={initialStats} />
-				<TeamEmailPrivacy locale={locale} />
-				<TeamTargetAudience locale={locale} />
+				<TeamComparison locale={locale} initialStats={initialStats} />
+				<TeamGrid locale={locale} />
+				<TeamPricing locale={locale} onOpenIntake={openIntake} />
 				<TeamFounder locale={locale} />
 				<TeamFaq locale={locale} initialStats={initialStats} />
-				<TeamCta locale={locale} />
+				<TeamCta locale={locale} onOpenIntake={openIntake} />
 			</main>
-			<TeamFooter locale={locale} onLocaleChange={setLocale} />
+			<TeamFooter
+				locale={locale}
+				onLocaleChange={setLocale}
+				onOpenIntake={openIntake}
+			/>
+			<IntakeForm locale={locale} isOpen={intakeOpen} onClose={closeIntake} />
 		</div>
 	);
 }
