@@ -50,6 +50,15 @@ export function TeamLandingPage({
 				<TeamDemo locale={locale} />
 				<TeamHowItWorks locale={locale} />
 				<TeamUseCases locale={locale} initialStats={initialStats} />
+				<div className="flex justify-center py-8">
+					<button
+						type="button"
+						onClick={openIntake}
+						className="w-full max-w-xs px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity sm:w-auto"
+					>
+						{locale === "fr" ? "Commencer maintenant" : "Get started now"}
+					</button>
+				</div>
 				<TeamCaseStudy locale={locale} initialStats={initialStats} />
 				<div className="flex justify-center py-8">
 					<button

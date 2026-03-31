@@ -230,7 +230,7 @@ function ProcessingDots() {
 		<span aria-hidden className="flex gap-0.5 items-center shrink-0">
 			{[0, 1, 2].map((i) => (
 				<motion.span
-					key={i}
+					key={`dot-${i}`}
 					className="size-1.5 rounded-full bg-muted-foreground/60 block"
 					animate={{ opacity: [0.3, 1, 0.3] }}
 					transition={{
