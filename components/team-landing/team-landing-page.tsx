@@ -4,6 +4,7 @@ import { useState } from "react";
 import { IntakeForm } from "@/components/team-landing/intake-form";
 import { TeamComparison } from "@/components/team-landing/team-comparison";
 import { TeamCta } from "@/components/team-landing/team-cta";
+import { TeamDemo } from "@/components/team-landing/team-demo";
 import { TeamFaq } from "@/components/team-landing/team-faq";
 import { TeamFooter } from "@/components/team-landing/team-footer";
 import { TeamFounder } from "@/components/team-landing/team-founder";
@@ -45,9 +46,30 @@ export function TeamLandingPage({
 				<TeamTargetAudience locale={locale} />
 				<TeamProblem locale={locale} />
 				<TeamSolution locale={locale} initialStats={initialStats} />
+				<TeamDemo locale={locale} />
 				<TeamHowItWorks locale={locale} />
 				<TeamUseCases locale={locale} initialStats={initialStats} />
+				<div className="flex justify-center py-8">
+					<button
+						type="button"
+						onClick={openIntake}
+						className="w-full max-w-xs px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity sm:w-auto"
+					>
+						{locale === "fr" ? "Commencer maintenant" : "Get started now"}
+					</button>
+				</div>
 				<TeamComparison locale={locale} initialStats={initialStats} />
+				<div className="flex justify-center py-8">
+					<button
+						type="button"
+						onClick={openIntake}
+						className="w-full max-w-xs px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity sm:w-auto"
+					>
+						{locale === "fr"
+							? "Démarrer avec le plan Solo"
+							: "Start with the Solo plan"}
+					</button>
+				</div>
 				<TeamGrid locale={locale} />
 				<TeamPricing locale={locale} onOpenIntake={openIntake} />
 				<TeamFounder locale={locale} />
