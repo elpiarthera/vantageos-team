@@ -157,10 +157,11 @@ export function IntakeForm({ locale, isOpen, onClose }: IntakeFormProps) {
 	const teamNames = TEAMS.map((team) => (locale === "en" ? team.en : team.fr));
 
 	const inputClass = cn(
-		"w-full rounded-md border border-input bg-background px-3 py-2 text-sm",
+		"w-full rounded-3xl border border-transparent bg-input/50 px-3 py-2 text-sm",
 		"placeholder:text-muted-foreground",
-		"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+		"focus-visible:outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30",
 		"disabled:cursor-not-allowed disabled:opacity-50",
+		"transition-[color,box-shadow,background-color]",
 	);
 
 	return (
@@ -180,7 +181,7 @@ export function IntakeForm({ locale, isOpen, onClose }: IntakeFormProps) {
 			/>
 			<div
 				className={cn(
-					"relative w-full max-w-lg bg-card border border-border rounded-xl shadow-xl",
+					"relative w-full max-w-lg bg-card rounded-4xl shadow-xl ring-1 ring-foreground/5 dark:ring-foreground/10",
 					"max-h-[90vh] overflow-y-auto",
 					"animate-in fade-in-0 zoom-in-95 duration-200",
 				)}
@@ -197,7 +198,7 @@ export function IntakeForm({ locale, isOpen, onClose }: IntakeFormProps) {
 						type="button"
 						onClick={onClose}
 						aria-label={t.close}
-						className="ml-4 mt-0.5 shrink-0 rounded-md p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+						className="ml-4 mt-0.5 shrink-0 rounded-full p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
 					>
 						<X className="size-4" aria-hidden="true" />
 					</button>
@@ -284,8 +285,8 @@ export function IntakeForm({ locale, isOpen, onClose }: IntakeFormProps) {
 									aria-haspopup="listbox"
 									aria-labelledby="teams-label"
 									className={cn(
-										"w-full text-left rounded-md border border-input bg-background px-3 py-2 text-sm",
-										"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+										"w-full text-left rounded-3xl border border-transparent bg-input/50 px-3 py-2 text-sm",
+										"focus-visible:outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30",
 										"disabled:cursor-not-allowed disabled:opacity-50",
 										selectedTeams.length === 0 && "text-muted-foreground",
 									)}
@@ -300,7 +301,7 @@ export function IntakeForm({ locale, isOpen, onClose }: IntakeFormProps) {
 										aria-multiselectable="true"
 										aria-labelledby="teams-label"
 										className={cn(
-											"absolute z-10 mt-1 w-full rounded-md border border-border bg-card shadow-lg",
+											"absolute z-10 mt-1 w-full rounded-3xl border-0 bg-popover shadow-lg ring-1 ring-foreground/5 dark:ring-foreground/10",
 											"max-h-48 overflow-y-auto",
 										)}
 									>
@@ -364,9 +365,10 @@ export function IntakeForm({ locale, isOpen, onClose }: IntakeFormProps) {
 								rows={3}
 								placeholder={t.challengePlaceholder}
 								className={cn(
-									"w-full rounded-md border border-input bg-background px-3 py-2 text-sm",
+									"w-full rounded-2xl border border-transparent bg-input/50 px-3 py-3 text-sm",
 									"placeholder:text-muted-foreground resize-none",
-									"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+									"focus-visible:outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30",
+									"transition-[color,box-shadow,background-color]",
 									"disabled:cursor-not-allowed disabled:opacity-50",
 								)}
 								disabled={status === "sending"}

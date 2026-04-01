@@ -214,14 +214,14 @@ export function TeamPricing({ locale, onOpenIntake }: TeamPricingProps) {
 					viewport={{ once: true }}
 					transition={{ duration: 0.5, delay: 0.1 }}
 				>
-					<div className="inline-flex rounded-lg border border-border bg-card p-1">
+					<div className="inline-flex rounded-full border border-border bg-card p-1">
 						{(["10h", "20h", "40h"] as Pace[]).map((p) => (
 							<button
 								key={p}
 								type="button"
 								onClick={() => setPace(p)}
 								className={cn(
-									"px-4 sm:px-6 py-2 rounded-md text-sm font-medium transition-all",
+									"px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all",
 									pace === p
 										? "bg-primary text-primary-foreground shadow-sm"
 										: "text-muted-foreground hover:text-foreground",

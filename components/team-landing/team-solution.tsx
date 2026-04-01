@@ -128,7 +128,7 @@ export function TeamSolution({ locale, initialStats }: TeamSolutionProps) {
 							viewport={{ once: true }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 						>
-							<div className="p-8 rounded-2xl border border-border bg-card h-full">
+							<div className="p-8 rounded-4xl bg-card shadow-md ring-1 ring-foreground/5 dark:ring-foreground/10 h-full">
 								<div
 									className={`size-12 rounded-xl ${benefit.bgColor} flex items-center justify-center mb-6`}
 								>

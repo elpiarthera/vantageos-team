@@ -98,7 +98,7 @@ export function TeamDemo({ locale }: TeamDemoProps) {
 				</motion.div>
 
 				<div className="max-w-2xl mx-auto">
-					<div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-sm card-glow">
+					<div className="rounded-4xl bg-card p-6 sm:p-8 shadow-md ring-1 ring-foreground/5 dark:ring-foreground/10 card-glow">
 						{/* Client bubble */}
 						<motion.div
 							className="flex items-end gap-3 justify-end mb-6"

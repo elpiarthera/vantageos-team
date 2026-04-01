@@ -116,12 +116,12 @@ function ComparisonTable({
 					</tr>
 				</thead>
 				<tbody>
-					{rows.map((row, rowIndex) => (
+					{rows.map((row) => (
 						<tr key={row[0]} className="border-b border-border/50">
-							{row.map((cell, cellIndex) => (
+							{row.map((cell) => (
 								<td
-									key={`${rowIndex}-${cellIndex}`}
-									className={`py-3 px-4 ${cellIndex === 0 ? "font-medium" : ""} ${cellIndex === row.length - 1 ? "font-medium text-foreground" : "text-muted-foreground"}`}
+									key={cell}
+									className={`py-3 px-4 ${cell === row[0] ? "font-medium" : ""} ${cell === row[row.length - 1] ? "font-medium text-foreground" : "text-muted-foreground"}`}
 								>
 									{cell}
 								</td>
@@ -165,7 +165,7 @@ export function TeamComparison({ locale, initialStats }: TeamComparisonProps) {
 
 				<div className="space-y-16">
 					<motion.div
-						className="rounded-2xl border border-border bg-card p-6 md:p-8"
+						className="rounded-4xl bg-card p-6 md:p-8 shadow-md ring-1 ring-foreground/5 dark:ring-foreground/10"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
@@ -179,7 +179,7 @@ export function TeamComparison({ locale, initialStats }: TeamComparisonProps) {
 					</motion.div>
 
 					<motion.div
-						className="rounded-2xl border border-border bg-card p-6 md:p-8"
+						className="rounded-4xl bg-card p-6 md:p-8 shadow-md ring-1 ring-foreground/5 dark:ring-foreground/10"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}

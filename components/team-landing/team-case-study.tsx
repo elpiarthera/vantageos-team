@@ -107,7 +107,7 @@ export function TeamCaseStudy({ locale, initialStats }: TeamCaseStudyProps) {
 					{t.metrics.map((metric, index) => (
 						<motion.div
 							key={metric.key}
-							className="rounded-2xl border border-border bg-card p-8 text-center"
+							className="rounded-4xl bg-card p-8 text-center shadow-md ring-1 ring-foreground/5 dark:ring-foreground/10"
 							initial={{ opacity: 0, y: 16 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
