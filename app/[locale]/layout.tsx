@@ -6,7 +6,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const BASE_URL = "https://vantageos-team.vercel.app";
+const BASE_URL = "https://vantageteam.dev";
 
 type Locale = "en" | "fr";
 

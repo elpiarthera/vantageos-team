@@ -1,80 +1,76 @@
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://vantageos-team.vercel.app";
+const BASE_URL = "https://vantageteam.dev";
 
-  return [
+export default function sitemap(): MetadataRoute.Sitemap {
+  const staticPages: Array<{
+    enPath: string;
+    frPath: string;
+    priority: number;
+    changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+  }> = [
     {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      enPath: "",
+      frPath: "/fr",
       priority: 1.0,
-      alternates: {
-        languages: {
-          en: baseUrl,
-          fr: `${baseUrl}/fr`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/fr`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
+    },
+    {
+      enPath: "/build",
+      frPath: "/fr/build",
       priority: 0.9,
-      alternates: {
-        languages: {
-          en: baseUrl,
-          fr: `${baseUrl}/fr`,
-        },
-      },
+      changeFrequency: "weekly",
     },
     {
-      url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.3,
-      alternates: {
-        languages: {
-          en: `${baseUrl}/privacy`,
-          fr: `${baseUrl}/fr/privacy`,
-        },
-      },
+      enPath: "/dev",
+      frPath: "/fr/dev",
+      priority: 0.9,
+      changeFrequency: "weekly",
     },
     {
-      url: `${baseUrl}/legal`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.3,
-      alternates: {
-        languages: {
-          en: `${baseUrl}/legal`,
-          fr: `${baseUrl}/fr/legal`,
-        },
-      },
+      enPath: "/teams",
+      frPath: "/fr/teams",
+      priority: 0.9,
+      changeFrequency: "weekly",
     },
     {
-      url: `${baseUrl}/fr/privacy`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      enPath: "/privacy",
+      frPath: "/fr/privacy",
       priority: 0.3,
-      alternates: {
-        languages: {
-          en: `${baseUrl}/privacy`,
-          fr: `${baseUrl}/fr/privacy`,
-        },
-      },
+      changeFrequency: "monthly",
     },
     {
-      url: `${baseUrl}/fr/legal`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      enPath: "/legal",
+      frPath: "/fr/legal",
       priority: 0.3,
-      alternates: {
-        languages: {
-          en: `${baseUrl}/legal`,
-          fr: `${baseUrl}/fr/legal`,
-        },
-      },
+      changeFrequency: "monthly",
     },
   ];
+
+  return staticPages.flatMap(({ enPath, frPath, priority, changeFrequency }) => [
+    {
+      url: `${BASE_URL}${enPath}`,
+      lastModified: new Date(),
+      changeFrequency,
+      priority,
+      alternates: {
+        languages: {
+          en: `${BASE_URL}${enPath}`,
+          fr: `${BASE_URL}${frPath}`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}${frPath}`,
+      lastModified: new Date(),
+      changeFrequency,
+      priority: priority - 0.1,
+      alternates: {
+        languages: {
+          en: `${BASE_URL}${enPath}`,
+          fr: `${BASE_URL}${frPath}`,
+        },
+      },
+    },
+  ]);
 }

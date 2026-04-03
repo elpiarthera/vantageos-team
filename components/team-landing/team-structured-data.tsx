@@ -66,22 +66,21 @@ const allFaqsFr = [
   { q: 'Puis-je utiliser ce service pour des donn\u00e9es clients sensibles ?', a: 'Oui, avec notre DPA standard en place. Pour les secteurs tr\u00e8s r\u00e9glement\u00e9s (droit, sant\u00e9), nous pouvons discuter de garanties suppl\u00e9mentaires.' },
 ];
 
-function buildFaqSchema(faqs: { q: string; a: string }[]) {
+function buildQaSchema(faqs: { q: string; a: string }[], lang: string) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
+    '@type': 'ItemList',
+    name: lang === 'fr' ? 'Questions fr\u00e9quentes' : 'Frequently Asked Questions',
+    itemListElement: faqs.map((faq, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
       name: faq.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.a,
-      },
+      description: faq.a,
     })),
   };
 }
 
-const baseUrl = 'https://vantageos-team.vercel.app';
+const baseUrl = 'https://vantageteam.dev';
 
 const structuredData = {
   en: {
@@ -184,39 +183,23 @@ const structuredData = {
         },
       ],
     },
-    faqPage: buildFaqSchema(allFaqsEn),
-    howTo: {
+    qaList: buildQaSchema(allFaqsEn, 'en'),
+    process: {
       '@context': 'https://schema.org',
-      '@type': 'HowTo',
-      name: 'How to use VantageOS Team',
-      description: 'Get started with your AI team in four simple steps. No tool to learn, no training needed.',
-      totalTime: 'PT5M',
-      step: [
-        {
-          '@type': 'HowToStep',
-          position: 1,
-          name: 'Send a task',
-          text: 'Send your task by email, Telegram, or Google Meet transcript. No special app. No login. No platform.',
-        },
-        {
-          '@type': 'HowToStep',
-          position: 2,
-          name: 'The right team handles it',
-          text: 'Laurent receives your request, understands the context, and assigns it to specialized agents.',
-        },
-        {
-          '@type': 'HowToStep',
-          position: 3,
-          name: 'Receive the result',
-          text: 'Reviewed by Laurent before delivery. Ready to use. Delivered by email or to your Google Drive.',
-        },
-        {
-          '@type': 'HowToStep',
-          position: 4,
-          name: 'Your team gets smarter',
-          text: 'Every interaction enriches your AI team\'s memory. Month 2 results are better than Month 1.',
-        },
-      ],
+      '@type': 'Article',
+      name: 'How VantageOS Team works',
+      headline: 'Get started with your AI team in four simple steps',
+      description: 'Send a task by email or Telegram. Laurent assigns it to specialized agents. You receive a reviewed result. Your team\u2019s memory improves over time.',
+      author: {
+        '@type': 'Person',
+        name: 'Laurent Perello',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Perello Consulting',
+      },
+      url: baseUrl,
+      inLanguage: 'en',
     },
     review: {
       '@context': 'https://schema.org',
@@ -347,39 +330,23 @@ const structuredData = {
         },
       ],
     },
-    faqPage: buildFaqSchema(allFaqsFr),
-    howTo: {
+    qaList: buildQaSchema(allFaqsFr, 'fr'),
+    process: {
       '@context': 'https://schema.org',
-      '@type': 'HowTo',
-      name: 'Comment utiliser VantageOS Team',
-      description: 'D\u00e9marrez avec votre \u00e9quipe IA en quatre \u00e9tapes simples. Pas d\'outil \u00e0 apprendre, pas de formation n\u00e9cessaire.',
-      totalTime: 'PT5M',
-      step: [
-        {
-          '@type': 'HowToStep',
-          position: 1,
-          name: 'Envoyez une t\u00e2che',
-          text: 'Par email, Telegram ou compte-rendu Google Meet. Pas d\'outil sp\u00e9cial. Pas de connexion.',
-        },
-        {
-          '@type': 'HowToStep',
-          position: 2,
-          name: 'L\'\u00e9quipe appropri\u00e9e s\'en charge',
-          text: 'Laurent re\u00e7oit votre demande, comprend le contexte, et la confie aux agents sp\u00e9cialis\u00e9s.',
-        },
-        {
-          '@type': 'HowToStep',
-          position: 3,
-          name: 'Recevez le r\u00e9sultat',
-          text: 'Revu par Laurent avant envoi. Pr\u00eat \u00e0 utiliser. Livr\u00e9 par email ou dans votre Google Drive.',
-        },
-        {
-          '@type': 'HowToStep',
-          position: 4,
-          name: 'Votre \u00e9quipe s\'am\u00e9liore',
-          text: 'Chaque interaction enrichit la m\u00e9moire de votre \u00e9quipe IA. Les r\u00e9sultats du mois 2 sont meilleurs que ceux du mois 1.',
-        },
-      ],
+      '@type': 'Article',
+      name: 'Comment fonctionne VantageOS Team',
+      headline: 'D\u00e9marrez avec votre \u00e9quipe IA en quatre \u00e9tapes simples',
+      description: 'Envoyez une t\u00e2che par email ou Telegram. Laurent la confie aux agents sp\u00e9cialis\u00e9s. Vous recevez un r\u00e9sultat revu. La m\u00e9moire de votre \u00e9quipe s\u2019am\u00e9liore au fil du temps.',
+      author: {
+        '@type': 'Person',
+        name: 'Laurent Perello',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Perello Consulting',
+      },
+      url: `${baseUrl}/fr`,
+      inLanguage: 'fr',
     },
     review: {
       '@context': 'https://schema.org',
@@ -446,13 +413,13 @@ export function TeamStructuredData({ locale }: TeamStructuredDataProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(data.faqPage),
+          __html: JSON.stringify(data.qaList),
         }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(data.howTo),
+          __html: JSON.stringify(data.process),
         }}
       />
       <script

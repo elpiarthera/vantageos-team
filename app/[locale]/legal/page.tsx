@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? 'Mentions l\u00e9gales du site VantageOS Team conform\u00e9ment \u00e0 la loi LCEN.'
       : 'Legal notice for the VantageOS Team website.',
     alternates: {
-      canonical: `https://vantageos-team.vercel.app/${locale}/legal`,
+      canonical: `https://vantageteam.dev/${locale}/legal`,
       languages: { en: '/en/legal', fr: '/fr/legal' },
     },
   };

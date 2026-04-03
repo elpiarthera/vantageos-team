@@ -28,6 +28,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://vantageos-team.vercel.app/sitemap.xml",
+    sitemap: "https://vantageteam.dev/sitemap.xml",
   };
 }
