@@ -2,8 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useRef, useState } from "react";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 // ─── Inline SVG icons ────────────────────────────────────────────────────────
@@ -148,6 +148,8 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 	const { theme, setTheme } = useTheme();
 	const t = headerContent[locale];
 	const links = navLinks[locale];
+	const mobileMenuRef = useRef<HTMLDivElement>(null);
+	const menuButtonRef = useRef<HTMLButtonElement>(null);
 
 	useEffect(() => {
 		setMounted(true);
@@ -158,6 +160,44 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
+
+	// Escape key + focus trap for mobile menu
+	useEffect(() => {
+		if (!isMobileMenuOpen) return;
+
+		const handleKeyDown = (e: KeyboardEvent) => {
+			if (e.key === "Escape") {
+				setIsMobileMenuOpen(false);
+				menuButtonRef.current?.focus();
+				return;
+			}
+			if (e.key !== "Tab") return;
+
+			const menu = mobileMenuRef.current;
+			if (!menu) return;
+
+			const focusable = menu.querySelectorAll<HTMLElement>(
+				'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+			);
+			const first = focusable[0];
+			const last = focusable[focusable.length - 1];
+
+			if (e.shiftKey) {
+				if (document.activeElement === first) {
+					e.preventDefault();
+					last?.focus();
+				}
+			} else {
+				if (document.activeElement === last) {
+					e.preventDefault();
+					first?.focus();
+				}
+			}
+		};
+
+		document.addEventListener("keydown", handleKeyDown);
+		return () => document.removeEventListener("keydown", handleKeyDown);
+	}, [isMobileMenuOpen]);
 
 	const toggleLocale = () => {
 		onLocaleChange(locale === "en" ? "fr" : "en");
@@ -176,7 +216,12 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 					: "bg-transparent",
 			)}
 		>
-			<nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<nav
+				aria-label={
+					locale === "fr" ? "Navigation principale" : "Main navigation"
+				}
+				className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+			>
 				<div className="flex items-center justify-between h-16 md:h-20">
 					{/* Logo */}
 					<a href="/" className="flex items-center gap-2 group">
@@ -227,8 +272,11 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 							<GlobeIcon className="size-4" />
 							{t.langLabel}
 						</Button>
-						<a href="mailto:laurent@perello.fr">
-							<Button size="sm">{t.cta}</Button>
+						<a
+							href="mailto:laurent@perello.fr"
+							className={buttonVariants({ size: "sm" })}
+						>
+							{t.cta}
 						</a>
 					</div>
 
@@ -249,11 +297,22 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 							</button>
 						)}
 						<button
+							ref={menuButtonRef}
 							type="button"
-							className="p-2 -mr-2 text-muted-foreground hover:text-foreground"
+							className="p-2 -mr-2 text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
 							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+							aria-expanded={isMobileMenuOpen}
+							aria-controls="mobile-menu"
 						>
-							<span className="sr-only">Open menu</span>
+							<span className="sr-only">
+								{isMobileMenuOpen
+									? locale === "fr"
+										? "Fermer le menu"
+										: "Close menu"
+									: locale === "fr"
+										? "Ouvrir le menu"
+										: "Open menu"}
+							</span>
 							{isMobileMenuOpen ? (
 								<XIcon className="size-6" />
 							) : (
@@ -268,6 +327,8 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 			<AnimatePresence>
 				{isMobileMenuOpen && (
 					<motion.div
+						id="mobile-menu"
+						ref={mobileMenuRef}
 						initial={{ opacity: 0, height: 0 }}
 						animate={{ opacity: 1, height: "auto" }}
 						exit={{ opacity: 0, height: 0 }}
@@ -278,7 +339,7 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 								<a
 									key={link.href}
 									href={link.href}
-									className="block px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+									className="block px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
 									onClick={() => setIsMobileMenuOpen(false)}
 								>
 									{link.label}
@@ -287,7 +348,7 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 							<div className="pt-4 space-y-2">
 								<Button
 									variant="outline"
-									className="w-full min-h-touch"
+									className="w-full min-h-[44px]"
 									onClick={() => {
 										toggleLocale();
 										setIsMobileMenuOpen(false);
@@ -296,13 +357,15 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 									<GlobeIcon className="size-4 mr-2" />
 									{t.langLabel}
 								</Button>
-								<a href="mailto:laurent@perello.fr" className="block">
-									<Button
-										className="w-full min-h-touch"
-										onClick={() => setIsMobileMenuOpen(false)}
-									>
-										{t.cta}
-									</Button>
+								<a
+									href="mailto:laurent@perello.fr"
+									onClick={() => setIsMobileMenuOpen(false)}
+									className={cn(
+										buttonVariants(),
+										"w-full min-h-[44px] justify-center",
+									)}
+								>
+									{t.cta}
 								</a>
 							</div>
 						</div>

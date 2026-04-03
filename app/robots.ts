@@ -27,6 +27,22 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "GoogleOther",
         allow: "/",
       },
+      {
+        userAgent: "Google-Extended",
+        allow: "/",
+      },
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+      },
+      {
+        userAgent: "ChatGPT-User",
+        allow: "/",
+      },
+      {
+        userAgent: "Applebot-Extended",
+        allow: "/",
+      },
     ],
     sitemap: "https://vantageteam.dev/sitemap.xml",
   };

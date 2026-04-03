@@ -25,7 +25,7 @@ export function TeamLandingPage({
 		<div className="min-h-screen bg-background overflow-x-hidden">
 			<TeamStructuredData locale={locale} />
 			<TeamHeader locale={locale} onLocaleChange={setLocale} />
-			<main>
+			<main id="main-content">
 				<TeamHero locale={locale} />
 				<ProductCards locale={locale} />
 				<SocialProof locale={locale} />

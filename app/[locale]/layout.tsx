@@ -1,144 +1,155 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { Geist, Geist_Mono } from "next/font/google";
-import { routing } from "@/i18n/routing";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
+import { routing } from "@/i18n/routing";
 
 const BASE_URL = "https://vantageteam.dev";
 
 type Locale = "en" | "fr";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+	variable: "--font-geist-sans",
+	subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+	variable: "--font-geist-mono",
+	subsets: ["latin"],
 });
 
 type Props = {
-  params: Promise<{ locale: string }>;
-  children: React.ReactNode;
+	params: Promise<{ locale: string }>;
+	children: React.ReactNode;
 };
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+	return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
-  params,
+	params,
 }: {
-  params: Promise<{ locale: string }>;
+	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
+	const { locale } = await params;
 
-  const meta: Record<
-    string,
-    { title: string; description: string; ogTitle: string; ogDesc: string }
-  > = {
-    en: {
-      title:
-        "VantageOS Team \u2014 Your Complete AI Team | 16 Teams, 81 Agents, 273 Skills",
-      description:
-        "Hire a complete AI team starting at EUR 490/month. 16 specialized departments, 81 AI agents, 273 skills \u2014 supervised by a tech executive with 25 years of experience. No tool to learn. Cancel anytime.",
-      ogTitle: "VantageOS Team \u2014 Your Complete AI Team",
-      ogDesc:
-        "16 departments, 81 agents, 273 skills. Send tasks by email, get results back. Starting at EUR 490/month.",
-    },
-    fr: {
-      title:
-        "VantageOS Team \u2014 Votre \u00e9quipe IA compl\u00e8te | 16 \u00e9quipes, 81 agents, 273 comp\u00e9tences",
-      description:
-        "Embauchez une \u00e9quipe IA compl\u00e8te \u00e0 partir de 490 \u20ac/mois. 16 d\u00e9partements sp\u00e9cialis\u00e9s, 81 agents IA, 273 comp\u00e9tences \u2014 supervis\u00e9s par un dirigeant tech avec 25 ans d\u2019exp\u00e9rience. Aucun outil \u00e0 apprendre. R\u00e9siliable \u00e0 tout moment.",
-      ogTitle: "VantageOS Team \u2014 Votre \u00e9quipe IA compl\u00e8te",
-      ogDesc:
-        "16 d\u00e9partements, 81 agents, 273 comp\u00e9tences. Envoyez vos t\u00e2ches par email, recevez les r\u00e9sultats. \u00c0 partir de 490 \u20ac/mois.",
-    },
-  };
+	const meta: Record<
+		string,
+		{ title: string; description: string; ogTitle: string; ogDesc: string }
+	> = {
+		en: {
+			title:
+				"VantageTeam \u2014 Your Complete AI Team | 16 Teams, 81 Agents, 273 Skills",
+			description:
+				"Hire a complete AI team starting at EUR 490/month. 16 specialized departments, 81 AI agents, 273 skills \u2014 supervised by a tech executive with 25 years of experience. No tool to learn. Cancel anytime.",
+			ogTitle: "VantageTeam \u2014 Your Complete AI Team",
+			ogDesc:
+				"16 departments, 81 agents, 273 skills. Send tasks by email, get results back. Starting at EUR 490/month.",
+		},
+		fr: {
+			title:
+				"VantageTeam \u2014 Votre \u00e9quipe IA compl\u00e8te | 16 \u00e9quipes, 81 agents, 273 comp\u00e9tences",
+			description:
+				"Embauchez une \u00e9quipe IA compl\u00e8te \u00e0 partir de 490 \u20ac/mois. 16 d\u00e9partements sp\u00e9cialis\u00e9s, 81 agents IA, 273 comp\u00e9tences \u2014 supervis\u00e9s par un dirigeant tech avec 25 ans d\u2019exp\u00e9rience. Aucun outil \u00e0 apprendre. R\u00e9siliable \u00e0 tout moment.",
+			ogTitle: "VantageTeam \u2014 Votre \u00e9quipe IA compl\u00e8te",
+			ogDesc:
+				"16 d\u00e9partements, 81 agents, 273 comp\u00e9tences. Envoyez vos t\u00e2ches par email, recevez les r\u00e9sultats. \u00c0 partir de 490 \u20ac/mois.",
+		},
+	};
 
-  const m = meta[locale] || meta.en;
-  const canonicalUrl = locale === "en" ? BASE_URL : `${BASE_URL}/fr`;
+	const m = meta[locale] || meta.en;
+	const canonicalUrl = locale === "en" ? BASE_URL : `${BASE_URL}/fr`;
 
-  return {
-    metadataBase: new URL(BASE_URL),
-    title: m.title,
-    description: m.description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        en: BASE_URL,
-        fr: `${BASE_URL}/fr`,
-        "x-default": BASE_URL,
-      },
-    },
-    openGraph: {
-      title: m.ogTitle,
-      description: m.ogDesc,
-      type: "website",
-      url: canonicalUrl,
-      images: [
-        {
-          url: "/opengraph-image",
-          width: 1200,
-          height: 630,
-          alt: "VantageOS Team - Your Complete AI Team",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: m.ogTitle,
-      description: m.ogDesc,
-      images: ["/opengraph-image"],
-    },
-    icons: {
-      apple: "/apple-touch-icon.png",
-    },
-    other: {
-      "theme-color": "#0a0a0a",
-    },
-  };
+	return {
+		metadataBase: new URL(BASE_URL),
+		title: {
+			template: "%s — VantageTeam",
+			default: m.title,
+		},
+		description: m.description,
+		alternates: {
+			canonical: canonicalUrl,
+			languages: {
+				en: BASE_URL,
+				fr: `${BASE_URL}/fr`,
+				"x-default": BASE_URL,
+			},
+		},
+		openGraph: {
+			title: m.ogTitle,
+			description: m.ogDesc,
+			type: "website",
+			url: canonicalUrl,
+			images: [
+				{
+					url: "/opengraph-image",
+					width: 1200,
+					height: 630,
+					alt: "VantageTeam - Your Complete AI Team",
+				},
+			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: m.ogTitle,
+			description: m.ogDesc,
+			images: ["/opengraph-image"],
+		},
+		icons: {
+			apple: "/apple-touch-icon.png",
+		},
+		other: {
+			"theme-color": "#0a0a0a",
+		},
+	};
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = await params;
+	const { locale } = await params;
 
-  if (!routing.locales.includes(locale as Locale)) {
-    notFound();
-  }
+	if (!routing.locales.includes(locale as Locale)) {
+		notFound();
+	}
 
-  setRequestLocale(locale);
+	setRequestLocale(locale);
 
-  const messages = await getMessages();
+	const messages = await getMessages();
 
-  return (
-    <html lang={locale} suppressHydrationWarning>
-      <head>
-        <meta name="theme-color" content="#0a0a0a" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+	return (
+		<html lang={locale} suppressHydrationWarning>
+			<head>
+				<meta name="theme-color" content="#0a0a0a" />
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="/apple-touch-icon.png"
+				/>
+			</head>
+			<body
+				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+			>
+				<a
+					href="#main-content"
+					className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-primary-foreground focus:font-medium focus:outline-none"
+				>
+					{locale === "fr"
+						? "Aller au contenu principal"
+						: "Skip to main content"}
+				</a>
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="dark"
+					enableSystem
+					disableTransitionOnChange
+				>
+					<NextIntlClientProvider messages={messages}>
+						{children}
+					</NextIntlClientProvider>
+				</ThemeProvider>
+			</body>
+		</html>
+	);
 }

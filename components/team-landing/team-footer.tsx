@@ -74,7 +74,11 @@ export function TeamFooter({ locale, onLocaleChange }: TeamFooterProps) {
 				<div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-12">
 					{/* Logo and tagline */}
 					<div>
-						<a href="#hero" className="flex items-center gap-2 mb-4">
+						<a
+							href="#hero"
+							aria-label="VantageOS Team — Return to top"
+							className="flex items-center gap-2 mb-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
+						>
 							<div className="size-8 rounded-lg bg-foreground flex items-center justify-center">
 								<span className="text-background font-bold text-lg">V</span>
 							</div>
@@ -93,7 +97,7 @@ export function TeamFooter({ locale, onLocaleChange }: TeamFooterProps) {
 							<a
 								key={link.href}
 								href={link.href}
-								className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+								className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
 							>
 								{link.label}
 							</a>
@@ -106,7 +110,7 @@ export function TeamFooter({ locale, onLocaleChange }: TeamFooterProps) {
 						<p className="text-muted-foreground">
 							<a
 								href="mailto:laurent@perello.fr"
-								className="hover:text-foreground transition-colors"
+								className="hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
 							>
 								laurent@perello.fr
 							</a>
@@ -116,9 +120,11 @@ export function TeamFooter({ locale, onLocaleChange }: TeamFooterProps) {
 								href="https://t.me/laurentperello"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="hover:text-foreground transition-colors"
+								aria-label="@laurentperello on Telegram (opens in new tab)"
+								className="hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
 							>
 								@laurentperello
+								<span className="sr-only"> (opens in new tab)</span>
 							</a>
 						</p>
 					</div>
@@ -136,7 +142,7 @@ export function TeamFooter({ locale, onLocaleChange }: TeamFooterProps) {
 								<a
 									key={link.href}
 									href={link.href}
-									className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
+									className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
 								>
 									{link.label}
 								</a>

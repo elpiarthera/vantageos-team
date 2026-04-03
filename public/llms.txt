@@ -1,0 +1,20 @@
+# VantageTeam
+
+> Fully managed AI agent teams for app development, dev maintenance, and marketing/SEO/content operations. Supervised by a tech executive with 25 years of experience.
+
+## Services
+
+- [Build an App](/en/build): AI-powered app development from idea to production in 4-8 weeks. From $2,990. Revenue share model.
+- [AI Dev Team](/en/dev): Ongoing development, bug fixes, feature work via GitHub Issues. From $990/month. SLA-backed.
+- [Agent Teams](/en/teams): Marketing, SEO, content, sales, email, and operations. From $990/month.
+
+## Pricing
+
+- Build packages: $2,990 - $19,990 one-time
+- Dev team: $990 - $4,990/month
+- Non-dev teams: $990 - $3,990/month
+
+## Optional
+
+- [Privacy Policy](/en/privacy)
+- [Legal](/en/legal)

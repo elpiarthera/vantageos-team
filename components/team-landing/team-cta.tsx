@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import type { Locale } from "./team-landing-page";
 
 // ─── Inline SVG icons ────────────────────────────────────────────────────────
@@ -89,15 +90,16 @@ export function TeamCta({ locale }: TeamCtaProps) {
 					viewport={{ once: true }}
 					transition={{ duration: 0.5, delay: 0.1 }}
 				>
-					<a href="mailto:laurent@perello.fr">
-						<Button
-							size="lg"
-							className="min-h-touch text-base px-10 group glow-on-hover"
-						>
-							<CalendarIcon className="mr-2 size-5" />
-							{t.cta}
-							<ArrowRightIcon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-						</Button>
+					<a
+						href="mailto:laurent@perello.fr"
+						className={cn(
+							buttonVariants({ size: "lg" }),
+							"min-h-[44px] text-base px-10 group glow-on-hover",
+						)}
+					>
+						<CalendarIcon className="mr-2 size-5" />
+						{t.cta}
+						<ArrowRightIcon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
 					</a>
 					<p className="mt-8 text-sm text-muted-foreground">
 						{t.contact}{" "}
