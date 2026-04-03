@@ -4,6 +4,17 @@
   "pages": [
     "browserbase-strategy",
     "10k-agentic-workflows",
-    "50-claude-code-tips"
+    "50-claude-code-tips",
+    "claude-code-real-expectations",
+    "claude-code-scheduled-tasks",
+    "claude-cowork-zero-experience",
+    "claude-skills-automatisez-1000-taches",
+    "claude-skills-generate-revenue",
+    "claude-skills-productivity",
+    "beautiful-ui-claude-code",
+    "claude-code-better-than-99-percent",
+    "llm-outputs-context",
+    "nano-banana-10k-websites",
+    "visual-coding-agents"
   ]
 }

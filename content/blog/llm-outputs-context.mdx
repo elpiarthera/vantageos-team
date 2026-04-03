@@ -1,0 +1,82 @@
+---
+title: "We watched 'Why LLM outputs are never the same' — here's what we learned"
+description: "Rick Mulready explains Claude Skills as reusable recipe books that solve context degradation — and shows five business use cases that map directly to what we build."
+date: "2026-04-03"
+author: "VantageTeam"
+tags: ["video-analysis", "claude-skills", "context-management", "AI-workflows", "progressive-disclosure"]
+category: "video-analysis"
+source_url: "https://www.youtube.com/watch?v=HCwfRe5EHGQ"
+source_type: "video"
+video_id: "HCwfRe5EHGQ"
+speaker: "Rick Mulready"
+duration: "18:42"
+lang: "en"
+---
+
+## The video
+
+<YouTubeEmbed id="HCwfRe5EHGQ" />
+
+**Speaker:** Rick Mulready, online business strategist and AI Playbook community founder
+**Duration:** 18:42
+**Published:** 2026
+
+## Why we analyzed this
+
+If you have ever wondered why Claude gives you great output on message three and garbage on message thirty, this video explains the mechanism clearly. Rick Mulready breaks down Claude Skills in plain language — no developer jargon — and demonstrates five business use cases that map almost perfectly to the kind of reusable AI workflows we build every day. Understanding how non-technical users think about skills helps us build better ones.
+
+## What you can learn from this
+
+- Why LLM outputs degrade over long conversations (context window saturation)
+- The difference between Claude Projects (persistent context) and Claude Skills (executable capabilities)
+- How progressive disclosure works — Claude loading only the skill it needs, when it needs it
+- The anatomy of a skill.md file: YAML frontmatter, step-by-step instructions, resource folders
+- Five concrete business use cases: brand guidelines, lead scoring, client reports, decision frameworks, survey analysis
+
+## Key takeaways
+
+### 1. Context degradation is the real problem — 0:00
+
+The video opens with the core insight most AI users feel but cannot name: output quality degrades the longer you chat. Every new message adds to the context window, diluting the instructions you gave at the start. Skills solve this by loading focused instructions only when needed, keeping the context lean.
+
+### 2. Progressive disclosure is the architecture — 2:15
+
+Claude Skills use progressive disclosure — loading information in stages rather than consuming your entire context upfront. Think of it as a cookbook where Claude only opens the page it needs. This is not just a performance optimization. It is the reason skills produce more consistent output than pasting the same instructions repeatedly.
+
+### 3. Projects vs. Skills: know which to use — 5:30
+
+Projects are persistent context containers. Skills are executable capabilities. The practical framework: if Claude needs to know something for every conversation (brand voice, ICP), that is a project. If you need a repeatable workflow with clear inputs, steps, and outputs, that is a skill. Most people confuse these. Getting it right saves thousands of tokens.
+
+### 4. Skill anatomy is simpler than you think — 8:00
+
+Every skill starts with a skill.md file — a markdown file with YAML frontmatter defining the name and description, followed by step-by-step instructions. Additional resource folders (logos, fonts, examples, writing style) go alongside it. The key principle: only add context Claude does not already have. Lean beats comprehensive.
+
+### 5. Self-improving skills are the real power — 14:30
+
+After each use, you tell Claude what worked and what did not, then ask it to update the skill.md. Every build makes the skill better. This iterative refinement loop is the difference between a static prompt and a living workflow that compounds in quality over time.
+
+### 6. Custom skills are still individual — 6:45
+
+An important limitation: custom skills are not shared organization-wide on team or enterprise plans. Each user maintains their own. For teams that need standardized AI workflows across people, this is a gap — and exactly the kind of problem a shared skill library solves.
+
+## Notable quotes
+
+> "Without skills, every time you want Claude to do something specific, you have to give it the full instructions every single time... With skills, you write down the recipe once, then whenever you need it, Claude just pulls up that recipe and follows it perfectly."
+> — Rick Mulready, 1:30
+
+> "Use a cloud project when Claude needs to know your brand voice or your ICP for every single chat. Use a cloud skill when you want a repeatable workflow."
+> — Rick Mulready, 5:45
+
+## How we applied this
+
+The five use cases Rick demonstrates — brand guidelines, lead scoring, client reports, decision frameworks, survey analysis — map almost directly to skills we already maintain in our deliverables library. What we took from this video was his framing of progressive disclosure for non-technical audiences. It is the clearest explanation we have seen, and we adopted similar language in our own onboarding materials. We also noted the organizational limitation of individual-only skills as a validation point for shared skill infrastructure.
+
+## The bottom line
+
+If you are building AI workflows for business and have not yet structured them as skills, this video is worth the 18 minutes. Rick Mulready targets non-technical business owners, so the explanations are accessible without being shallow. The single most important takeaway: skills are not prompts you save — they are executable capabilities that improve with every use.
+
+---
+
+*This video was transcribed and analyzed by our AI agent team. We watch and analyze tech content so you can get the insights in 5 minutes instead of 18.*
+
+[Explore our services →](/build)

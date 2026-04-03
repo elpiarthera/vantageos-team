@@ -1,0 +1,82 @@
+---
+title: "We watched 'Nano Banana 2 + Claude Code = $10k Websites' — here's what we learned"
+description: "A full pipeline for building premium scroll-driven animated landing pages using AI-generated video frames, Claude Code skills, and a 30-minute build process."
+date: "2026-04-03"
+author: "VantageTeam"
+tags: ["video-analysis", "claude-code", "web-development", "scroll-animation", "nano-banana", "website-building"]
+category: "video-analysis"
+source_url: "https://www.youtube.com/watch?v=q0TgUtj6vIs"
+source_type: "video"
+video_id: "q0TgUtj6vIs"
+speaker: "Nate Herki"
+duration: "22:15"
+lang: "en"
+---
+
+## The video
+
+<YouTubeEmbed id="q0TgUtj6vIs" />
+
+**Speaker:** Nate Herki, Dynamis community founder
+**Duration:** 22:15
+**Published:** 2026
+
+## Why we analyzed this
+
+This video demonstrates something that sounds implausible until you see it: building Apple-quality animated landing pages in 30 minutes using AI image generation, video synthesis, and Claude Code skills. The technical insight is deceptively simple — scroll-driven animations are just video frames mapped to scroll position. No 3D rendering, no WebGL, no complex animation libraries. For anyone building websites or selling web development services, this pipeline changes the economics entirely.
+
+## What you can learn from this
+
+- How to generate product imagery with Nano Banana 2 and animate it with Cling 3.0
+- The scroll-driven animation technique: video frames extracted via ffmpeg, each tied to a scroll position
+- How Claude Code's plan mode produces better first iterations than jumping straight to implementation
+- The full deployment pipeline: localhost testing, GitHub push, Vercel auto-deploy
+- A viable freelance model: build demo sites, prospect businesses with bad websites, charge $5k-$10k
+
+## Key takeaways
+
+### 1. The animation trick is absurdly simple — 3:00
+
+Every scroll-driven animation on these premium landing pages is just a video broken into frames. Nano Banana 2 generates a start frame and end frame. Cling 3.0 animates between them. ffmpeg extracts individual frames. Claude Code maps each frame to a scroll position. The result looks like a $50k agency build. The process takes 30 minutes.
+
+### 2. Two skills do all the heavy lifting — 6:30
+
+The entire workflow runs on two Claude Code skills: a front-end design skill (modified from Anthropic's official version) and a video-to-website skill. Both are markdown files containing best practices for creating animated, scroll-driven websites. The skills are given away free in the creator's community — the value is not in the files but in knowing how to use them iteratively.
+
+### 3. Plan mode first, always — 12:00
+
+Before building anything, the creator switches Claude Code to plan mode. The agent reads the video, asks clarifying questions (product name, content sections, layout preferences), and produces a detailed implementation plan with brand identity, fonts, colors, and section-by-section build steps. This planning step is why the first iteration comes out clean enough to ship with minor tweaks.
+
+### 4. Context management matters mid-build — 16:30
+
+At 53% context usage, the creator clears the conversation before making iteration requests. This is practical wisdom: context rot degrades output quality. He feeds back only the specific feedback (feature two appears too late on scroll) rather than re-explaining the entire project. Targeted, lean feedback loops produce better iterations than long conversations.
+
+### 5. The deployment gotcha: frames in .gitignore — 18:45
+
+When pushing to GitHub, the animation frames were excluded (likely by a default .gitignore pattern for media files). The deployed site rendered everything except the actual animation. The fix was simple — include the frames in the repo and redeploy. A useful reminder: always verify that your production deploy matches localhost, especially with large media assets.
+
+### 6. The business model is the real takeaway — 20:30
+
+The technical pipeline enables a specific business model: find businesses with bad websites, build a demo landing page with their product in one day, show it to them, charge $5k-$10k plus monthly hosting and maintenance. This undercuts traditional agencies on both speed and cost while producing visually comparable results. The recurring revenue from hosting and updates makes it sustainable.
+
+## Notable quotes
+
+> "All of these animations that you're seeing on the site... they're just videos. And so, all I did here was had Nano Banana generate two different images for me and then turn it into a video."
+> — Nate Herki, 3:15
+
+> "What you could do is you could find prospects, you could find some sort of niche... build a demo site similar to this in one day... and I can charge $5 to $10,000 which is a lot cheaper than they might get with other vendors."
+> — Nate Herki, 20:45
+
+## How we applied this
+
+The scroll-driven frame animation technique is something we are evaluating for product landing pages — both our own and for consulting engagements. The key insight is that perceived production value does not require complex tooling. We also noted the Nano Banana 2 + Cling 3.0 pipeline via Key.ai as a cost-effective way to generate product visuals without photoshoots. The self-improving skill pattern (update the skill.md after every build) validates the iterative approach we already use in our own skill development.
+
+## The bottom line
+
+If you build websites for clients or want to start, this video is a masterclass in leveraging AI tools end-to-end — from asset generation to deployment. The 30-minute build time is real, not marketing. The sites need iteration, but the starting point is remarkably close to production quality. Worth watching for the pipeline alone, even if you never sell a $10k website.
+
+---
+
+*This video was transcribed and analyzed by our AI agent team. We watch and analyze tech content so you can get the insights in 5 minutes instead of 22.*
+
+[Explore our services →](/build)

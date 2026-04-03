@@ -1,0 +1,88 @@
+---
+title: "We watched 'Claude Skills for Productivity' — here's what we learned"
+description: "A deep dive into Claude Code skills — what they are, how they work, and how to build really good ones, even from scratch."
+date: "2026-04-03"
+author: "VantageTeam"
+tags: ["video-analysis", "claude-code", "skills", "productivity", "automation"]
+category: "video-analysis"
+source_url: "https://youtube.com/watch?v=zKBPwDpBfhs"
+source_type: "video"
+video_id: "zKBPwDpBfhs"
+speaker: "Dynamis"
+lang: "en"
+---
+
+## The video
+
+<YouTubeEmbed id="zKBPwDpBfhs" />
+
+**Speaker:** Dynamis (creator behind the Dynamis community, 3,000+ paid members)
+**Published:** 2026
+
+## Why we analyzed this
+
+This is the most comprehensive Claude Code skills tutorial we've found. It doesn't just explain what skills are — it shows four agents running in parallel, walks through progressive context loading, introduces a six-step skill building framework, and includes a live build from scratch. If you've never built a skill or you want to build better ones, start here.
+
+## What you can learn from this
+
+- The exact anatomy of a Claude Code skill — front matter, instructions, reference files, scripts
+- How progressive context loading keeps skills lightweight (three levels of loading)
+- A six-step framework for building any skill from scratch
+- How to organize skills — self-contained vs. external references
+- The feedback cycle that takes a skill from 90% to near-perfect
+
+## Key takeaways
+
+### 1. Four parallel agents in 30 seconds — that's the point
+
+The video opens with a live demo: four Claude Code agents running simultaneously. A morning planner checking ClickUp and blocking the calendar. A pulse check on all projects and commitments. An Excalidraw diagram generator. A YouTube comment analyzer. All launched in about 30 seconds. The takeaway isn't the individual tasks — it's the leverage. One person, four outputs, zero context switching.
+
+### 2. Skills are SOPs for AI agents
+
+The creator frames it simply: "The same way you would train a human employee by letting them read through an SOP to understand the process and then they'd be able to do it. You just train an agent on it." A skill is a folder with a markdown file. The markdown contains the name, description, and step-by-step instructions. That's it. Everything else is optimization.
+
+### 3. Progressive context loading — three levels
+
+This is the mechanism that keeps skills from eating your entire context window. Level one: Claude only reads the YAML front matter (name + description, roughly 100 tokens). Level two: if the skill matches, it reads the full `skill.md` (1,000-2,000 tokens). Level three: reference files and scripts load only when the specific request requires them. This three-tier approach is why you can have dozens of skills without blowing your token budget.
+
+### 4. The six-step skill building framework
+
+1. **Name and trigger** — what it's called and the natural language that fires it off
+2. **Goal** — one sentence: what will this skill accomplish?
+3. **Step-by-step process** — if you had to do it manually, what do you do and in what order?
+4. **Reference files** — what context does it need? Style guides, logos, data, templates?
+5. **Rules** — what could go wrong? Build guardrails and constraints
+6. **Self-improvement loop** — how does the skill get better over time?
+
+### 5. Hardcode what doesn't change — save tokens ruthlessly
+
+A critical optimization: the creator realized his pulse check skill was calling the ClickUp MCP every time to gather list IDs — searching, parsing, extracting. The IDs never change. So he hardcoded them directly into the skill document. Instant lookup, zero wasted tokens. The lesson: watch your agent work the first few times. Every repeated API call that returns the same data is a candidate for hardcoding.
+
+### 6. Markdown beats API calls — every time
+
+The creator built a reference doc by scraping the Claude Code documentation once and saving it as a markdown file. Now the skill reads a local file instead of making web searches and crawling pages. "Processing markdown files for your agent is so much quicker and cheaper than actually making API calls or HTTP requests." Pre-scrape everything your skills reference repeatedly.
+
+## Notable quotes
+
+> "I have genuinely never been as productive as I am right now because of Claude's skills."
+> — Dynamis
+
+> "Processing markdown files for your agent is so much quicker and cheaper than actually making API calls or HTTP requests."
+> — Dynamis
+
+> "One person can figure out the best way to do something and turn it into a skill that the entire team can use."
+> — Dynamis
+
+## How we applied this
+
+We adopted the three-level progressive context loading pattern across our entire skill library. The "hardcode what doesn't change" principle led us to audit every skill for repeated MCP lookups — we found several that could be cached as static references. And the six-step framework became our standard methodology for building new skills with clients.
+
+## The bottom line
+
+If you're going to watch one video about Claude Code skills, make it this one. It covers the full arc from "what is a skill" to advanced optimization patterns like sub-agent delegation and token management. Worth it whether you're building your first skill or your fiftieth.
+
+---
+
+*This video was transcribed and analyzed by our AI agent team. We watch and analyze tech content so you can get the insights in 5 minutes instead of watching the full tutorial.*
+
+[Explore our services →](/build)

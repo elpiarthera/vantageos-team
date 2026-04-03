@@ -1,0 +1,80 @@
+---
+title: "We watched 'Claude Code Scheduled Tasks Got Even Better' -- loops vs. scheduled tasks explained"
+description: "Nate Herk breaks down Claude Code's new loop feature alongside scheduled tasks. Two different tools, two different use cases. Here is when to use each -- and what to watch out for."
+date: "2026-04-03"
+author: "VantageTeam"
+tags: ["video-analysis", "claude-code", "loops", "scheduled-tasks", "cron", "automation"]
+category: "video-analysis"
+source_url: "https://www.youtube.com/watch?v=OUyfxhFtGCo"
+source_type: "video"
+video_id: "OUyfxhFtGCo"
+speaker: "Nate Herk"
+lang: "en"
+---
+
+## The video
+
+<YouTubeEmbed id="OUyfxhFtGCo" />
+
+**Speaker:** Nate Herk
+**Published:** 2026
+
+## Why we analyzed this
+
+Claude Code now has two distinct scheduling mechanisms -- loops and scheduled tasks -- and most people conflate them. Nate Herk's breakdown is the clearest explanation of how they differ, when to use each, and what the limitations are. If you are building any kind of recurring automation with Claude Code, you need to understand this distinction before you build the wrong thing.
+
+## What you can learn from this
+
+- How Claude Code's loop/cron feature works under the hood (cron create, cron list, cron delete)
+- The critical difference between loops (session-bound, 3-day max) and scheduled tasks (persistent, indefinite)
+- Why context bloat is the primary risk with frequent loops
+- How to compose loops with skills for recurring automated workflows
+- Practical use cases: email monitoring, deploy checking, deadline sprints, log watching
+
+## Key takeaways
+
+### 1. Loops are session-bound, scheduled tasks are persistent
+
+This is the core distinction. A loop runs inside your current Claude Code session using cron jobs. It fires at your specified interval, but if you close the terminal or the session, the loop dies. Scheduled tasks persist across sessions, support catch-up (they execute missed runs when you reopen), and run indefinitely. The decision framework is simple: need help right now on a project? Use a loop. Need something daily or weekly? Use scheduled tasks.
+
+### 2. Loops auto-expire after 3 days
+
+Every loop has a built-in 3-day timer. Day one, day two, into day three -- then it auto-deletes. This is a safety mechanism to prevent forgotten loops from burning tokens indefinitely. If you need longer than 3 days, either recreate the loop or convert it into a proper scheduled task.
+
+### 3. Context bloat is the real danger
+
+Each loop iteration adds tokens to the session. If you set a loop to fire every 10 minutes with a substantial report, you will hit context limits fast. The presenter flags this as "context rot" -- the session accumulates so much history that the model loses track of earlier context. Design your loop prompts to be lightweight. Request summaries, not full reports.
+
+### 4. Loops compose with skills
+
+You can loop skills directly: `/loop every 20 min run review-PR skill`. The loop fires, invokes the skill, waits the interval, fires again. This composability means you can build sophisticated recurring workflows without writing any additional code -- just chain a loop interval with an existing skill.
+
+### 5. Natural language invocation works
+
+You do not need slash commands. Saying "every 10 minutes, check my ClickUp for new developments" creates the cron job the same way `/loop` does. The underlying tools are `cron create`, `cron list`, and `cron delete`. Claude figures out which to use from context. One-time reminders work too: "at 3 PM, remind me to review the PR" creates a non-recurring cron that self-deletes after firing.
+
+### 6. Loops are per-session and isolated
+
+Two different sessions cannot see each other's loops. If you set a reminder in tab one and a recurring check in tab two, neither session knows about the other's scheduled jobs. This is by design but can surprise you if you expect a unified task queue.
+
+## Notable quotes
+
+> "It's basically a help me now or help me on this project for today type of function."
+> -- Nate Herk, on loops
+
+> "The scheduled tasks are stored. They're long-lived. They have catchup and these are like daily, weekly, monthly functions that can run indefinitely."
+> -- Nate Herk, on scheduled tasks
+
+## How we applied this
+
+We immediately adopted loops for our internal delivery sprints: during active client builds, we run loops that check progress on ClickUp tasks and GitHub PRs every 30 minutes. For longer-running processes -- daily email monitoring for leads, weekly report generation -- we use scheduled tasks. The distinction also shaped how we teach automation in our training: loops are for tactical, in-the-moment monitoring; scheduled tasks are for operational, recurring processes.
+
+## The bottom line
+
+Watch this if you have been confused about whether to use loops or scheduled tasks in Claude Code. Nate Herk makes the distinction clean in under 15 minutes. The single most important takeaway: loops are ephemeral project tools, scheduled tasks are persistent operational tools. Pick the wrong one and you either lose your automation when you close the terminal or waste resources on a heavyweight feature for a simple check.
+
+---
+
+*This video was transcribed and analyzed by our AI agent team. We watch and analyze tech content so you can get the insights in 5 minutes instead of 15.*
+
+[Explore our services →](/build)

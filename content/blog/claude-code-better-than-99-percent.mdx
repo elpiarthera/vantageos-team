@@ -1,0 +1,83 @@
+---
+title: "We watched 'How to Use Claude Code Better Than 99% of People' — here's what we learned"
+description: "Two creators build a complete 'make me viral' system for Instagram short-form content using Claude Code, Apify MCP, and SQLite — from scratch, live on camera."
+date: "2026-04-03"
+author: "VantageTeam"
+tags: ["video-analysis", "claude-code", "content-creation", "automation", "apify", "sqlite"]
+category: "video-analysis"
+source_url: "https://youtube.com/watch?v=9owy-NV5l6k"
+source_type: "video"
+video_id: "9owy-NV5l6k"
+speaker: "Brock Mesarich & Mark Kashif"
+lang: "en"
+---
+
+## The video
+
+<YouTubeEmbed id="9owy-NV5l6k" />
+
+**Speaker:** Brock Mesarich (host) & Mark Kashif (Claude Code expert, Early AI Adopters community)
+**Published:** 2026
+
+## Why we analyzed this
+
+This isn't a feature walkthrough. It's a live build session where two creators construct a complete content automation system — from competitor scraping to virality scoring to hook generation — using Claude Code. The conversation is raw, the bugs are real, and the human-in-the-loop lessons are honest. If you want to see what building with Claude Code actually looks like (not the polished demo version), this is it.
+
+## What you can learn from this
+
+- How to build a full content pipeline: scrape competitors, store in SQLite, score for virality, generate hooks
+- How to use the Apify MCP to auto-discover and test scraper actors
+- Why CLAUDE.md as a persistent knowledge base changes everything
+- The real cost of not watching your agent work (caption vs. transcript bug)
+- How to use Claude Co-Work as an entry point before going full Claude Code
+
+## Key takeaways
+
+### 1. One input, many outputs — that's the leverage equation
+
+Mark's YouTube command center captures it: from one topic input, the system generates 15 thumbnails, face-swapped images, thumbnail briefs, editing briefs, script outlines, SEO tags, titles, and descriptions. The same principle drives the Instagram system they build live: say "make me viral," provide a topic, and get 20 ranked hooks plus captions. This is what leverage actually looks like — one decision, multiple artifacts.
+
+### 2. CLAUDE.md is your persistent brain
+
+Every mistake, every workflow, every actor preference gets saved to CLAUDE.md. New sessions start smart instead of starting blind. Mark makes the comparison explicit: in ChatGPT, if you don't document a failure, it keeps happening. In Claude Code, you tell it to learn from the mistake and commit it to memory. The knowledge base compounds over time.
+
+### 3. Apify MCP eliminates manual scraper shopping
+
+Instead of browsing the Apify marketplace, testing actors manually, and checking success rates, the MCP does it all. It searches actors, ranks them by usage and success rate, tests them, and reports back. When one actor fails, it automatically finds alternatives. Mark shows this live — the MCP discovers that transcript scraping needs a different actor than post scraping, and it finds the right one without human intervention.
+
+### 4. SQLite as free local database — stop paying for prototypes
+
+Every vibe-coded app that uses Supabase costs $10 to spin up. SQLite runs locally, costs nothing, and handles prototyping perfectly. Build the system, iterate until it works, then upgrade to a hosted database if you need to. Mark treats this as non-negotiable for early-stage builds.
+
+### 5. The caption vs. transcript bug — why human-in-the-loop matters
+
+The system was working. Hooks were being generated. Everything looked fine — until Brock noticed the hooks all said "Comment X and I'll send you Y." The system had stored Instagram captions in the transcript column and was training on the wrong data. No automated check caught this. A human watching the output did. Mark is direct about it: "You can't just go off to the beach and come back and expect good results."
+
+### 6. Claude Co-Work gives you 30-40% of Claude Code's power
+
+Mark's honest assessment of Co-Work: it's the gateway drug, not the destination. It covers the most common non-technical use cases with one-click buttons. But it's vibe-coded, full of bugs, and nowhere near the full firepower of Claude Code in a terminal. Use it to get comfortable. Then upgrade.
+
+## Notable quotes
+
+> "Human in the loop plus Claude Code is the most OP combination."
+> — Mark Kashif
+
+> "It's one thing to execute a hundred tasks. It's another thing for those tasks to be meaningful and derive actual value."
+> — Mark Kashif
+
+> "I canceled $1,200 a month worth of subscriptions because I literally realized I didn't need them anymore."
+> — Mark Kashif
+
+## How we applied this
+
+The full content pipeline pattern — scrape, store, score, generate — became a blueprint for our own lead generation workflows. The Apify MCP integration matches our planned scraper architecture. And the CLAUDE.md-as-knowledge-base pattern is now something we teach as a core practice: every session should leave the system smarter than it found it.
+
+## The bottom line
+
+If you've been avoiding Claude Code because it seems too technical, watch this. Two non-developer-focused creators build something genuinely useful in a single session. The bugs are part of the story. The iteration is the point. And the system they build — competitor scraping, virality scoring, hook generation — is immediately applicable to anyone creating content at scale.
+
+---
+
+*This video was transcribed and analyzed by our AI agent team. We watch and analyze tech content so you can get the insights in 5 minutes instead of watching the full episode.*
+
+[Explore our services →](/build)

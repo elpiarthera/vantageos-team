@@ -1,0 +1,82 @@
+---
+title: "We watched 'Visual coding agents with Claude Code' — here's what we learned"
+description: "An Excalidraw skill that teaches coding agents to argue visually — with a self-validation loop that renders, screenshots, and iterates on its own diagrams."
+date: "2026-04-03"
+author: "VantageTeam"
+tags: ["video-analysis", "claude-code", "excalidraw", "visual-diagrams", "coding-agents", "skills"]
+category: "video-analysis"
+source_url: "https://www.youtube.com/watch?v=m3fqyXZ4k4I"
+source_type: "video"
+video_id: "m3fqyXZ4k4I"
+speaker: "Nate Herki"
+duration: "10:32"
+lang: "en"
+---
+
+## The video
+
+<YouTubeEmbed id="m3fqyXZ4k4I" />
+
+**Speaker:** Nate Herki, Dynamis community founder
+**Duration:** 10:32
+**Published:** 2026
+
+## Why we analyzed this
+
+Coding agents are powerful text processors but weak visual thinkers. This video addresses that gap directly with an open-source Excalidraw skill that teaches Claude Code to generate diagrams — and more importantly, to validate them visually by rendering a PNG, inspecting it, and iterating on imperfections. The self-validation loop is a transferable pattern applicable to any AI workflow that produces visual output.
+
+## What you can learn from this
+
+- How to give coding agents visual reasoning capabilities using Excalidraw
+- The self-validation pattern: generate JSON, render PNG, screenshot, inspect, iterate
+- Why diagram complexity requires chunked generation (32k token output limit)
+- The concept of "arguing visually" — structure and labels that communicate without explanatory text
+- How to customize the color palette and design patterns for brand consistency
+
+## Key takeaways
+
+### 1. Coding agents cannot see — until you teach them — 0:00
+
+The core problem is stated immediately: most people are visual learners, but coding agents are text-based tools. They generate diagrams that are blocky, repetitive, and visually uninformative without explicit guidance. The Excalidraw skill solves this by providing detailed instructions on visual hierarchy, layout patterns, and design principles that override the agent's default behavior.
+
+### 2. The self-validation loop is the breakthrough — 3:30
+
+The skill's most valuable pattern is not the diagram generation itself but what happens after: Claude renders the JSON to PNG via a Python script, takes a screenshot, visually inspects the result, identifies imperfections, and makes direct edits to the JSON file. This loop runs two to four times before passing control back to the user. The result is a dramatically better starting point than a single-pass generation.
+
+### 3. Argue visually — structure over decoration — 5:45
+
+The creator's core design philosophy: if you strip all explanatory text from a diagram, the visual structure alone should communicate the concept. This means the layout, grouping, hierarchy, and flow are doing the argumentative work — not labels bolted onto boxes. This principle transforms generic flowcharts into diagrams that actually teach something.
+
+### 4. Complex diagrams need chunked generation — 7:00
+
+Claude Code has a 32,000 token output limit per response. Complex diagrams exceed this easily because every shape, position, color, and text element is specified in JSON. The skill handles this by assessing diagram complexity upfront and building section by section when needed, then combining the sections into a single file. Without this assessment step, complex diagrams simply fail.
+
+### 5. The 80/20 expectation is realistic and honest — 8:15
+
+The creator is direct about limitations: the skill gives you a strong starting point, not a finished product. AI handles 80% of the work — layout, structure, color, basic positioning. You apply the remaining 20% — fine-tuning arrow positions, adjusting information density, matching your exact vision. Two to three iterations with directed feedback gets you to a polished result. This expectation-setting is more honest than most AI tool demonstrations.
+
+### 6. Color palette as brand consistency tool — 9:00
+
+The skill includes a reference color palette file that standardizes hex codes across all generated diagrams. This means every diagram you produce maintains visual consistency without specifying colors each time. The palette is fully customizable — swap in your brand colors once, and every future diagram inherits them automatically.
+
+## Notable quotes
+
+> "Coding agents are not very visual tools... they need the ability to check their own work and we can do that with Excalidraw."
+> — Nate Herki, 0:15
+
+> "It's never going to be perfect at first... getting the starting point with this skill for you to apply your own reasoning for how you want it to evolve."
+> — Nate Herki, 8:20
+
+## How we applied this
+
+The self-validation loop — generate, render, inspect, iterate — is a pattern we are applying beyond diagrams. Any skill that produces visual output (presentations, dashboards, infographics) benefits from a built-in visual check step. We also adopted the "argue visually" principle for our own documentation: diagrams should communicate through structure, not just through labels. The open-source Excalidraw skill itself is now part of our toolkit for producing client-facing architecture diagrams and workflow visualizations.
+
+## The bottom line
+
+This is a ten-minute video that introduces a genuinely useful pattern: visual self-validation for coding agents. The Excalidraw skill is free, open-source, and works across coding agents. Even if you never generate a single diagram, the self-validation loop concept is worth understanding and applying to your own AI workflows. Best suited for developers, technical writers, and anyone who explains complex systems to other humans.
+
+---
+
+*This video was transcribed and analyzed by our AI agent team. We watch and analyze tech content so you can get the insights in 5 minutes instead of 10.*
+
+[Explore our services →](/build)

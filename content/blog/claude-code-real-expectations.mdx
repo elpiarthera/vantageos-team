@@ -1,0 +1,80 @@
+---
+title: "We watched 'Claude Code: Real Expectations' -- here's what actually works"
+description: "A construction professional walks through three Claude Code workflows -- cost tracking, email triage, and tender extraction -- and exposes the real bottleneck nobody talks about: getting data out of your existing software."
+date: "2026-04-03"
+author: "VantageTeam"
+tags: ["video-analysis", "claude-code", "automation", "mcp", "workflows"]
+category: "video-analysis"
+source_url: "https://www.youtube.com/watch?v=jKSdubXsSxA"
+source_type: "video"
+video_id: "jKSdubXsSxA"
+speaker: "Construction industry creator"
+lang: "en"
+---
+
+## The video
+
+<YouTubeEmbed id="jKSdubXsSxA" />
+
+**Speaker:** Construction management YouTuber
+**Published:** 2026
+
+## Why we analyzed this
+
+Most Claude Code demos come from developers building developer tools. This one comes from a construction professional automating real business processes -- cost comparison, email management, tender tracking. The perspective is valuable precisely because it is non-technical. When someone outside software engineering hits the walls, those walls are the ones your clients will hit too.
+
+## What you can learn from this
+
+- How Claude Code turns natural-language prompts into reusable Python scripts that run reliably every time
+- Why API limitations in existing software (QuickBooks, estimating tools) are the real bottleneck, not AI capability
+- How to use MCP connectors (Gmail, Airtable, Google Drive) to bridge Claude Code to your existing stack
+- The Zapier-as-bridge pattern for software that lacks direct API access
+- Why plan mode should be your default workflow for building automations
+
+## Key takeaways
+
+### 1. Claude Code is a script factory, not a chatbot
+
+The fundamental insight: instead of asking an AI to reason through a task every time (with hallucination risk at every step), Claude Code writes a script, tests it, validates it, and then runs that deterministic code on demand. The reliability difference between "ask AI to figure it out" and "run the code AI already wrote and tested" is enormous.
+
+### 2. The hardest part is always data extraction
+
+Every workflow hit the same wall: getting data out of existing software. QuickBooks has no straightforward API for direct pulls. Estimating software varies wildly. The presenter had to build a Zapier-to-Airtable bridge just to get accounting data into a format Claude Code could read. This is the real work -- and it is where most non-technical users give up.
+
+### 3. Plan mode as default workflow
+
+The presenter defaults to plan mode: discuss what you want, Claude creates a plan, you approve, then it executes. This is not a beginner setting -- it is the correct production workflow. It gives you a checkpoint before anything runs, which matters when Claude has write access to your files.
+
+### 4. MCP connectors unlock real business automation
+
+Connecting Claude Code to Gmail, Google Drive, Notion, Airtable, and Canva through MCP turns it from a coding tool into a business automation platform. The email triage workflow -- scanning for outstanding actions, RFIs, submittals -- runs entirely through the Gmail connector without leaving Claude Code.
+
+### 5. Tender extraction: from inbox to CRM in minutes
+
+The third workflow pulls tender documents from email, extracts structured data, and writes it to an Airtable CRM. The presenter built it from a single natural-language prompt. Setup time: roughly 20-30 minutes of iteration. The demo makes the critical point that you do not need to understand Python to use what Claude Code produces.
+
+### 6. Safety matters when Claude has file access
+
+Claude Code can read, write, edit, and delete files in its working folder. The presenter recommends three mitigation strategies: use "Ask Permissions" mode for folders with important documents, work on duplicates rather than originals, and use plan mode to review before execution.
+
+## Notable quotes
+
+> "You will find the hardest part about setting up workflows like this is getting data from different softwares... You have to get good at building workarounds."
+
+> "I put it into plan mode where basically you discuss with Claude what you want it to do. It creates a plan and then it will go and execute that plan once you give approval."
+
+> "It can read and actually send emails on your behalf all controlled through the Claude code interface."
+
+## How we applied this
+
+The Zapier-as-bridge pattern -- routing data from API-limited software through an intermediary into a format Claude Code can consume -- is now a standard pattern in our client delivery process. We also adopted the presenter's "plan first, always" approach as a non-negotiable in our own agent workflows. When building automations for clients whose tools lack APIs, we document the workaround chain upfront instead of discovering it mid-build.
+
+## The bottom line
+
+This is worth watching if you are a non-developer trying to understand what Claude Code actually does versus what the hype claims. The presenter sets realistic expectations: 10-15 minutes to build a workflow, 5-10 minutes to run it, and the real challenge is always bridging your existing software. Skip the first two minutes of setup walkthrough and start at the QuickBooks demo.
+
+---
+
+*This video was transcribed and analyzed by our AI agent team. We watch and analyze tech content so you can get the insights in 5 minutes instead of 15.*
+
+[Explore our services →](/build)

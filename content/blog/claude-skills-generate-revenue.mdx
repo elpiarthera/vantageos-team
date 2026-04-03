@@ -1,0 +1,83 @@
+---
+title: "We watched 'How to Build Claude Skills that Generate Revenue' — here's what we learned"
+description: "A full course on building Claude Code skills that actually drive revenue — from CRM follow-ups to cold email campaigns to content repurposing at scale."
+date: "2026-04-03"
+author: "VantageTeam"
+tags: ["video-analysis", "claude-code", "skills", "revenue", "automation"]
+category: "video-analysis"
+source_url: "https://youtube.com/watch?v=sduaTkhIm_w"
+source_type: "video"
+video_id: "sduaTkhIm_w"
+speaker: "Dynamis"
+lang: "en"
+---
+
+## The video
+
+<YouTubeEmbed id="sduaTkhIm_w" />
+
+**Speaker:** Dynamis (creator behind the Dynamis community, $4M/year business)
+**Published:** 2026
+
+## Why we analyzed this
+
+Most Claude Code tutorials show you toy examples. This one doesn't. It walks through five production-grade skills that directly touch revenue — lead follow-up, thumbnail generation, LinkedIn scraping, cold email campaigns, and one-shot website deployment. Then it teaches you how to build your own from scratch. If you're serious about using AI agents for business, this is the video to study.
+
+## What you can learn from this
+
+- How to build skills that target the front end of your business — lead generation, sales, marketing — not just internal ops
+- The compressed `skillspec.md` pattern for reducing context window overhead
+- Front matter as progressive disclosure: store 60-70 tokens upfront, load the rest only when invoked
+- Self-healing skills that patch themselves when they encounter errors
+- How to use parallel sub-agents for multi-platform content output
+
+## Key takeaways
+
+### 1. Front-end revenue skills beat back-end automation — always
+
+The creator makes a sharp argument: the difference between people who make money with AI and people who chase shiny objects is focus. The former group builds skills for acquisition, lead generation, and closing. The latter builds meta-tools and internal dashboards nobody asked for. If you're going to invest time designing skills, start with what gets you paid.
+
+### 2. The compressed skillspec pattern saves tokens at scale
+
+Instead of storing entire scripts and instructions in context, the `skillspec.md` approach uses front matter with a ~60-70 token summary. The full skill body only loads when explicitly invoked. This is not a nice-to-have — it's the difference between running five skills and hitting your context ceiling at two.
+
+### 3. Five production skills, demonstrated live
+
+The video walks through: (1) CRM lead follow-up nurture — automated personalized email chains, (2) thumbnail generator with face swap via AI, (3) LinkedIn Sales Navigator lead scraper, (4) cold email campaign builder, and (5) one-shot website builder deployed to Netlify. None of these are toy examples. Each one solves a real revenue problem.
+
+### 4. Self-annealing skills improve themselves over time
+
+Every time a skill runs and encounters a mistake — a broken service, missing knowledge, an unexpected edge case — it can automatically figure out how to solve it and patch itself. The creator calls these "self-annealing" skills. Build the self-improvement loop into your skill spec from day one.
+
+### 5. Content repurposer: one input, many outputs
+
+The live build includes a content repurposer skill that spins up parallel sub-agents — one for a tweet thread, one for LinkedIn, one for a newsletter — all from a single piece of source material. This is leverage at its purest: one human decision, multiple outputs, no context switching.
+
+### 6. Chrome DevTools MCP for browser automation
+
+A quick but powerful demo: using the Chrome DevTools MCP to automate browser tasks like booking a WeWork space or shopping on Amazon. The skill doesn't just generate text — it drives a browser. This unlocks an entirely different category of automation.
+
+## Notable quotes
+
+> "Skills are basically the evolution of standard operating procedures just for agents. Whereas SOPs and checklists are for human beings, skills are for these new AI agent intelligences."
+> — Dynamis
+
+> "If you're going to design skills, I highly recommend you focus the design of those skills primarily on front-end tasks... spend your time designing them on things that help get you sales, on things that help you do your marketing faster and better."
+> — Dynamis
+
+> "Every time the skill runs, if the agent finds a mistake or a service is out or it doesn't have the knowledge it needs, it'll automatically figure out how to solve it and then it'll patch the skill for you. They're self-annealing over time."
+> — Dynamis
+
+## How we applied this
+
+We adopted the "front-end first" prioritization for our own skill development — lead generation and outreach skills before internal operations. The compressed skillspec pattern is now standard across our skill library, reducing token overhead significantly. And the self-healing skill concept became a core requirement: every skill we build includes self-improvement instructions.
+
+## The bottom line
+
+This is the most business-focused Claude Code skills tutorial we've found. If you're building skills for fun, watch something else. If you're building skills to generate revenue, this is the course. Worth every minute.
+
+---
+
+*This video was transcribed and analyzed by our AI agent team. We watch and analyze tech content so you can get the insights in 5 minutes instead of watching the full course.*
+
+[Explore our services →](/build)
