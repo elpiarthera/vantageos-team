@@ -14,6 +14,12 @@
 - Dev team: $990 - $4,990/month
 - Non-dev teams: $990 - $3,990/month
 
+## Blog
+
+- [We analyzed Browserbase — here's why it matters for AI testing](/blog/browserbase-strategy): Browserbase is managed headless browser infrastructure that gives AI agents eyes on the web. Platform breakdown, Stagehand SDK, and CI pipeline integration.
+- [We watched 'How to Build $10k Agentic Workflows' — here's what we learned](/blog/10k-agentic-workflows): WAT framework for building and pricing agentic workflows — newsletter automation, value-based pricing, outcomes over hours.
+- [We watched '50 Claude Code Tips from a Meta Staff Engineer' — here's what we learned](/blog/50-claude-code-tips): John Kim's 50 practical Claude Code tips — foundation setup, CLAUDE.md, keyboard shortcuts, compound engineering patterns.
+
 ## Optional
 
 - [Privacy Policy](/en/privacy)
