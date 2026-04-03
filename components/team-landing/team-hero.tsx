@@ -3,34 +3,33 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { AgentTicker } from "./agent-ticker";
 
 const content = {
 	en: {
 		badge: "Early bird pricing \u2014 Limited spots",
-		headline: "Your app. Built by AI agents.",
-		headlineSub: "From $2,990",
+		headline: "Your vision.",
+		headlineSub: "Built by AI agents.",
 		subheadline:
-			"We build your SaaS app in 4\u20138 weeks. Or get an ongoing agent team from $990/month. Next.js + AI agents + senior tech supervision. Production-quality, not prototypes.",
-		cta1: "Build My App",
-		cta2: "See Team Plans",
+			"We build your SaaS app, run your dev team, or handle your marketing \u2014 all powered by AI agents supervised by senior tech.",
+		cta1: "Book a Free Call",
+		cta2: "See Pricing",
 		stats: [
-			{ value: "4\u20138", label: "Weeks to launch" },
+			{ value: "4\u20138 wks", label: "To launch" },
 			{ value: "$2,990", label: "Starting at" },
 			{ value: "100%", label: "Your code" },
 			{ value: "25y", label: "Experience" },
 		],
 	},
 	fr: {
-		badge: "Tarifs early bird \u2014 Places limit\u00e9es",
-		headline: "Votre app. Construite par des agents IA.",
-		headlineSub: "\u00c0 partir de 2\u202f990\u00a0$",
+		badge: "Tarif early bird \u2014 Places limit\u00e9es",
+		headline: "Votre vision.",
+		headlineSub: "Construite par des agents IA.",
 		subheadline:
-			"Nous construisons votre app SaaS en 4\u20138 semaines. Ou obtenez une \u00e9quipe d\u2019agents en continu d\u00e8s 990\u00a0$/mois. Next.js + agents IA + supervision tech senior. Qualit\u00e9 production, pas des prototypes.",
-		cta1: "Construire mon app",
-		cta2: "Voir les \u00e9quipes",
+			"On construit votre app SaaS, on g\u00e8re votre \u00e9quipe dev, ou on s\u2019occupe de votre marketing \u2014 le tout propuls\u00e9 par des agents IA supervis\u00e9s par des seniors tech.",
+		cta1: "R\u00e9server un appel gratuit",
+		cta2: "Voir les tarifs",
 		stats: [
-			{ value: "4\u20138", label: "Semaines" },
+			{ value: "4\u20138 sem.", label: "Pour lancer" },
 			{ value: "2\u202f990\u00a0$", label: "\u00c0 partir de" },
 			{ value: "100%", label: "Votre code" },
 			{ value: "25\u00a0ans", label: "Exp\u00e9rience" },
@@ -113,7 +112,7 @@ export function TeamHero({ locale }: TeamHeroProps) {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.3 }}
 					>
-						<a href="#pricing">
+						<a href="mailto:laurent@perello.fr">
 							<Button
 								size="lg"
 								className="min-h-touch text-base px-8 group glow-on-hover"
@@ -144,30 +143,24 @@ export function TeamHero({ locale }: TeamHeroProps) {
 						</a>
 					</motion.div>
 
-					{/* Stats row */}
+					{/* Stats pills */}
 					<motion.div
-						className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto"
+						className="mt-12 flex flex-wrap justify-center gap-3"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.4 }}
 					>
 						{t.stats.map((stat) => (
-							<div key={stat.label} className="text-center">
-								<span className="text-3xl font-bold block">{stat.value}</span>
-								<p className="text-sm text-muted-foreground mt-1">
+							<div
+								key={stat.label}
+								className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/80 backdrop-blur-sm"
+							>
+								<span className="text-base font-bold">{stat.value}</span>
+								<span className="text-xs text-muted-foreground">
 									{stat.label}
-								</p>
+								</span>
 							</div>
 						))}
-					</motion.div>
-
-					{/* Agent name ticker */}
-					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ duration: 0.8, delay: 0.6 }}
-					>
-						<AgentTicker />
 					</motion.div>
 				</div>
 			</div>

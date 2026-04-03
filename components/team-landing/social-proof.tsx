@@ -1,0 +1,53 @@
+"use client";
+
+import { motion } from "framer-motion";
+import type { Locale } from "./team-landing-page";
+
+const content = {
+	en: {
+		stat: "37 issues resolved. 2 days. 50+ signed commits. Zero regressions.",
+		caption:
+			"Real results from a real codebase. No demo. No sandbox. Production.",
+	},
+	fr: {
+		stat: "37 probl\u00e8mes r\u00e9solus. 2 jours. 50+ commits sign\u00e9s. Z\u00e9ro r\u00e9gressions.",
+		caption:
+			"Des r\u00e9sultats r\u00e9els, sur une vraie base de code. Pas de d\u00e9mo. Pas de sandbox. De la production.",
+	},
+};
+
+interface SocialProofProps {
+	locale: Locale;
+}
+
+export function SocialProof({ locale }: SocialProofProps) {
+	const t = content[locale];
+
+	return (
+		<section className="py-12 md:py-16 bg-muted/30 border-y border-border">
+			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.5 }}
+				>
+					{/* Quote mark */}
+					<div
+						className="text-5xl font-serif leading-none mb-4 select-none"
+						aria-hidden="true"
+						style={{ color: "oklch(0.65 0.15 232)" }}
+					>
+						&ldquo;
+					</div>
+
+					<p className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-4">
+						{t.stat}
+					</p>
+
+					<p className="text-sm text-muted-foreground">{t.caption}</p>
+				</motion.div>
+			</div>
+		</section>
+	);
+}
