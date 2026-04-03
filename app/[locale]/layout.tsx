@@ -6,7 +6,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
 import { routing } from "@/i18n/routing";
 
-const BASE_URL = "https://vantageteam.dev";
+const BASE_URL = "https://www.vantageteam.dev";
 
 type Locale = "en" | "fr";
 
@@ -41,19 +41,18 @@ export async function generateMetadata({
 		{ title: string; description: string; ogTitle: string; ogDesc: string }
 	> = {
 		en: {
-			title:
-				"VantageTeam \u2014 Your Complete AI Team | 16 Teams, 81 Agents, 273 Skills",
+			title: "VantageTeam \u2014 Your Complete AI Team | 81 Agents",
 			description:
-				"Hire a complete AI team starting at EUR 490/month. 16 specialized departments, 81 AI agents, 273 skills \u2014 supervised by a tech executive with 25 years of experience. No tool to learn. Cancel anytime.",
+				"Hire a complete AI team from EUR 490/month. 16 departments, 81 agents, 273 skills \u2014 supervised by a tech executive. No tool to learn. Cancel anytime.",
 			ogTitle: "VantageTeam \u2014 Your Complete AI Team",
 			ogDesc:
 				"16 departments, 81 agents, 273 skills. Send tasks by email, get results back. Starting at EUR 490/month.",
 		},
 		fr: {
 			title:
-				"VantageTeam \u2014 Votre \u00e9quipe IA compl\u00e8te | 16 \u00e9quipes, 81 agents, 273 comp\u00e9tences",
+				"VantageTeam \u2014 Votre \u00e9quipe IA | 81 agents, 273 comp\u00e9tences",
 			description:
-				"Embauchez une \u00e9quipe IA compl\u00e8te \u00e0 partir de 490 \u20ac/mois. 16 d\u00e9partements sp\u00e9cialis\u00e9s, 81 agents IA, 273 comp\u00e9tences \u2014 supervis\u00e9s par un dirigeant tech avec 25 ans d\u2019exp\u00e9rience. Aucun outil \u00e0 apprendre. R\u00e9siliable \u00e0 tout moment.",
+				"Embauchez une \u00e9quipe IA compl\u00e8te \u00e0 partir de 490 \u20ac/mois. 16 d\u00e9partements, 81 agents IA, 273 comp\u00e9tences \u2014 supervis\u00e9s par un dirigeant tech. Aucun outil \u00e0 apprendre.",
 			ogTitle: "VantageTeam \u2014 Votre \u00e9quipe IA compl\u00e8te",
 			ogDesc:
 				"16 d\u00e9partements, 81 agents, 273 comp\u00e9tences. Envoyez vos t\u00e2ches par email, recevez les r\u00e9sultats. \u00c0 partir de 490 \u20ac/mois.",
@@ -82,6 +81,7 @@ export async function generateMetadata({
 			title: m.ogTitle,
 			description: m.ogDesc,
 			type: "website",
+			locale: locale === "fr" ? "fr_FR" : "en_US",
 			url: canonicalUrl,
 			images: [
 				{

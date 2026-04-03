@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://vantageteam.dev";
+const BASE_URL = "https://www.vantageteam.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: Array<{
@@ -64,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}${frPath}`,
       lastModified: new Date(),
       changeFrequency,
-      priority: priority - 0.1,
+      priority: Math.round((priority - 0.1) * 10) / 10,
       alternates: {
         languages: {
           en: `${BASE_URL}${enPath}`,
