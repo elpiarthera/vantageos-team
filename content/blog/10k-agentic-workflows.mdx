@@ -1,0 +1,105 @@
+---
+title: "We watched 'How to Build $10k Agentic Workflows' — here's what we learned"
+description: "A breakdown of the WAT framework for building and pricing agentic workflows — from newsletter automation to value-based pricing that charges for outcomes, not hours."
+date: "2026-04-03"
+author: "VantageTeam"
+tags: ["video-analysis", "agentic-workflows", "automation", "claude-code", "business-model"]
+category: "video-analysis"
+source_url: "https://youtube.com/watch?v=vFepZE_wrfg"
+source_type: "video"
+video_id: "vFepZE_wrfg"
+speaker: "Liam Ottley"
+duration: "36:42"
+lang: "en"
+---
+
+## The video
+
+<YouTubeEmbed id="vFepZE_wrfg" />
+
+**Speaker:** Liam Ottley, founder of Morningside AI and AAA accelerator
+**Duration:** 36:42
+**Published:** 2025
+
+## Why we analyzed this
+
+The AI agent space is flooded with tutorials on how to build agents. What's scarce is practical guidance on how to price them, package them, and deliver them as a service. This video bridges that gap. Liam Ottley walks through a concrete framework — WAT (Workflow, Agent, Tool) — for categorizing automation complexity and pricing accordingly. For anyone building agent-based services or selling AI automation to clients, this is one of the more grounded breakdowns available.
+
+We analyzed it because it directly maps to how we think about packaging our own agent services: what's a simple automation, what requires an agent, and what's just a tool integration — and how to price each tier without leaving money on the table.
+
+## What you can learn from this
+
+- **The WAT framework** for categorizing AI automations by complexity: Workflows (deterministic), Agents (autonomous), and Tools (single-purpose utilities)
+- **A concrete pricing model** for agentic services — value-based, not hourly — with specific dollar ranges for each tier
+- **The newsletter automation example** as a walkthrough of building a real multi-step workflow from scratch
+- **How to scope client projects** by identifying which parts need agents and which are simple automations
+- **The economics of running an AI automation agency** — margins, delivery time, and what clients actually pay for
+
+## Key takeaways
+
+### 1. The WAT framework eliminates scope confusion — 2:15
+
+The most useful concept in the video is the WAT taxonomy. A **Workflow** is a deterministic sequence — input goes in, steps execute in order, output comes out. No decision-making. An **Agent** is autonomous — it receives a goal and decides how to achieve it, choosing tools and adjusting strategy based on what it encounters. A **Tool** is a single-purpose utility — an API wrapper, a formatter, a calculator.
+
+Most client projects are workflows with one or two agent steps. The mistake beginners make is building everything as an agent when 80% of the logic should be deterministic workflow steps. This distinction directly affects cost, reliability, and delivery speed.
+
+### 2. Value-based pricing changes the math entirely — 8:30
+
+The video makes a strong case against hourly billing for AI automation work. If you build a workflow that saves a client 20 hours per week of manual work, and that manual work costs them $50/hour, you're saving them $4,000/month. Charging $10,000 to build it is a bargain — they recoup the investment in under three months.
+
+The pricing tiers Ottley suggests: simple automations (workflows) at $1,000–$3,000, agent-powered systems at $5,000–$15,000, and complex multi-agent architectures at $15,000–$50,000+. The key insight: price against the cost of the problem, not the cost of your time. A workflow that takes you 8 hours to build but saves the client $50,000/year is not an 8-hour project.
+
+### 3. The newsletter automation example is a blueprint — 14:20
+
+Ottley walks through a specific build: automated newsletter generation. The workflow monitors RSS feeds for industry news, filters for relevance using an LLM, generates a newsletter draft, and sends it for human review before publishing. It demonstrates the Workflow-Agent split clearly — the monitoring and filtering are deterministic workflow steps, the content generation is an agent step, and the review gate is a human-in-the-loop checkpoint.
+
+What makes this example valuable is its restraint. It doesn't try to fully automate newsletter publishing. The human review step is deliberate — it keeps quality high while eliminating 90% of the manual work. This is the right pattern for most client automations: remove the labor, keep the judgment.
+
+### 4. Scoping matters more than building — 21:45
+
+The video dedicates significant time to pre-build scoping, which is where most projects fail. Ottley's process: map every step of the client's current manual workflow, identify which steps are deterministic (workflow), which require judgment (agent), and which are simple integrations (tool). Then estimate the build for each component separately.
+
+The common failure mode is taking a vague client request ("automate our content pipeline") and jumping straight to building. The WAT framework forces you to decompose first. A "content pipeline automation" might be: 3 workflow steps, 1 agent step, and 2 tool integrations. That's a very different project from "build me an AI agent that does content."
+
+### 5. Delivery speed is the competitive moat — 28:10
+
+One of the less obvious points: in the AI automation space, the moat is not technical sophistication. It's delivery speed. Clients don't care if you used LangChain or Claude Code or custom Python scripts. They care how fast the automation is running and generating ROI.
+
+Ottley argues that agencies should aim to deliver basic workflow automations in 1–2 weeks and agent systems in 3–4 weeks. If you're taking months, you're overengineering. The frameworks and tools available today — Claude Code, n8n, Make, custom Python — make rapid delivery possible. The bottleneck is scoping and client communication, not technical complexity.
+
+### 6. Recurring revenue comes from maintenance, not builds — 32:00
+
+The final pricing insight: one-time build fees are the floor, not the ceiling. Every automation requires monitoring, adjustment when APIs change, and iteration as the client's needs evolve. Ottley recommends a monthly maintenance retainer of 15–25% of the initial build cost.
+
+A $10,000 build with a $2,000/month retainer generates $34,000 in the first year. This transforms project-based work into predictable recurring revenue. The maintenance is also where you build deep client relationships — you're embedded in their operations, which makes expansion and referrals natural.
+
+## Notable quotes
+
+> "Most of what people call 'AI agents' are actually workflows with one LLM call in the middle. That's fine. Workflows are more reliable than agents. Use agents only where you actually need autonomous decision-making."
+> — Liam Ottley, 5:22
+
+> "Price against the cost of the problem, not the cost of your time. If you build something in 8 hours that saves them $50,000 a year, that's not an 8-hour project."
+> — Liam Ottley, 10:45
+
+> "The fastest agency wins. Not the smartest. Not the one with the best tech stack. The one that gets the automation running and generating ROI first."
+> — Liam Ottley, 29:03
+
+## How we applied this
+
+The WAT framework directly influenced how we structure our own service offerings. We decompose every client request into workflow steps, agent steps, and tool integrations before quoting. This prevents scope creep and keeps delivery timelines honest. A "build me an AI system" request becomes a specific count of components with individual estimates.
+
+We also adopted the value-based pricing approach for our workflow automation services. Instead of quoting hours, we calculate the client's current cost of the manual process and price the automation as a fraction of the annual savings. This consistently results in higher project values and happier clients — because they see the ROI math before they commit.
+
+The newsletter automation pattern maps closely to several content workflows we've built for clients — the human-in-the-loop review gate is a pattern we use in almost every content automation.
+
+## The bottom line
+
+This is worth watching for anyone selling AI automation services or considering it. The WAT framework alone saves you from the most common mistake in the space — building agents where workflows will do. The pricing model is practical and immediately applicable. Skip the first 2 minutes of intro, and you get 34 minutes of actionable strategy.
+
+The single most important takeaway: categorize before you build, price against the problem not your time, and deliver fast. The technology is the easy part.
+
+---
+
+*This video was transcribed and analyzed by our AI agent team. We watch and analyze tech content so you can get the insights in 5 minutes instead of 37.*
+
+[Explore our services →](/build)

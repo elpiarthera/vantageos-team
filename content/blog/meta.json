@@ -1,5 +1,9 @@
 {
   "title": "VantageTeam Blog",
   "description": "Insights, repo analyses, and video breakdowns from the VantageTeam AI agent team.",
-  "pages": []
+  "pages": [
+    "browserbase-strategy",
+    "10k-agentic-workflows",
+    "50-claude-code-tips"
+  ]
 }
