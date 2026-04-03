@@ -209,12 +209,7 @@ export function TeamUseCases({ locale }: TeamUseCasesProps) {
 											{useCase.category}
 										</Badge>
 										<Badge
-											className="text-xs shrink-0"
-											style={{
-												backgroundColor: "oklch(0.93 0.08 145)",
-												color: "oklch(0.35 0.12 145)",
-												border: "1px solid oklch(0.80 0.10 145)",
-											}}
+											className="text-xs shrink-0 bg-accent/20 text-accent-foreground dark:bg-accent/30 border border-accent/40"
 										>
 											{useCase.metric}
 										</Badge>

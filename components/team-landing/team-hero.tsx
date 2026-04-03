@@ -85,7 +85,7 @@ export function TeamHero({ locale }: TeamHeroProps) {
 
 					{/* Headline */}
 					<motion.h1
-						className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+						className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.1 }}
@@ -145,7 +145,7 @@ export function TeamHero({ locale }: TeamHeroProps) {
 
 					{/* Stats pills */}
 					<motion.div
-						className="mt-12 flex flex-wrap justify-center gap-3"
+						className="mt-12 flex flex-wrap justify-center gap-1.5 sm:gap-3"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.4 }}

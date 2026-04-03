@@ -95,11 +95,7 @@ export function SimpleHowItWorks({ locale }: SimpleHowItWorksProps) {
 							<div className="text-center">
 								{/* Step number */}
 								<div
-									className="inline-flex items-center justify-center size-12 rounded-full border-2 text-lg font-bold mb-4"
-									style={{
-										borderColor: "oklch(0.65 0.15 232)",
-										color: "oklch(0.65 0.15 232)",
-									}}
+									className="inline-flex items-center justify-center size-12 rounded-full border-2 border-primary text-primary text-lg font-bold mb-4"
 								>
 									{step.number}
 								</div>

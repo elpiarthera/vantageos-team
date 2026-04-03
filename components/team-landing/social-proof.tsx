@@ -24,7 +24,7 @@ export function SocialProof({ locale }: SocialProofProps) {
 	const t = content[locale];
 
 	return (
-		<section className="py-12 md:py-16 bg-muted/30 border-y border-border">
+		<section className="py-16 md:py-24 bg-muted/30 border-y border-border">
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -34,9 +34,8 @@ export function SocialProof({ locale }: SocialProofProps) {
 				>
 					{/* Quote mark */}
 					<div
-						className="text-5xl font-serif leading-none mb-4 select-none"
+						className="text-5xl font-serif leading-none mb-4 select-none text-primary"
 						aria-hidden="true"
-						style={{ color: "oklch(0.65 0.15 232)" }}
 					>
 						&ldquo;
 					</div>

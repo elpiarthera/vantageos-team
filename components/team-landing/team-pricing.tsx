@@ -311,17 +311,13 @@ function BuildTierCard({
 			<Card
 				className={cn(
 					"relative h-full flex flex-col",
-					tier.popular && "ring-2 ring-[oklch(0.65_0.15_232)] shadow-lg",
+					tier.popular && "ring-2 ring-primary shadow-lg",
 				)}
 			>
 				{tier.popular && (
 					<div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
 						<Badge
-							className="px-3 py-1 text-xs font-semibold"
-							style={{
-								backgroundColor: "oklch(0.65 0.15 232)",
-								color: "oklch(0.98 0 0)",
-							}}
+							className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground"
 						>
 							{t.popular}
 						</Badge>
@@ -334,10 +330,7 @@ function BuildTierCard({
 					{/* Early bird price */}
 					<div className="mt-2 space-y-1">
 						<div className="flex items-center gap-2 flex-wrap">
-							<span
-								className="text-2xl font-bold"
-								style={{ color: "oklch(0.45 0.15 145)" }}
-							>
+							<span className="text-2xl font-bold text-foreground">
 								{tier.onDemand
 									? locale === "fr"
 										? "Dès $19,990"
@@ -345,12 +338,7 @@ function BuildTierCard({
 									: tier.earlyBirdPrice}
 							</span>
 							<Badge
-								className="shrink-0 text-[10px] px-2 py-0.5"
-								style={{
-									backgroundColor: "oklch(0.93 0.08 145)",
-									color: "oklch(0.35 0.12 145)",
-									border: "1px solid oklch(0.80 0.10 145)",
-								}}
+								className="shrink-0 text-[10px] px-2 py-0.5 bg-accent/20 text-accent-foreground dark:bg-accent/30"
 							>
 								{t.earlyBird}
 							</Badge>
@@ -434,17 +422,13 @@ function TeamTierCard({
 			<Card
 				className={cn(
 					"relative h-full flex flex-col",
-					tier.popular && "ring-2 ring-[oklch(0.65_0.15_232)] shadow-lg",
+					tier.popular && "ring-2 ring-primary shadow-lg",
 				)}
 			>
 				{tier.popular && (
 					<div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
 						<Badge
-							className="px-3 py-1 text-xs font-semibold"
-							style={{
-								backgroundColor: "oklch(0.65 0.15 232)",
-								color: "oklch(0.98 0 0)",
-							}}
+							className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground"
 						>
 							{t.popular}
 						</Badge>
@@ -456,19 +440,11 @@ function TeamTierCard({
 
 					<div className="mt-2 space-y-1">
 						<div className="flex items-center gap-2 flex-wrap">
-							<span
-								className="text-2xl font-bold"
-								style={{ color: "oklch(0.45 0.15 145)" }}
-							>
+							<span className="text-2xl font-bold text-foreground">
 								{tier.earlyBirdPrice}
 							</span>
 							<Badge
-								className="shrink-0 text-[10px] px-2 py-0.5"
-								style={{
-									backgroundColor: "oklch(0.93 0.08 145)",
-									color: "oklch(0.35 0.12 145)",
-									border: "1px solid oklch(0.80 0.10 145)",
-								}}
+								className="shrink-0 text-[10px] px-2 py-0.5 bg-accent/20 text-accent-foreground dark:bg-accent/30"
 							>
 								{t.earlyBird}
 							</Badge>
@@ -527,7 +503,7 @@ function TeamTierCard({
 function FeatureRow({ label, value }: { label: string; value: string }) {
 	return (
 		<li className="flex items-start gap-2">
-			<CheckIcon className="size-4 shrink-0 mt-0.5 text-[oklch(0.55_0.15_145)]" />
+			<CheckIcon className="size-4 shrink-0 mt-0.5 text-muted-foreground" />
 			<span>
 				<span className="text-muted-foreground">{label}:</span>{" "}
 				<span className="font-medium">{value}</span>
@@ -607,7 +583,7 @@ export function TeamPricing({ locale }: TeamPricingProps) {
 
 				{/* Build Packages grid */}
 				{category === "build" && (
-					<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+					<div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
 						{buildTiers.map((tier) => (
 							<BuildTierCard key={tier.key} tier={tier} locale={locale} t={t} />
 						))}

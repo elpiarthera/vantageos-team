@@ -77,7 +77,7 @@ export function TeamCta({ locale }: TeamCtaProps) {
 					viewport={{ once: true }}
 					transition={{ duration: 0.5 }}
 				>
-					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+					<h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
 						{t.title}
 					</h2>
 					<p className="text-lg text-muted-foreground mb-12">{t.subtitle}</p>

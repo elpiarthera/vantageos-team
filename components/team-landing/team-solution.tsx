@@ -148,7 +148,7 @@ const content = {
 				Icon: NonDevTeamIcon,
 				title: "\u00c9quipe Non-Dev Agents",
 				description:
-					"Marketing, SEO/GEO, contenu, ventes, email, op\u00e9rations. Votre \u00e9quipe IA c\u00f4t\u00e9 business. G\u00e8re tout ce qui fait croissance votre produit.",
+					"Marketing, SEO/GEO, contenu, ventes, email, op\u00e9rations. Votre \u00e9quipe IA c\u00f4t\u00e9 business. G\u00e8re tout ce qui fait cro\u00eetre votre produit.",
 				price: "\u00c0 partir de 990\u00a0$/mois",
 				priceNote: "sans engagement",
 				badge: null,
@@ -200,12 +200,7 @@ export function TeamSolution({ locale }: TeamSolutionProps) {
 									{/* Badge */}
 									{offering.badge && (
 										<span
-											className="self-start mb-4 inline-block px-2.5 py-1 rounded-full text-xs font-semibold"
-											style={{
-												backgroundColor: "oklch(0.93 0.08 145)",
-												color: "oklch(0.35 0.12 145)",
-												border: "1px solid oklch(0.80 0.10 145)",
-											}}
+											className="self-start mb-4 inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-accent/20 text-accent-foreground dark:bg-accent/30 border border-accent/40"
 										>
 											{offering.badge}
 										</span>

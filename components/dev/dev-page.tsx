@@ -956,8 +956,7 @@ function HowItWorksSection({ t }: { t: ContentType }) {
 							transition={{ duration: 0.4, delay: i * 0.08 }}
 						>
 							<div
-								className="flex-shrink-0 size-10 rounded-full flex items-center justify-center text-sm font-bold text-primary-foreground"
-								style={{ backgroundColor: "oklch(0.45 0.15 232)" }}
+								className="flex-shrink-0 size-10 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-primary-foreground"
 							>
 								{step.num}
 							</div>
@@ -1004,17 +1003,13 @@ function PricingSection({ t }: { t: ContentType }) {
 								className={cn(
 									"relative h-full flex flex-col",
 									tier.popular &&
-										"ring-2 ring-[oklch(0.65_0.15_232)] shadow-lg",
+										"ring-2 ring-primary shadow-lg",
 								)}
 							>
 								{tier.popular && (
 									<div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
 										<Badge
-											className="px-3 py-1 text-xs font-semibold"
-											style={{
-												backgroundColor: "oklch(0.65 0.15 232)",
-												color: "oklch(0.98 0 0)",
-											}}
+											className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground"
 										>
 											{t.pricing.popular}
 										</Badge>
@@ -1024,19 +1019,11 @@ function PricingSection({ t }: { t: ContentType }) {
 									<h3 className="text-base font-semibold">{tier.name}</h3>
 									<div className="mt-2 space-y-1">
 										<div className="flex items-center gap-2 flex-wrap">
-											<span
-												className="text-2xl font-bold"
-												style={{ color: "oklch(0.45 0.15 145)" }}
-											>
+											<span className="text-2xl font-bold text-foreground">
 												{tier.earlyBirdPrice}
 											</span>
 											<Badge
-												className="shrink-0 text-[10px] px-2 py-0.5"
-												style={{
-													backgroundColor: "oklch(0.93 0.08 145)",
-													color: "oklch(0.35 0.12 145)",
-													border: "1px solid oklch(0.80 0.10 145)",
-												}}
+												className="shrink-0 text-[10px] px-2 py-0.5 bg-accent/20 text-accent-foreground dark:bg-accent/30"
 											>
 												{t.pricing.earlyBird} — {t.pricing.earlyBirdNote}
 											</Badge>
@@ -1060,7 +1047,7 @@ function PricingSection({ t }: { t: ContentType }) {
 											] as [string, string][]
 										).map(([label, value]) => (
 											<li key={label} className="flex items-start gap-2">
-												<CheckIcon className="size-4 shrink-0 mt-0.5 text-[oklch(0.55_0.15_145)]" />
+												<CheckIcon className="size-4 shrink-0 mt-0.5 text-muted-foreground" />
 												<span>
 													<span className="text-muted-foreground">
 														{label}:
@@ -1117,7 +1104,7 @@ function IncludeExcludeSection({ t }: { t: ContentType }) {
 						<ul className="space-y-3">
 							{t.included.items.map((item) => (
 								<li key={item} className="flex items-start gap-3 text-sm">
-									<CheckIcon className="size-4 shrink-0 mt-0.5 text-[oklch(0.55_0.15_145)]" />
+									<CheckIcon className="size-4 shrink-0 mt-0.5 text-muted-foreground" />
 									<span>{item}</span>
 								</li>
 							))}
@@ -1157,10 +1144,8 @@ function CaseStudySection({ t }: { t: ContentType }) {
 					viewport={{ once: true }}
 					transition={{ duration: 0.5 }}
 				>
-					<Card
-						className="border-2"
-						style={{ borderColor: "oklch(0.65 0.15 232 / 0.3)" }}
-					>
+					<Card className="border-2 border-primary/30">
+
 						<CardContent className="pt-8 pb-8">
 							<h2 className="text-2xl sm:text-3xl font-bold mb-4">
 								{t.caseStudy.headline}
@@ -1169,10 +1154,7 @@ function CaseStudySection({ t }: { t: ContentType }) {
 							<div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
 								{t.caseStudy.stats.map((stat) => (
 									<div key={stat.label}>
-										<div
-											className="text-3xl font-bold mb-1"
-											style={{ color: "oklch(0.45 0.15 232)" }}
-										>
+										<div className="text-3xl font-bold mb-1 text-primary">
 											{stat.value}
 										</div>
 										<p className="text-xs text-muted-foreground">
@@ -1181,10 +1163,7 @@ function CaseStudySection({ t }: { t: ContentType }) {
 									</div>
 								))}
 							</div>
-							<blockquote
-								className="text-xl font-semibold mb-4 italic"
-								style={{ color: "oklch(0.45 0.15 232)" }}
-							>
+							<blockquote className="text-xl font-semibold mb-4 italic text-primary">
 								{t.caseStudy.quote}
 							</blockquote>
 							<p className="text-sm text-muted-foreground">
@@ -1279,7 +1258,7 @@ function WorkflowSection({ t }: { t: ContentType }) {
 							viewport={{ once: true }}
 							transition={{ duration: 0.3, delay: i * 0.08 }}
 						>
-							<CheckIcon className="size-4 shrink-0 mt-0.5 text-[oklch(0.55_0.15_145)]" />
+							<CheckIcon className="size-4 shrink-0 mt-0.5 text-muted-foreground" />
 							<span>{bullet}</span>
 						</motion.div>
 					))}
@@ -1338,10 +1317,7 @@ function RatesSection({ t }: { t: ContentType }) {
 										</td>
 										<td className="px-4 py-3 text-right">
 											{row.highlight ? (
-												<span
-													className="font-bold"
-													style={{ color: "oklch(0.45 0.15 145)" }}
-												>
+												<span className="font-bold text-foreground">
 													{row.rate}
 												</span>
 											) : (

@@ -649,7 +649,7 @@ const content = {
 			"Publication sur les app stores (web d\u2019abord\u00a0; PWA incluse, natif mobile non inclus)",
 			"Marketing et services de croissance (voir nos \u00c9quipes Agent pour cela)",
 			"Documents juridiques (CGU, politique de confidentialit\u00e9)",
-			"Modifications au-del\u00e0 du PRD valid\u00e9 (devis\u00e9es s\u00e9par\u00e9ment)",
+			"Modifications au-del\u00e0 du PRD valid\u00e9 (propos\u00e9es s\u00e9par\u00e9ment)",
 			"Applications mobiles natives (web uniquement)",
 		],
 
@@ -962,7 +962,7 @@ function BuildWho({ t }: { t: (typeof content)["en"] }) {
 					<ul className="space-y-3 mb-8">
 						{t.whoList.map((item) => (
 							<li key={item.key} className="flex items-start gap-3">
-								<CheckIcon className="size-5 shrink-0 mt-0.5 text-[oklch(0.55_0.15_145)]" />
+								<CheckIcon className="size-5 shrink-0 mt-0.5 text-muted-foreground" />
 								<span>
 									<strong>{item.bold}</strong>
 									{item.rest}
@@ -1006,10 +1006,7 @@ function BuildHowItWorks({ t }: { t: (typeof content)["en"] }) {
 						>
 							<Card className="h-full">
 								<CardHeader>
-									<div
-										className="text-4xl font-bold mb-2"
-										style={{ color: "oklch(0.65 0.15 232)" }}
-									>
+									<div className="text-4xl font-bold mb-2 text-primary">
 										{step.number}
 									</div>
 									<h3 className="text-xl font-semibold">{step.title}</h3>
@@ -1062,17 +1059,13 @@ function BuildPricing({ t }: { t: (typeof content)["en"] }) {
 								className={cn(
 									"relative h-full flex flex-col",
 									tier.popular &&
-										"ring-2 ring-[oklch(0.65_0.15_232)] shadow-lg",
+										"ring-2 ring-primary shadow-lg",
 								)}
 							>
 								{tier.popular && (
 									<div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
 										<Badge
-											className="px-3 py-1 text-xs font-semibold"
-											style={{
-												backgroundColor: "oklch(0.65 0.15 232)",
-												color: "oklch(0.98 0 0)",
-											}}
+											className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground"
 										>
 											{t.pricingPopular}
 										</Badge>
@@ -1082,10 +1075,7 @@ function BuildPricing({ t }: { t: (typeof content)["en"] }) {
 								<CardHeader className="pb-2 pt-6">
 									<h3 className="text-base font-semibold">{tier.name}</h3>
 									<div className="mt-2 space-y-1">
-										<span
-											className="text-2xl font-bold block"
-											style={{ color: "oklch(0.45 0.15 145)" }}
-										>
+										<span className="text-2xl font-bold block text-foreground">
 											{tier.earlyBird}
 										</span>
 										<p className="text-xs text-muted-foreground">
@@ -1152,7 +1142,7 @@ function BuildPricing({ t }: { t: (typeof content)["en"] }) {
 function PricingRow({ label, value }: { label: string; value: string }) {
 	return (
 		<li className="flex items-start gap-2">
-			<CheckIcon className="size-4 shrink-0 mt-0.5 text-[oklch(0.55_0.15_145)]" />
+			<CheckIcon className="size-4 shrink-0 mt-0.5 text-muted-foreground" />
 			<span>
 				<span className="text-muted-foreground">{label}:</span>{" "}
 				<span className="font-medium">{value}</span>
@@ -1179,7 +1169,7 @@ function BuildIncluded({ t }: { t: (typeof content)["en"] }) {
 					<ul className="space-y-3 mb-6">
 						{t.includedBase.map((item) => (
 							<li key={item} className="flex items-start gap-3">
-								<CheckIcon className="size-5 shrink-0 mt-0.5 text-[oklch(0.55_0.15_145)]" />
+								<CheckIcon className="size-5 shrink-0 mt-0.5 text-muted-foreground" />
 								<span>{item}</span>
 							</li>
 						))}
@@ -1216,7 +1206,7 @@ function BuildNotIncluded({ t }: { t: (typeof content)["en"] }) {
 					<ul className="space-y-3">
 						{t.notIncluded.map((item) => (
 							<li key={item} className="flex items-start gap-3">
-								<XCircleIcon className="size-5 shrink-0 mt-0.5 text-[oklch(0.60_0.20_30)]" />
+								<XCircleIcon className="size-5 shrink-0 mt-0.5 text-muted-foreground" />
 								<span className="text-muted-foreground">{item}</span>
 							</li>
 						))}
@@ -1291,7 +1281,7 @@ function BuildRevenueShare({ t }: { t: (typeof content)["en"] }) {
 							<ul className="space-y-2">
 								{t.revenueItems.map((item) => (
 									<li key={item} className="flex items-start gap-2 text-sm">
-										<CheckIcon className="size-4 shrink-0 mt-0.5 text-[oklch(0.55_0.15_145)]" />
+										<CheckIcon className="size-4 shrink-0 mt-0.5 text-muted-foreground" />
 										<span>{item}</span>
 									</li>
 								))}
@@ -1302,7 +1292,7 @@ function BuildRevenueShare({ t }: { t: (typeof content)["en"] }) {
 							<ul className="space-y-2">
 								{t.revenueDetailItems.map((item) => (
 									<li key={item} className="flex items-start gap-2 text-sm">
-										<CheckIcon className="size-4 shrink-0 mt-0.5 text-[oklch(0.55_0.15_145)]" />
+										<CheckIcon className="size-4 shrink-0 mt-0.5 text-muted-foreground" />
 										<span>{item}</span>
 									</li>
 								))}
@@ -1342,11 +1332,7 @@ function BuildPaymentTerms({ t }: { t: (typeof content)["en"] }) {
 								{t.paymentT1T2Items.map((item, index) => (
 									<li key={item} className="flex items-start gap-3 text-sm">
 										<span
-											className="size-6 rounded-full border-2 flex items-center justify-center shrink-0 text-xs font-bold"
-											style={{
-												borderColor: "oklch(0.65 0.15 232)",
-												color: "oklch(0.65 0.15 232)",
-											}}
+											className="size-6 rounded-full border-2 border-primary text-primary flex items-center justify-center shrink-0 text-xs font-bold"
 										>
 											{index + 1}
 										</span>
@@ -1361,11 +1347,7 @@ function BuildPaymentTerms({ t }: { t: (typeof content)["en"] }) {
 								{t.paymentT3Items.map((item, index) => (
 									<li key={item} className="flex items-start gap-3 text-sm">
 										<span
-											className="size-6 rounded-full border-2 flex items-center justify-center shrink-0 text-xs font-bold"
-											style={{
-												borderColor: "oklch(0.65 0.15 232)",
-												color: "oklch(0.65 0.15 232)",
-											}}
+											className="size-6 rounded-full border-2 border-primary text-primary flex items-center justify-center shrink-0 text-xs font-bold"
 										>
 											{index + 1}
 										</span>
