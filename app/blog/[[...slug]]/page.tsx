@@ -3,6 +3,7 @@ import { DocsBody, DocsTitle, DocsDescription } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { Metadata } from "next";
+import { YouTubeEmbed } from "@/components/blog/youtube-embed";
 
 // ─── Blog index page ─────────────────────────────────────────────────────────
 
@@ -157,7 +158,7 @@ function BlogPost({ slug }: { slug: string[] }) {
             <DocsDescription>{page.data.description}</DocsDescription>
           ) : null}
         </div>
-        <MDX components={{ ...defaultMdxComponents }} />
+        <MDX components={{ ...defaultMdxComponents, YouTubeEmbed }} />
       </DocsBody>
     </article>
   );
