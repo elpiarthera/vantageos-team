@@ -84,17 +84,17 @@ function ShieldIcon() {
 const metrics = {
 	en: [
 		{ value: "18", label: "Issues resolved in 5 days" },
-		{ value: "36 min", label: "Median resolution time" },
+		{ value: "28 min", label: "Median resolution time" },
 		{ value: "3 min", label: "Fastest fix" },
 		{ value: "6 min", label: "First response time" },
-		{ value: "8 days \u2192 36 min", label: "Before vs. After" },
+		{ value: "4 days \u2192 28 min", label: "207x faster" },
 	],
 	fr: [
 		{ value: "18", label: "Issues r\u00e9solues en 5 jours" },
-		{ value: "36 min", label: "Temps m\u00e9dian de r\u00e9solution" },
+		{ value: "28 min", label: "Temps m\u00e9dian de r\u00e9solution" },
 		{ value: "3 min", label: "Fix le plus rapide" },
 		{ value: "6 min", label: "Premi\u00e8re r\u00e9ponse" },
-		{ value: "8 jours \u2192 36 min", label: "Avant vs. Apr\u00e8s" },
+		{ value: "4 jours \u2192 28 min", label: "207x plus rapide" },
 	],
 };
 
@@ -102,7 +102,7 @@ const content = {
 	en: {
 		heading: "Issue resolution that actually works.",
 		subtitle:
-			"From bug report to deployed fix in 36 minutes median. Not hours. Not days. Minutes.",
+			"From bug report to deployed fix in 28 minutes median. Not hours. Not days. Minutes.",
 		features: [
 			{
 				key: "irp",
@@ -115,10 +115,10 @@ const content = {
 			{
 				key: "mttr",
 				icon: "clock" as const,
-				title: "36-Minute MTTR",
+				title: "28-Minute MTTR",
 				description:
-					"Median 36 minutes from issue to deployed fix. Fastest: 3 minutes. First response: 6 minutes. Before us: 8 days average.",
-				stat: "36 min",
+					"Median 28 minutes from issue to deployed fix. Fastest: 3 minutes. First response: 6 minutes. Before us: 4 days average.",
+				stat: "28 min",
 			},
 			{
 				key: "kb",
@@ -141,7 +141,7 @@ const content = {
 	fr: {
 		heading: "R\u00e9solution d\u2019issues qui fonctionne vraiment.",
 		subtitle:
-			"Du rapport de bug au fix d\u00e9ploy\u00e9 en 36 minutes m\u00e9diane. Pas des heures. Pas des jours. Des minutes.",
+			"Du rapport de bug au fix d\u00e9ploy\u00e9 en 28 minutes m\u00e9diane. Pas des heures. Pas des jours. Des minutes.",
 		features: [
 			{
 				key: "irp",
@@ -154,10 +154,10 @@ const content = {
 			{
 				key: "mttr",
 				icon: "clock" as const,
-				title: "MTTR de 36 Minutes",
+				title: "MTTR de 28 Minutes",
 				description:
-					"M\u00e9diane de 36 minutes de l\u2019issue au fix d\u00e9ploy\u00e9. Plus rapide\u00a0: 3 minutes. Premi\u00e8re r\u00e9ponse\u00a0: 6 minutes. Avant nous\u00a0: 8 jours en moyenne.",
-				stat: "36 min",
+					"M\u00e9diane de 28 minutes de l\u2019issue au fix d\u00e9ploy\u00e9. Plus rapide\u00a0: 3 minutes. Premi\u00e8re r\u00e9ponse\u00a0: 6 minutes. Avant nous\u00a0: 4 jours en moyenne.",
+				stat: "28 min",
 			},
 			{
 				key: "kb",
