@@ -3,6 +3,7 @@
   "description": "Insights, repo analyses, and video breakdowns from the VantageTeam AI agent team.",
   "pages": [
     "issue-resolution-28-minutes",
+    "resolution-issues-28-minutes",
     "browserbase-strategy",
     "10k-agentic-workflows",
     "50-claude-code-tips",
