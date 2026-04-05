@@ -258,11 +258,12 @@ const content = {
 			],
 		},
 		caseStudy: {
-			headline: "One client. 37 issues. 2 days.",
+			headline: "One client. 45 issues. 37 resolved. 28 minutes median.",
 			intro:
 				"Here's what happened when a real client pointed their GitHub repo at our pipeline:",
 			stats: [
-				{ value: "37", label: "GitHub Issues created over 2 days" },
+				{ value: "45", label: "GitHub Issues filed" },
+				{ value: "37", label: "Issues resolved" },
 				{
 					value: "50+",
 					label:
@@ -272,7 +273,8 @@ const content = {
 					value: "0",
 					label: "regressions — E2E tests passed on every deploy",
 				},
-				{ value: "0.54h", label: "average resolution time per issue" },
+				{ value: "28 min", label: "Median resolution time per issue" },
+				{ value: "207x", label: "Faster than before" },
 				{ value: "$5.35", label: "cost at T1 rates per fix" },
 			],
 			quote: "That's not a demo. That's a Tuesday.",
@@ -615,11 +617,12 @@ const content = {
 			],
 		},
 		caseStudy: {
-			headline: "Un client. 37 issues. 2 jours.",
+			headline: "Un client. 45 issues. 37 résolues. 28 minutes médiane.",
 			intro:
 				"Voici ce qui s'est passé quand un vrai client a connecté son repo GitHub à notre pipeline :",
 			stats: [
-				{ value: "37", label: "Issues GitHub créées sur 2 jours" },
+				{ value: "45", label: "Issues GitHub déposées" },
+				{ value: "37", label: "Issues résolues" },
 				{
 					value: "50+",
 					label:
@@ -629,7 +632,8 @@ const content = {
 					value: "0",
 					label: "régressions — les tests E2E ont passé à chaque déploiement",
 				},
-				{ value: "0,54 h", label: "temps moyen de résolution par issue" },
+				{ value: "28 min", label: "Temps médian de résolution par issue" },
+				{ value: "207x", label: "Plus rapide qu'avant" },
 				{ value: "5,35 $", label: "coût au tarif T1 par correction" },
 			],
 			quote: "Ce n'est pas une démo. C'est un mardi.",

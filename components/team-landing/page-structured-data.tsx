@@ -1,4 +1,4 @@
-const BASE_URL = "https://vantageteam.dev";
+const BASE_URL = "https://www.vantageteam.dev";
 
 const organizationRef = {
   "@type": "Organization",
@@ -54,41 +54,21 @@ const buildSchemas = {
         },
       ],
     },
-    qaList: {
+    breadcrumb: {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
+      "@type": "BreadcrumbList",
+      itemListElement: [
         {
-          "@type": "Question",
-          name: "What tech stack do you use?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Next.js 15, Convex (real-time backend), Clerk (auth), Polar (payments), Vercel AI Gateway (AI features), shadcn/ui (components), Tailwind CSS (styling). Production-grade. Open source. No vendor lock-in.",
-          },
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
         },
         {
-          "@type": "Question",
-          name: "How long does it take?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "T1: 4 weeks. T2: 6 weeks. T3: 8 weeks. On-demand: custom timeline.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Who owns the code?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "You do. 100%. Full source code, full Git history, full access.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can you add AI features?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. Vercel AI Gateway is included in every tier. T1 gets the gateway. T2 gets up to 5 custom agents. T3 gets a full agent suite with orchestration and RAG.",
-          },
+          "@type": "ListItem",
+          position: 2,
+          name: "We Build Your App",
+          item: `${BASE_URL}/build`,
         },
       ],
     },
@@ -149,33 +129,21 @@ const buildSchemas = {
         },
       ],
     },
-    qaList: {
+    breadcrumb: {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
+      "@type": "BreadcrumbList",
+      itemListElement: [
         {
-          "@type": "Question",
-          name: "Quelle stack technique utilisez-vous\u00a0?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Next.js 15, Convex (backend temps r\u00e9el), Clerk (auth), Polar (paiements), Vercel AI Gateway (fonctionnalit\u00e9s IA), shadcn/ui (composants), Tailwind CSS (styles). Grade production. Open source. Sans d\u00e9pendance vendeur.",
-          },
+          "@type": "ListItem",
+          position: 1,
+          name: "Accueil",
+          item: `${BASE_URL}/fr`,
         },
         {
-          "@type": "Question",
-          name: "Combien de temps cela prend-il\u00a0?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "T1\u00a0: 4 semaines. T2\u00a0: 6 semaines. T3\u00a0: 8 semaines. Sur-mesure\u00a0: calendrier personnalis\u00e9.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Qui poss\u00e8de le code\u00a0?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Vous. 100\u00a0%. Code source complet, historique Git complet, acc\u00e8s total.",
-          },
+          "@type": "ListItem",
+          position: 2,
+          name: "Nous construisons votre app",
+          item: `${BASE_URL}/fr/build`,
         },
       ],
     },
@@ -238,41 +206,21 @@ const devSchemas = {
         },
       ],
     },
-    qaList: {
+    breadcrumb: {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
+      "@type": "BreadcrumbList",
+      itemListElement: [
         {
-          "@type": "Question",
-          name: "What are \"agent hours\"?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Agent hours are the actual compute time our AI agents spend working on your tasks. Time is tracked automatically and reported monthly.",
-          },
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
         },
         {
-          "@type": "Question",
-          name: "What\u2019s the SLA exactly?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "First response within 4h (T1), 2h (T2), or 10 minutes (T3). Resolution targets: 48h/24h/8h. SLA breach 3+ times = 10% credit.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can I see the commits?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Every single one. Agents commit directly to your GitHub repo with signed commits.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What\u2019s the minimum commitment?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "3 months. After that, month-to-month with 30 days notice.",
-          },
+          "@type": "ListItem",
+          position: 2,
+          name: "AI Dev Team",
+          item: `${BASE_URL}/dev`,
         },
       ],
     },
@@ -330,33 +278,21 @@ const devSchemas = {
         },
       ],
     },
-    qaList: {
+    breadcrumb: {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
+      "@type": "BreadcrumbList",
+      itemListElement: [
         {
-          "@type": "Question",
-          name: "Que sont les \u00abheures agents\u00bb\u00a0?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Les heures agents correspondent au temps de calcul r\u00e9el pass\u00e9 par nos agents IA sur vos t\u00e2ches. Le temps est suivi automatiquement et rapport\u00e9 mensuellement.",
-          },
+          "@type": "ListItem",
+          position: 1,
+          name: "Accueil",
+          item: `${BASE_URL}/fr`,
         },
         {
-          "@type": "Question",
-          name: "Puis-je voir les commits\u00a0?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Tous sans exception. Les agents commitent directement sur votre d\u00e9p\u00f4t GitHub avec des commits sign\u00e9s.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Quel est l\u2019engagement minimum\u00a0?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "3 mois. Ensuite, mois par mois avec 30 jours de pr\u00e9avis.",
-          },
+          "@type": "ListItem",
+          position: 2,
+          name: "\u00c9quipe dev IA",
+          item: `${BASE_URL}/fr/dev`,
         },
       ],
     },
@@ -419,33 +355,21 @@ const teamsSchemas = {
         },
       ],
     },
-    qaList: {
+    breadcrumb: {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
+      "@type": "BreadcrumbList",
+      itemListElement: [
         {
-          "@type": "Question",
-          name: "What teams are available?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "16 specialized departments: marketing, sales, dev, content, SEO, translation, video, design, and more.",
-          },
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
         },
         {
-          "@type": "Question",
-          name: "How do I send tasks?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "By email, Telegram, or Google Meet transcript. No special app needed.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can I add extra teams outside my plan?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. EUR 190/month per additional team.",
-          },
+          "@type": "ListItem",
+          position: 2,
+          name: "Agent Teams",
+          item: `${BASE_URL}/teams`,
         },
       ],
     },
@@ -503,33 +427,21 @@ const teamsSchemas = {
         },
       ],
     },
-    qaList: {
+    breadcrumb: {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
+      "@type": "BreadcrumbList",
+      itemListElement: [
         {
-          "@type": "Question",
-          name: "Quelles \u00e9quipes sont disponibles\u00a0?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "16 d\u00e9partements sp\u00e9cialis\u00e9s : marketing, vente, dev, contenu, SEO, traduction, vid\u00e9o, design et plus.",
-          },
+          "@type": "ListItem",
+          position: 1,
+          name: "Accueil",
+          item: `${BASE_URL}/fr`,
         },
         {
-          "@type": "Question",
-          name: "Comment envoyer des t\u00e2ches\u00a0?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Par email, Telegram ou compte-rendu Google Meet. Aucune application sp\u00e9ciale.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Puis-je ajouter une \u00e9quipe suppl\u00e9mentaire\u00a0?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Oui. 190\u00a0EUR/mois par \u00e9quipe suppl\u00e9mentaire.",
-          },
+          "@type": "ListItem",
+          position: 2,
+          name: "\u00c9quipes agents",
+          item: `${BASE_URL}/fr/teams`,
         },
       ],
     },
@@ -574,7 +486,7 @@ export function PageStructuredData({ locale, page }: PageStructuredDataProps) {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.qaList) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.breadcrumb) }}
       />
       <script
         type="application/ld+json"

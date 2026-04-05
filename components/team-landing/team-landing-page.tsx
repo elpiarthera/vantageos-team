@@ -4,10 +4,13 @@ import { useState } from "react";
 import { ProductCards } from "@/components/team-landing/product-cards";
 import { SimpleHowItWorks } from "@/components/team-landing/simple-how-it-works";
 import { SocialProof } from "@/components/team-landing/social-proof";
+import { TeamCompatibleTools } from "@/components/team-landing/team-compatible-tools";
 import { TeamCta } from "@/components/team-landing/team-cta";
 import { TeamFooter } from "@/components/team-landing/team-footer";
 import { TeamHeader } from "@/components/team-landing/team-header";
 import { TeamHero } from "@/components/team-landing/team-hero";
+import { TeamIrpFeatures } from "@/components/team-landing/team-irp-features";
+import { TeamNpmInstall } from "@/components/team-landing/team-npm-install";
 import { TeamStructuredData } from "@/components/team-landing/team-structured-data";
 
 export type Locale = "en" | "fr";
@@ -28,6 +31,9 @@ export function TeamLandingPage({
 			<main id="main-content">
 				<TeamHero locale={locale} />
 				<ProductCards locale={locale} />
+				<TeamIrpFeatures locale={locale} />
+				<TeamCompatibleTools locale={locale} />
+				<TeamNpmInstall locale={locale} />
 				<SocialProof locale={locale} />
 				<SimpleHowItWorks locale={locale} />
 				<TeamCta locale={locale} />

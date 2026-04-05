@@ -192,14 +192,15 @@ Tous les plans incluent :
 
 ### EN
 
-**Headline:** One client. 37 issues. 2 days.
+**Headline:** One client. 45 issues. 37 resolved. 28 minutes median.
 
 Here's what happened when a real client pointed their GitHub repo at our pipeline:
 
-- **37 GitHub Issues** created over 2 days
+- **45 GitHub Issues filed. 37 resolved autonomously.**
 - **50+ signed agent commits** — every change traceable, every author verified
 - **Zero régressions** — E2E tests passed on every deploy
-- **Average résolution time: 0.54 hours per issue**
+- **Median resolution time: 28 minutes per issue**
+- **207x faster than before**
 - **Cost at T1 rates: $5.35 per fix**
 
 That's not a demo. That's a Tuesday.
@@ -208,14 +209,15 @@ The issues ranged from CSS fixes to auth flow bugs to new feature implementation
 
 ### FR
 
-**Titre :** Un client. 37 issues. 2 jours.
+**Titre :** Un client. 45 issues. 37 résolues. 28 minutes médiane.
 
 Voici ce qui s'est passe quand un vrai client a connecte son repo GitHub a notre pipeline :
 
-- **37 Issues GitHub** créées sur 2 jours
+- **45 Issues GitHub déposées. 37 résolues de manière autonome.**
 - **50+ commits agents signes** — chaque changement tracable, chaque auteur verifie
 - **Zero régressions** — les tests E2E ont passe a chaque déploiement
-- **Temps moyen de résolution : 0,54 heure par issue**
+- **Temps médian de résolution : 28 minutes par issue**
+- **207x plus rapide qu'avant**
 - **Coût au tarif T1 : 5,35 $ par correction**
 
 Ce n'est pas une demo. C'est un mardi.

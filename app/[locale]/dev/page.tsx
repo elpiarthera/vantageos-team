@@ -3,7 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { DevPage } from "@/components/dev/dev-page";
 import { PageStructuredData } from "@/components/team-landing/page-structured-data";
 
-const BASE_URL = "https://vantageteam.dev";
+const BASE_URL = "https://www.vantageteam.dev";
 
 type Props = {
 	params: Promise<{ locale: string }>;
@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const isFr = locale === "fr";
 
 	const title = isFr
-		? "\u00c9quipe dev IA \u2014 VantageTeam | D\u00e8s 990\u00a0$/mois"
-		: "AI Dev Team \u2014 VantageTeam | From $990/month";
+		? "\u00c9quipe dev IA | D\u00e8s 990\u00a0$/mois"
+		: "AI Dev Team | From $990/month";
 
 	const description = isFr
 		? "Corrections de bugs, nouvelles fonctionnalit\u00e9s, revue de code \u2014 tout pris en charge par des agents IA. Workflow GitHub, commits sign\u00e9s, SLA garanti."
@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			title,
 			description,
 			type: "website",
+			locale: isFr ? "fr_FR" : "en_US",
 			url: canonicalUrl,
 			images: [
 				{
