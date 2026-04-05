@@ -81,27 +81,44 @@ function ShieldIcon() {
 
 // ─── Content ─────────────────────────────────────────────────────────────────
 
+const metrics = {
+	en: [
+		{ value: "18", label: "Issues resolved in 5 days" },
+		{ value: "36 min", label: "Median resolution time" },
+		{ value: "3 min", label: "Fastest fix" },
+		{ value: "6 min", label: "First response time" },
+		{ value: "8 days \u2192 36 min", label: "Before vs. After" },
+	],
+	fr: [
+		{ value: "18", label: "Issues r\u00e9solues en 5 jours" },
+		{ value: "36 min", label: "Temps m\u00e9dian de r\u00e9solution" },
+		{ value: "3 min", label: "Fix le plus rapide" },
+		{ value: "6 min", label: "Premi\u00e8re r\u00e9ponse" },
+		{ value: "8 jours \u2192 36 min", label: "Avant vs. Apr\u00e8s" },
+	],
+};
+
 const content = {
 	en: {
 		heading: "Issue resolution that actually works.",
 		subtitle:
-			"From bug report to deployed fix in 23 minutes. Not hours. Not days. Minutes.",
+			"From bug report to deployed fix in 36 minutes median. Not hours. Not days. Minutes.",
 		features: [
 			{
 				key: "irp",
 				icon: "target" as const,
 				title: "Issue Resolution Protocol (IRP)",
 				description:
-					"GitHub issue \u2192 auto-diagnostic \u2192 12-task mission \u2192 fix \u2192 tests \u2192 deploy \u2192 close. Fully autonomous.",
+					"GitHub webhook auto-comments on issues. Auto-creates 12-task missions. Diagnoses, fixes, tests, deploys, and closes \u2014 with standardized commit signatures.",
 				stat: null,
 			},
 			{
 				key: "mttr",
 				icon: "clock" as const,
-				title: "23-Minute MTTR",
+				title: "36-Minute MTTR",
 				description:
-					"Issue to resolution in 23 minutes average. Our agents diagnose, fix, test, and deploy while you sleep.",
-				stat: "23 min",
+					"Median 36 minutes from issue to deployed fix. Fastest: 3 minutes. First response: 6 minutes. Before us: 8 days average.",
+				stat: "36 min",
 			},
 			{
 				key: "kb",
@@ -116,7 +133,7 @@ const content = {
 				icon: "shield" as const,
 				title: "Enforcement Hooks",
 				description:
-					"Every fix goes through mandatory QA: delegation enforced, tests required, commits blocked without passing checks.",
+					"Anti-defer enforcement: agents cannot postpone fixes. Mandatory QA pipeline. Commits blocked without passing tests. Production error monitoring included.",
 				stat: null,
 			},
 		],
@@ -124,23 +141,23 @@ const content = {
 	fr: {
 		heading: "R\u00e9solution d\u2019issues qui fonctionne vraiment.",
 		subtitle:
-			"Du rapport de bug au fix d\u00e9ploy\u00e9 en 23 minutes. Pas des heures. Pas des jours. Des minutes.",
+			"Du rapport de bug au fix d\u00e9ploy\u00e9 en 36 minutes m\u00e9diane. Pas des heures. Pas des jours. Des minutes.",
 		features: [
 			{
 				key: "irp",
 				icon: "target" as const,
 				title: "Issue Resolution Protocol (IRP)",
 				description:
-					"Issue GitHub \u2192 auto-diagnostic \u2192 mission 12 t\u00e2ches \u2192 fix \u2192 tests \u2192 deploy \u2192 close. Enti\u00e8rement autonome.",
+					"Webhook GitHub auto-commente les issues. Cr\u00e9e automatiquement des missions de 12 t\u00e2ches. Diagnostique, fixe, teste, d\u00e9ploie et ferme \u2014 avec des signatures de commit standardis\u00e9es.",
 				stat: null,
 			},
 			{
 				key: "mttr",
 				icon: "clock" as const,
-				title: "MTTR de 23 Minutes",
+				title: "MTTR de 36 Minutes",
 				description:
-					"Issue r\u00e9solue en 23 minutes en moyenne. Nos agents diagnostiquent, fixent, testent et d\u00e9ploient pendant que vous dormez.",
-				stat: "23 min",
+					"M\u00e9diane de 36 minutes de l\u2019issue au fix d\u00e9ploy\u00e9. Plus rapide\u00a0: 3 minutes. Premi\u00e8re r\u00e9ponse\u00a0: 6 minutes. Avant nous\u00a0: 8 jours en moyenne.",
+				stat: "36 min",
 			},
 			{
 				key: "kb",
@@ -155,7 +172,7 @@ const content = {
 				icon: "shield" as const,
 				title: "Hooks d\u2019Application",
 				description:
-					"Chaque fix passe par un QA obligatoire\u00a0: d\u00e9l\u00e9gation forc\u00e9e, tests requis, commits bloqu\u00e9s sans validation.",
+					"Enforcement anti-report\u00a0: les agents ne peuvent pas reporter les corrections. Pipeline QA obligatoire. Commits bloqu\u00e9s sans tests pass\u00e9s. Monitoring d\u2019erreurs en production inclus.",
 				stat: null,
 			},
 		],
@@ -177,6 +194,7 @@ interface TeamIrpFeaturesProps {
 
 export function TeamIrpFeatures({ locale }: TeamIrpFeaturesProps) {
 	const t = content[locale];
+	const m = metrics[locale];
 
 	return (
 		<section id="irp-features" className="py-16 md:py-24 bg-muted/40">
@@ -195,6 +213,36 @@ export function TeamIrpFeatures({ locale }: TeamIrpFeaturesProps) {
 					<p className="text-muted-foreground text-lg leading-relaxed">
 						{t.subtitle}
 					</p>
+				</motion.div>
+
+				{/* Real Metrics stats bar */}
+				<motion.div
+					className="mb-12"
+					initial={{ opacity: 0, y: 16 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.45, delay: 0.1 }}
+				>
+					<div className="rounded-2xl border border-border bg-card/60 backdrop-blur-sm px-6 py-6">
+						<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
+							{m.map((item) => (
+								<div
+									key={item.label}
+									className="flex flex-col items-center gap-1 text-center"
+								>
+									<span
+										className="text-3xl sm:text-4xl font-extrabold tracking-tight tabular-nums leading-none"
+										style={{ color: "var(--primary)" }}
+									>
+										{item.value}
+									</span>
+									<span className="text-xs text-muted-foreground leading-snug max-w-[10ch]">
+										{item.label}
+									</span>
+								</div>
+							))}
+						</div>
+					</div>
 				</motion.div>
 
 				{/* Feature grid */}
