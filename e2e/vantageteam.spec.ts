@@ -65,8 +65,8 @@ test.describe("VantageTeam.dev — Landing & Pages", () => {
     const slaContent = page.getByText(/SLA/i).first();
     await expect(slaContent).toBeVisible();
 
-    // Case study section — headline is "One client. 37 issues. 2 days."
-    const caseStudy = page.getByText("One client. 37 issues. 2 days.").first();
+    // Case study section — headline is "One client. 45 issues. 37 resolved. 28 minutes median."
+    const caseStudy = page.getByText("One client. 45 issues. 37 resolved. 28 minutes median.").first();
     await expect(caseStudy).toBeVisible();
 
     await page.screenshot({ path: "screenshots/03-dev-page.png", fullPage: false });

@@ -54,7 +54,7 @@ CTA: Learn More -> /teams
 
 **Stat block:**
 
-37 issues resolved. 2 days. 50+ signed commits. Zero regressions.
+45 issues filed. 37 resolved. 28 min median. Zero regressions.
 
 **Caption:** Real results from a real codebase. No demo. No sandbox. Production.
 
@@ -138,7 +138,7 @@ CTA : En savoir plus -> /teams
 
 **Bloc chiffres :**
 
-37 problèmes résolus. 2 jours. 50+ commits signés. Zéro régressions.
+45 issues déposées. 37 résolues. 28 min médiane. Zéro régressions.
 
 **Légende :** Des résultats réels, sur une vraie base de code. Pas de démo. Pas de sandbox. De la production.
 
