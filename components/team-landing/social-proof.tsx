@@ -5,12 +5,12 @@ import type { Locale } from "./team-landing-page";
 
 const content = {
 	en: {
-		stat: "18 issues resolved. 28 minutes median. 50+ signed commits. Zero regressions.",
+		stat: "18 issues resolved. 28 minutes median. New feature in 38 min. 50+ signed commits. Zero regressions.",
 		caption:
 			"Real results from a real codebase. No demo. No sandbox. Production.",
 	},
 	fr: {
-		stat: "18 probl\u00e8mes r\u00e9solus. 28 minutes m\u00e9diane. 50+ commits sign\u00e9s. Z\u00e9ro r\u00e9gressions.",
+		stat: "18 probl\u00e8mes r\u00e9solus. 28 minutes m\u00e9diane. Nouvelle feature en 38 min. 50+ commits sign\u00e9s. Z\u00e9ro r\u00e9gressions.",
 		caption:
 			"Des r\u00e9sultats r\u00e9els, sur une vraie base de code. Pas de d\u00e9mo. Pas de sandbox. De la production.",
 	},
