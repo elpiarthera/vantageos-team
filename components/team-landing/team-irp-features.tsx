@@ -88,6 +88,7 @@ const metrics = {
 		{ value: "3 min", label: "Fastest fix" },
 		{ value: "6 min", label: "First response time" },
 		{ value: "4 days \u2192 28 min", label: "207x faster" },
+		{ value: "38 min", label: "New feature delivery" },
 	],
 	fr: [
 		{ value: "18", label: "Issues r\u00e9solues en 5 jours" },
@@ -95,6 +96,7 @@ const metrics = {
 		{ value: "3 min", label: "Fix le plus rapide" },
 		{ value: "6 min", label: "Premi\u00e8re r\u00e9ponse" },
 		{ value: "4 jours \u2192 28 min", label: "207x plus rapide" },
+		{ value: "38 min", label: "Livraison de feature" },
 	],
 };
 
@@ -119,6 +121,14 @@ const content = {
 				description:
 					"Median 28 minutes from issue to deployed fix. Fastest: 3 minutes. First response: 6 minutes. Before us: 4 days average.",
 				stat: "28 min",
+			},
+			{
+				key: "feature-delivery",
+				icon: "clock" as const,
+				title: "38-Minute Feature Delivery",
+				description:
+					"Voice Cloning feature complete — backend, UI, i18n for 7 languages, QA — in 38 minutes. Initial estimate: 10-14 hours. Reality: 15-22x faster.",
+				stat: "38 min",
 			},
 			{
 				key: "kb",
@@ -158,6 +168,14 @@ const content = {
 				description:
 					"M\u00e9diane de 28 minutes de l\u2019issue au fix d\u00e9ploy\u00e9. Plus rapide\u00a0: 3 minutes. Premi\u00e8re r\u00e9ponse\u00a0: 6 minutes. Avant nous\u00a0: 4 jours en moyenne.",
 				stat: "28 min",
+			},
+			{
+				key: "feature-delivery",
+				icon: "clock" as const,
+				title: "Livraison de Feature en 38 Minutes",
+				description:
+					"Feature Voice Cloning compl\u00e8te \u2014 backend, UI, i18n 7 langues, QA \u2014 en 38 minutes. Estimation initiale\u00a0: 10-14 heures. R\u00e9alit\u00e9\u00a0: 15-22x plus rapide.",
+				stat: "38 min",
 			},
 			{
 				key: "kb",
@@ -224,7 +242,7 @@ export function TeamIrpFeatures({ locale }: TeamIrpFeaturesProps) {
 					transition={{ duration: 0.45, delay: 0.1 }}
 				>
 					<div className="rounded-2xl border border-border bg-card/60 backdrop-blur-sm px-6 py-6">
-						<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
+						<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
 							{m.map((item) => (
 								<div
 									key={item.label}
