@@ -32,7 +32,11 @@ const content = {
       },
       {
         heading: 'Data We Collect',
-        body: 'We only process data you explicitly share with us through email, Telegram, or file sharing. This may include: your name, email address, business documents, and task instructions. We do not use cookies for tracking. We do not collect data passively.',
+        body: 'We process data you explicitly share with us through email, Telegram, or file sharing. This may include: your name, email address, business documents, and task instructions. We also use Plausible Analytics to understand how visitors use our site \u2014 Plausible is a privacy-first analytics tool that does not use cookies, does not collect personal data, does not track visitors across sites, and hosts all data in the EU. No IP addresses are stored.',
+      },
+      {
+        heading: 'Analytics (Plausible)',
+        body: 'We use Plausible Analytics (plausible.io) to measure site usage. Plausible is GDPR-compliant by design: no cookies, no personal data, no cross-site tracking, no IP addresses stored. Data is hosted in the EU (Germany). You can learn more at plausible.io/privacy-focused-web-analytics.',
       },
       {
         heading: 'How We Use Your Data',
@@ -74,7 +78,11 @@ const content = {
       },
       {
         heading: 'Donn\u00e9es collect\u00e9es',
-        body: 'Nous ne traitons que les donn\u00e9es que vous partagez explicitement avec nous par email, Telegram ou partage de fichiers. Cela peut inclure\u00a0: votre nom, adresse email, documents professionnels et instructions de t\u00e2ches. Nous n\u2019utilisons pas de cookies de tra\u00e7age. Nous ne collectons aucune donn\u00e9e de mani\u00e8re passive.',
+        body: 'Nous traitons les donn\u00e9es que vous nous partagez explicitement par email, Telegram ou partage de fichiers. Cela peut inclure\u00a0: votre nom, adresse email, documents professionnels et instructions de t\u00e2ches. Nous utilisons \u00e9galement Plausible Analytics pour comprendre l\u2019usage de notre site \u2014 Plausible est un outil d\u2019analyse respectueux de la vie priv\u00e9e qui n\u2019utilise pas de cookies, ne collecte aucune donn\u00e9e personnelle, ne suit pas les visiteurs entre les sites, et h\u00e9berge toutes les donn\u00e9es dans l\u2019UE. Aucune adresse IP n\u2019est stock\u00e9e.',
+      },
+      {
+        heading: 'Analyses (Plausible)',
+        body: 'Nous utilisons Plausible Analytics (plausible.io) pour mesurer l\u2019usage du site. Plausible est conforme RGPD par conception\u00a0: pas de cookies, pas de donn\u00e9es personnelles, pas de tracking entre sites, aucune adresse IP stock\u00e9e. Les donn\u00e9es sont h\u00e9berg\u00e9es dans l\u2019UE (Allemagne). Plus d\u2019infos\u00a0: plausible.io/privacy-focused-web-analytics.',
       },
       {
         heading: 'Utilisation de vos donn\u00e9es',
