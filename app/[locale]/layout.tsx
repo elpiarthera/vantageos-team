@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
@@ -149,6 +150,12 @@ export default async function LocaleLayout({ children, params }: Props) {
 						{children}
 					</NextIntlClientProvider>
 				</ThemeProvider>
+				<Script
+					defer
+					data-domain="vantageteam.dev"
+					src="https://plausible.io/js/script.js"
+					strategy="afterInteractive"
+				/>
 			</body>
 		</html>
 	);
