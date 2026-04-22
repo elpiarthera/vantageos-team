@@ -134,8 +134,10 @@ const structuredData = {
       '@context': 'https://schema.org',
       '@type': 'Review',
       itemReviewed: {
-        '@type': 'Service',
+        '@type': 'Organization',
+        '@id': `${baseUrl}/#organization`,
         name: 'VantageTeam',
+        url: baseUrl,
       },
       author: {
         '@type': 'Person',
@@ -281,8 +283,10 @@ const structuredData = {
       '@context': 'https://schema.org',
       '@type': 'Review',
       itemReviewed: {
-        '@type': 'Service',
+        '@type': 'Organization',
+        '@id': `${baseUrl}/#organization`,
         name: 'VantageTeam',
+        url: baseUrl,
       },
       author: {
         '@type': 'Person',
