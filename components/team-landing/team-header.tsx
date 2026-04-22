@@ -129,10 +129,13 @@ const headerContent = {
 	en: {
 		cta: "Book a Call",
 		langLabel: "FR",
+		scheduleAriaLabel: "Book a call with VantageTeam (opens in new tab)",
 	},
 	fr: {
 		cta: "R\u00e9server un appel",
 		langLabel: "EN",
+		scheduleAriaLabel:
+			"R\u00e9server un appel avec VantageTeam (ouvre dans un nouvel onglet)",
 	},
 };
 
@@ -273,7 +276,10 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 							{t.langLabel}
 						</Button>
 						<a
-							href="mailto:laurent@perello.fr"
+							href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label={t.scheduleAriaLabel}
 							className={buttonVariants({ size: "sm" })}
 						>
 							{t.cta}
@@ -358,7 +364,10 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 									{t.langLabel}
 								</Button>
 								<a
-									href="mailto:laurent@perello.fr"
+									href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={t.scheduleAriaLabel}
 									onClick={() => setIsMobileMenuOpen(false)}
 									className={cn(
 										buttonVariants(),
