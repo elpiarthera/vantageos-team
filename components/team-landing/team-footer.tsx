@@ -37,6 +37,8 @@ const content = {
 			{ label: "Legal Notice", href: "/en/legal" },
 		],
 		contact: "Contact",
+		bookACall: "Book a call",
+		bookACallAriaLabel: "Book a call with VantageTeam (opens in new tab)",
 		switchLabel: "Fran\u00e7ais",
 		lastUpdated: "Last updated: March 2026",
 	},
@@ -55,6 +57,9 @@ const content = {
 			{ label: "Mentions l\u00e9gales", href: "/fr/legal" },
 		],
 		contact: "Contact",
+		bookACall: "R\u00e9server un appel",
+		bookACallAriaLabel:
+			"R\u00e9server un appel avec VantageTeam (ouvre dans un nouvel onglet)",
 		switchLabel: "English",
 		lastUpdated: "Derni\u00e8re mise \u00e0 jour\u00a0: mars 2026",
 	},
@@ -117,13 +122,13 @@ export function TeamFooter({ locale, onLocaleChange }: TeamFooterProps) {
 						</p>
 						<p className="text-muted-foreground">
 							<a
-								href="https://t.me/laurentperello"
+								href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
 								target="_blank"
 								rel="noopener noreferrer"
-								aria-label="@laurentperello on Telegram (opens in new tab)"
+								aria-label={t.bookACallAriaLabel}
 								className="hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
 							>
-								@laurentperello
+								{t.bookACall}
 								<span className="sr-only"> (opens in new tab)</span>
 							</a>
 						</p>

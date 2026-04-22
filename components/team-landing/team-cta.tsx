@@ -52,12 +52,19 @@ const content = {
 		subtitle: "Start with a free PRD consultation. No commitment required.",
 		cta: "Book a Call",
 		contact: "Or email directly:",
+		scheduleLabel: "Or schedule a call:",
+		scheduleAction: "Book a slot",
+		scheduleAriaLabel: "Book a call with VantageTeam (opens in new tab)",
 	},
 	fr: {
 		title: "Pr\u00eat \u00e0 construire\u00a0?",
 		subtitle: "Commencez par une consultation PRD gratuite. Sans engagement.",
 		cta: "R\u00e9server un appel",
 		contact: "Ou contactez directement\u00a0:",
+		scheduleLabel: "Ou planifier un \u00e9change\u00a0:",
+		scheduleAction: "R\u00e9server un cr\u00e9neau",
+		scheduleAriaLabel:
+			"R\u00e9server un appel avec VantageTeam (ouvre dans un nouvel onglet)",
 	},
 };
 
@@ -111,14 +118,15 @@ export function TeamCta({ locale }: TeamCtaProps) {
 						</a>
 					</p>
 					<p className="mt-2 text-sm text-muted-foreground">
-						Telegram:{" "}
+						{t.scheduleLabel}{" "}
 						<a
-							href="https://t.me/laurentperello"
+							href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
 							target="_blank"
 							rel="noopener noreferrer"
+							aria-label={t.scheduleAriaLabel}
 							className="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
 						>
-							@laurentperello
+							{t.scheduleAction}
 						</a>
 					</p>
 				</motion.div>
