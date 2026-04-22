@@ -98,7 +98,10 @@ export function TeamCta({ locale }: TeamCtaProps) {
 					transition={{ duration: 0.5, delay: 0.1 }}
 				>
 					<a
-						href="mailto:laurent@perello.fr"
+						href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={t.scheduleAriaLabel}
 						className={cn(
 							buttonVariants({ size: "lg" }),
 							"min-h-[44px] text-base px-10 group glow-on-hover",
