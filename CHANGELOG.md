@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- feat(seo): IndexNow protocol — key file, helper, API route, docs (mission k575k6wxqnfppf0wkknmc6dgjn85a9r7). Adds `public/2ee69d41-b7ae-47b4-8c75-eeccdf6d3047.txt` (proof-of-ownership), `lib/indexnow.ts` (server-only `notifyIndexNow(urls)` helper), `app/api/indexnow/route.ts` (POST endpoint gated by `x-internal-secret`), `.env.example` (documents `INDEXNOW_API_KEY`, `INTERNAL_API_SECRET`, `NEXT_PUBLIC_SITE_URL`), and `docs/INDEXNOW.md`. Vercel env vars `INDEXNOW_API_KEY` + `INTERNAL_API_SECRET` still need to be set in the dashboard post-merge; no publish pipeline auto-triggers IndexNow yet — the helper is ready as a hook point.
+
 ### Fixed
 
 - fix(cta): primary "Book a Call" button now routes to calendar link (was mailto, inconsistent with icon+label)
