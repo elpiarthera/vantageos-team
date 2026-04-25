@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__vantage-peers__send_message",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /root/coding/vantageos-team/.claude/hooks/enforce-no-task-in-message.py",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
