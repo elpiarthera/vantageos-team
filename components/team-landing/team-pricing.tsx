@@ -33,8 +33,7 @@ type Category = "build" | "dev" | "nondev";
 interface BuildTier {
 	key: string;
 	name: Record<Locale, string>;
-	earlyBirdPrice: string;
-	normalPrice: string;
+	price: string;
 	duration: Record<Locale, string>;
 	coreFeatures: Record<Locale, string>;
 	aiAgents: Record<Locale, string>;
@@ -50,8 +49,7 @@ const buildTiers: BuildTier[] = [
 	{
 		key: "t1",
 		name: { en: "T1 Simple App", fr: "T1 App Simple" },
-		earlyBirdPrice: "$2,990",
-		normalPrice: "$4,999",
+		price: "$2,990",
 		duration: { en: "4 weeks", fr: "4 semaines" },
 		coreFeatures: { en: "1 core feature", fr: "1 fonctionnalité principale" },
 		aiAgents: { en: "Gateway included", fr: "Gateway inclus" },
@@ -63,8 +61,7 @@ const buildTiers: BuildTier[] = [
 	{
 		key: "t2",
 		name: { en: "T2 Standard App", fr: "T2 App Standard" },
-		earlyBirdPrice: "$4,990",
-		normalPrice: "$7,999",
+		price: "$4,990",
 		duration: { en: "6 weeks", fr: "6 semaines" },
 		coreFeatures: {
 			en: "2-3 core features",
@@ -80,8 +77,7 @@ const buildTiers: BuildTier[] = [
 	{
 		key: "t3",
 		name: { en: "T3 Complex App", fr: "T3 App Complexe" },
-		earlyBirdPrice: "$9,990",
-		normalPrice: "$17,990",
+		price: "$9,990",
 		duration: { en: "8 weeks", fr: "8 semaines" },
 		coreFeatures: { en: "Full app", fr: "App complète" },
 		aiAgents: {
@@ -96,8 +92,7 @@ const buildTiers: BuildTier[] = [
 	{
 		key: "ondemand",
 		name: { en: "On-demand", fr: "Sur mesure" },
-		earlyBirdPrice: "From $19,990",
-		normalPrice: "Custom quote",
+		price: "From $19,990",
 		duration: { en: "Custom", fr: "Sur devis" },
 		coreFeatures: { en: "Custom", fr: "Sur mesure" },
 		aiAgents: { en: "Custom", fr: "Sur mesure" },
@@ -113,14 +108,14 @@ const buildTiers: BuildTier[] = [
 interface TeamTier {
 	key: string;
 	name: Record<Locale, string>;
-	earlyBirdPrice: string;
-	normalPrice: string;
+	price: string;
 	agentHours: Record<Locale, string>;
 	availability: Record<Locale, string>;
 	sla: Record<Locale, string>;
 	weeklyCalls: Record<Locale, string>;
 	e2e: Record<Locale, string>;
 	rollover: Record<Locale, string>;
+	customAgents?: Record<Locale, string>;
 	popular?: boolean;
 }
 
@@ -128,9 +123,8 @@ const devTiers: TeamTier[] = [
 	{
 		key: "t1",
 		name: { en: "T1 Starter", fr: "T1 Starter" },
-		earlyBirdPrice: "$990/mo",
-		normalPrice: "$1,490/mo",
-		agentHours: { en: "Up to 100h/mo", fr: "Jusqu'à 100h/mois" },
+		price: "€1,490/mo",
+		agentHours: { en: "50h/mo", fr: "50h/mois" },
 		availability: { en: "Mon-Fri 9-19 CET", fr: "Lun-Ven 9-19 CET" },
 		sla: { en: "4 hour response", fr: "Réponse sous 4h" },
 		weeklyCalls: { en: "1x weekly call", fr: "1 appel hebdo" },
@@ -140,27 +134,33 @@ const devTiers: TeamTier[] = [
 	{
 		key: "t2",
 		name: { en: "T2 Growth", fr: "T2 Growth" },
-		earlyBirdPrice: "$1,790/mo",
-		normalPrice: "$2,990/mo",
-		agentHours: { en: "Up to 200h/mo", fr: "Jusqu'à 200h/mois" },
+		price: "€2,490/mo",
+		agentHours: { en: "100h/mo", fr: "100h/mois" },
 		availability: { en: "Mon-Fri 9-19 CET", fr: "Lun-Ven 9-19 CET" },
 		sla: { en: "2 hour response", fr: "Réponse sous 2h" },
 		weeklyCalls: { en: "1x weekly call", fr: "1 appel hebdo" },
 		e2e: { en: "Included", fr: "Inclus" },
 		rollover: { en: "Up to 20h rollover", fr: "Report jusqu'à 20h" },
+		customAgents: {
+			en: "Custom industry agents on request",
+			fr: "Agents métiers personnalisés sur demande",
+		},
 		popular: true,
 	},
 	{
 		key: "t3",
 		name: { en: "T3 Scale", fr: "T3 Scale" },
-		earlyBirdPrice: "$2,990/mo",
-		normalPrice: "$4,990/mo",
-		agentHours: { en: "Up to 400h/mo", fr: "Jusqu'à 400h/mois" },
+		price: "€4,490/mo",
+		agentHours: { en: "200h/mo", fr: "200h/mois" },
 		availability: { en: "24/7", fr: "24/7" },
 		sla: { en: "10 min response", fr: "Réponse sous 10 min" },
 		weeklyCalls: { en: "2x weekly calls", fr: "2 appels hebdo" },
 		e2e: { en: "Included + monitoring", fr: "Inclus + monitoring" },
 		rollover: { en: "Up to 40h rollover", fr: "Report jusqu'à 40h" },
+		customAgents: {
+			en: "Custom industry agents included",
+			fr: "Agents métiers personnalisés inclus",
+		},
 	},
 ];
 
@@ -169,9 +169,8 @@ const nonDevTiers: TeamTier[] = [
 	{
 		key: "t1",
 		name: { en: "T1 Starter", fr: "T1 Starter" },
-		earlyBirdPrice: "$990/mo",
-		normalPrice: "$1,490/mo",
-		agentHours: { en: "Up to 100h/mo", fr: "Jusqu'à 100h/mois" },
+		price: "€1,490/mo",
+		agentHours: { en: "50h/mo", fr: "50h/mois" },
 		availability: { en: "Mon-Fri", fr: "Lun-Ven" },
 		sla: { en: "Standard", fr: "Standard" },
 		weeklyCalls: { en: "1x weekly call", fr: "1 appel hebdo" },
@@ -181,27 +180,33 @@ const nonDevTiers: TeamTier[] = [
 	{
 		key: "t2",
 		name: { en: "T2 Growth", fr: "T2 Growth" },
-		earlyBirdPrice: "$1,490/mo",
-		normalPrice: "$2,490/mo",
-		agentHours: { en: "Up to 200h/mo", fr: "Jusqu'à 200h/mois" },
+		price: "€2,490/mo",
+		agentHours: { en: "100h/mo", fr: "100h/mois" },
 		availability: { en: "Mon-Fri", fr: "Lun-Ven" },
 		sla: { en: "Priority", fr: "Prioritaire" },
 		weeklyCalls: { en: "1x weekly call", fr: "1 appel hebdo" },
 		e2e: { en: "Included", fr: "Inclus" },
 		rollover: { en: "Up to 20h rollover", fr: "Report jusqu'à 20h" },
+		customAgents: {
+			en: "Custom industry agents on request",
+			fr: "Agents métiers personnalisés sur demande",
+		},
 		popular: true,
 	},
 	{
 		key: "t3",
 		name: { en: "T3 Scale", fr: "T3 Scale" },
-		earlyBirdPrice: "$2,490/mo",
-		normalPrice: "$3,990/mo",
-		agentHours: { en: "Up to 400h/mo", fr: "Jusqu'à 400h/mois" },
+		price: "€4,490/mo",
+		agentHours: { en: "200h/mo", fr: "200h/mois" },
 		availability: { en: "24/7", fr: "24/7" },
 		sla: { en: "Dedicated SLA", fr: "SLA dédié" },
 		weeklyCalls: { en: "2x weekly calls", fr: "2 appels hebdo" },
 		e2e: { en: "Included + monitoring", fr: "Inclus + monitoring" },
 		rollover: { en: "Up to 40h rollover", fr: "Report jusqu'à 40h" },
+		customAgents: {
+			en: "Custom industry agents included",
+			fr: "Agents métiers personnalisés inclus",
+		},
 	},
 ];
 
@@ -216,18 +221,15 @@ const content = {
 			dev: "Agent Dev Team",
 			nondev: "Agent Non-Dev Team",
 		},
-		earlyBird: "Early bird — 5 seats left",
-		normalPrice: "Normal price",
 		popular: "Popular",
 		getStarted: "Get Started",
 		contactUs: "Contact Us",
-		setupFee: "Setup fee",
-		setupFeeAmount: "$490 one-time",
+		setupFee: "Onboarding fee",
+		setupFeeAmount: "€990 one-time",
+		minimumEngagement: "3-month minimum",
 		perMonth: "per month",
 		exclVat: "All prices excl. VAT.",
-		noCommitment: "No long-term commitment. Cancel anytime.",
-		earlyBirdNote:
-			"Early bird pricing — limited to 5 founding clients per tier.",
+		noCommitment: "3-month minimum engagement.",
 		buildLabels: {
 			duration: "Duration",
 			coreFeatures: "Core features",
@@ -244,8 +246,12 @@ const content = {
 			weeklyCalls: "Weekly calls",
 			e2e: "E2E testing",
 			rollover: "Hour rollover",
+			customAgents: "Custom industry agents",
 		},
 		nonDevTeams: "Teams: Marketing, SEO/GEO, Content, Sales, Email, Operations",
+		customAgentsDesc: {
+			en: "We build the custom industry agents you need (real estate, legal, healthcare, or any specific sector not covered by our standard catalog).",
+		},
 	},
 	fr: {
 		sectionTitle: "Tarifs simples et transparents",
@@ -256,18 +262,15 @@ const content = {
 			dev: "Equipe dev agents",
 			nondev: "Equipe non-dev agents",
 		},
-		earlyBird: "Early bird — 5 places restantes",
-		normalPrice: "Prix normal",
 		popular: "Populaire",
 		getStarted: "Commencer",
 		contactUs: "Contactez-nous",
-		setupFee: "Frais d'installation",
-		setupFeeAmount: "490$ unique",
+		setupFee: "Frais d'onboarding",
+		setupFeeAmount: "990 € unique",
+		minimumEngagement: "Engagement minimum 3 mois",
 		perMonth: "par mois",
 		exclVat: "Tous les prix sont hors taxes.",
-		noCommitment: "Sans engagement long terme. Résiliable à tout moment.",
-		earlyBirdNote:
-			"Tarif early bird — limité à 5 clients fondateurs par niveau.",
+		noCommitment: "Engagement minimum 3 mois.",
 		buildLabels: {
 			duration: "Durée",
 			coreFeatures: "Fonctionnalités principales",
@@ -284,9 +287,13 @@ const content = {
 			weeklyCalls: "Appels hebdo",
 			e2e: "Tests E2E",
 			rollover: "Report des heures",
+			customAgents: "Agents métiers personnalisés",
 		},
 		nonDevTeams:
 			"Équipes : Marketing, SEO/GEO, Contenu, Ventes, Email, Opérations",
+		customAgentsDesc: {
+			en: "Nous construisons les agents métiers personnalisés dont vous avez besoin (immobilier, juridique, santé, ou tout secteur spécifique non couvert par notre catalogue standard).",
+		},
 	},
 };
 
@@ -316,9 +323,7 @@ function BuildTierCard({
 			>
 				{tier.popular && (
 					<div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-						<Badge
-							className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground"
-						>
+						<Badge className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground">
 							{t.popular}
 						</Badge>
 					</div>
@@ -327,29 +332,14 @@ function BuildTierCard({
 				<CardHeader className="pb-2 pt-6">
 					<h3 className="text-base font-semibold">{tier.name[locale]}</h3>
 
-					{/* Early bird price */}
 					<div className="mt-2 space-y-1">
-						<div className="flex items-center gap-2 flex-wrap">
-							<span className="text-2xl font-bold text-foreground">
-								{tier.onDemand
-									? locale === "fr"
-										? "Dès $19,990"
-										: tier.earlyBirdPrice
-									: tier.earlyBirdPrice}
-							</span>
-							<Badge
-								className="shrink-0 text-[10px] px-2 py-0.5 bg-accent/20 text-accent-foreground dark:bg-accent/30"
-							>
-								{t.earlyBird}
-							</Badge>
-						</div>
-						<p className="text-xs text-muted-foreground line-through">
+						<span className="text-2xl font-bold text-foreground">
 							{tier.onDemand
 								? locale === "fr"
-									? "Devis sur mesure"
-									: tier.normalPrice
-								: `${t.normalPrice}: ${tier.normalPrice}`}
-						</p>
+									? "Dès $19,990"
+									: tier.price
+								: tier.price}
+						</span>
 					</div>
 				</CardHeader>
 
@@ -386,7 +376,12 @@ function BuildTierCard({
 						/>
 					</ul>
 
-					<a href="mailto:laurent@perello.fr" className="block mt-auto">
+					<a
+						href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="block mt-auto"
+					>
 						<Button
 							variant={tier.popular ? "default" : "outline"}
 							size="lg"
@@ -427,9 +422,7 @@ function TeamTierCard({
 			>
 				{tier.popular && (
 					<div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-						<Badge
-							className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground"
-						>
+						<Badge className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground">
 							{t.popular}
 						</Badge>
 					</div>
@@ -439,19 +432,9 @@ function TeamTierCard({
 					<h3 className="text-base font-semibold">{tier.name[locale]}</h3>
 
 					<div className="mt-2 space-y-1">
-						<div className="flex items-center gap-2 flex-wrap">
-							<span className="text-2xl font-bold text-foreground">
-								{tier.earlyBirdPrice}
-							</span>
-							<Badge
-								className="shrink-0 text-[10px] px-2 py-0.5 bg-accent/20 text-accent-foreground dark:bg-accent/30"
-							>
-								{t.earlyBird}
-							</Badge>
-						</div>
-						<p className="text-xs text-muted-foreground line-through">
-							{`${t.normalPrice}: ${tier.normalPrice}`}
-						</p>
+						<span className="text-2xl font-bold text-foreground">
+							{tier.price}
+						</span>
 					</div>
 				</CardHeader>
 
@@ -475,6 +458,12 @@ function TeamTierCard({
 							label={t.teamLabels.rollover}
 							value={tier.rollover[locale]}
 						/>
+						{tier.customAgents && (
+							<FeatureRow
+								label={t.teamLabels.customAgents}
+								value={tier.customAgents[locale]}
+							/>
+						)}
 					</ul>
 
 					<div className="text-xs text-muted-foreground border-t border-border pt-3">
@@ -482,9 +471,16 @@ function TeamTierCard({
 						<span className="font-medium text-foreground">
 							{t.setupFeeAmount}
 						</span>
+						{" · "}
+						<span>{t.minimumEngagement}</span>
 					</div>
 
-					<a href="mailto:laurent@perello.fr" className="block">
+					<a
+						href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="block"
+					>
 						<Button
 							variant={tier.popular ? "default" : "outline"}
 							size="lg"
@@ -570,16 +566,6 @@ export function TeamPricing({ locale }: TeamPricingProps) {
 						))}
 					</div>
 				</motion.div>
-
-				{/* Early bird notice */}
-				<motion.p
-					className="text-center text-xs text-muted-foreground mb-8"
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					viewport={{ once: true }}
-				>
-					{t.earlyBirdNote}
-				</motion.p>
 
 				{/* Build Packages grid */}
 				{category === "build" && (

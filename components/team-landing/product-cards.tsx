@@ -104,7 +104,7 @@ const content = {
 				title: "Agent Dev Team",
 				description:
 					"Bug fixes, features, code review, testing \u2014 all handled by AI agents.",
-				price: "From $990/mo",
+				price: "From \u20ac1,490/mo",
 				cta: "Learn More",
 				href: "/dev",
 				comingSoon: true,
@@ -115,7 +115,7 @@ const content = {
 				title: "Agent Teams",
 				description:
 					"Marketing, SEO, content, sales \u2014 specialized agent teams for non-dev needs.",
-				price: "From $990/mo",
+				price: "From \u20ac1,490/mo",
 				cta: "Learn More",
 				href: "/teams",
 				comingSoon: true,
@@ -142,7 +142,7 @@ const content = {
 				title: "\u00c9quipe Dev Agent",
 				description:
 					"Corrections de bugs, nouvelles fonctionnalit\u00e9s, revue de code, tests \u2014 tout est g\u00e9r\u00e9 par des agents IA.",
-				price: "\u00c0 partir de 990\u00a0$/mois",
+				price: "\u00c0 partir de 1\u202f490\u00a0\u20ac/mois",
 				cta: "En savoir plus",
 				href: "/dev",
 				comingSoon: true,
@@ -153,7 +153,7 @@ const content = {
 				title: "\u00c9quipes Agent",
 				description:
 					"Marketing, SEO, contenu, ventes \u2014 des \u00e9quipes d\u2019agents sp\u00e9cialis\u00e9es pour vos besoins non-dev.",
-				price: "\u00c0 partir de 990\u00a0$/mois",
+				price: "\u00c0 partir de 1\u202f490\u00a0\u20ac/mois",
 				cta: "En savoir plus",
 				href: "/teams",
 				comingSoon: true,

@@ -91,7 +91,7 @@ function ArrowRightIcon({ className }: { className?: string }) {
 const content = {
 	en: {
 		hero: {
-			badge: "Agent Dev Team — Early bird pricing",
+			badge: "Agent Dev Team",
 			headline: "Your AI Dev Team",
 			subheadline:
 				"Bug fixes, features, code review, testing, deployment — all handled by specialized AI agents, supervised by senior architects. Available when you need them, at a fraction of freelance rates.",
@@ -167,10 +167,7 @@ const content = {
 		pricing: {
 			headline: "Predictable pricing. No surprises.",
 			setupNote:
-				"Setup fee (all tiers): $490 — Onboarding includes: codebase review, CI/CD setup, GitHub webhook integration.",
-			earlyBird: "Early bird",
-			earlyBirdNote: "5 seats left",
-			normal: "Normal price",
+				"Onboarding fee (all tiers): €990 — Includes: codebase review, CI/CD setup, GitHub webhook integration.",
 			popular: "Popular",
 			getStarted: "Get Started",
 			commitment:
@@ -179,9 +176,8 @@ const content = {
 				{
 					key: "t1",
 					name: "T1 — Starter",
-					earlyBirdPrice: "$990/mo",
-					normalPrice: "$1,490/mo",
-					agentHours: "Up to 100h",
+					price: "€1,490/mo",
+					agentHours: "50h/mo",
 					availability: "Mon-Fri, 9h-19h CET",
 					slaResponse: "4 hours",
 					slaResolution: "48 hours",
@@ -193,9 +189,8 @@ const content = {
 				{
 					key: "t2",
 					name: "T2 — Growth",
-					earlyBirdPrice: "$1,790/mo",
-					normalPrice: "$2,990/mo",
-					agentHours: "Up to 200h",
+					price: "€2,490/mo",
+					agentHours: "100h/mo",
 					availability: "Mon-Fri, 9h-19h CET",
 					slaResponse: "2 hours",
 					slaResolution: "24 hours",
@@ -207,9 +202,8 @@ const content = {
 				{
 					key: "t3",
 					name: "T3 — Scale",
-					earlyBirdPrice: "$2,990/mo",
-					normalPrice: "$4,990/mo",
-					agentHours: "Up to 400h",
+					price: "€4,490/mo",
+					agentHours: "200h/mo",
 					availability: "24/7",
 					slaResponse: "10 minutes",
 					slaResolution: "8 hours",
@@ -360,13 +354,13 @@ const content = {
 			rateHeader: "Effective Rate",
 			rows: [
 				{
-					service: "VantageTeam T1 (early bird)",
-					rate: "$9.90/h",
+					service: "VantageTeam T1",
+					rate: "€29.80/h",
 					highlight: true,
 				},
 				{
-					service: "VantageTeam T3 (early bird)",
-					rate: "$7.475/h",
+					service: "VantageTeam T3",
+					rate: "€22.45/h",
 					highlight: true,
 				},
 				{
@@ -448,7 +442,7 @@ const content = {
 	},
 	fr: {
 		hero: {
-			badge: "Équipe Dev Agents — Tarifs early bird",
+			badge: "Équipe Dev Agents",
 			headline: "Votre Équipe de Dev IA",
 			subheadline:
 				"Corrections de bugs, fonctionnalités, revue de code, tests, déploiement — tout est géré par des agents IA spécialisés, supervisés par des architectes seniors. Disponibles quand vous en avez besoin, à une fraction du coût d'un freelance.",
@@ -526,10 +520,7 @@ const content = {
 		pricing: {
 			headline: "Tarification prévisible. Zéro surprise.",
 			setupNote:
-				"Frais d'installation (tous les plans) : 490 $ — L'onboarding comprend : revue du codebase, configuration CI/CD, intégration webhook GitHub.",
-			earlyBird: "Early bird",
-			earlyBirdNote: "5 places restantes",
-			normal: "Prix normal",
+				"Frais d'onboarding (tous les plans) : 990 € — Comprend : revue du codebase, configuration CI/CD, intégration webhook GitHub.",
 			popular: "Populaire",
 			getStarted: "Commencer",
 			commitment:
@@ -538,13 +529,12 @@ const content = {
 				{
 					key: "t1",
 					name: "T1 — Starter",
-					earlyBirdPrice: "990 $/mois",
-					normalPrice: "1 490 $/mois",
-					agentHours: "Jusqu'à 100 h",
+					price: "1 490 €/mois",
+					agentHours: "50 h/mois",
 					availability: "Lun-Ven, 9 h-19 h CET",
 					slaResponse: "4 heures",
 					slaResolution: "48 heures",
-					weeklyCalls: "1x (1 h max)",
+					weeklyCalls: "1 appel hebdo",
 					e2e: "Sur demande",
 					rollover: "Non",
 					popular: false,
@@ -552,13 +542,12 @@ const content = {
 				{
 					key: "t2",
 					name: "T2 — Growth",
-					earlyBirdPrice: "1 790 $/mois",
-					normalPrice: "2 990 $/mois",
-					agentHours: "Jusqu'à 200 h",
+					price: "2 490 €/mois",
+					agentHours: "100 h/mois",
 					availability: "Lun-Ven, 9 h-19 h CET",
 					slaResponse: "2 heures",
 					slaResolution: "24 heures",
-					weeklyCalls: "1x (1 h max)",
+					weeklyCalls: "1 appel hebdo",
 					e2e: "Inclus",
 					rollover: "Jusqu'à 20 h",
 					popular: true,
@@ -566,13 +555,12 @@ const content = {
 				{
 					key: "t3",
 					name: "T3 — Scale",
-					earlyBirdPrice: "2 990 $/mois",
-					normalPrice: "4 990 $/mois",
-					agentHours: "Jusqu'à 400 h",
+					price: "4 490 €/mois",
+					agentHours: "200 h/mois",
 					availability: "24/7",
 					slaResponse: "10 minutes",
 					slaResolution: "8 heures",
-					weeklyCalls: "2x (1 h max)",
+					weeklyCalls: "2 appels hebdo",
 					e2e: "Inclus + monitoring",
 					rollover: "Jusqu'à 40 h",
 					popular: false,
@@ -720,12 +708,12 @@ const content = {
 			rateHeader: "Taux effectif",
 			rows: [
 				{
-					service: "VantageTeam T1 (early bird)",
+					service: "VantageTeam T1",
 					rate: "9,90 $/h",
 					highlight: true,
 				},
 				{
-					service: "VantageTeam T3 (early bird)",
+					service: "VantageTeam T3",
 					rate: "7,475 $/h",
 					highlight: true,
 				},
@@ -889,7 +877,11 @@ function HeroSection({ t }: { t: ContentType }) {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.3 }}
 				>
-					<a href="mailto:laurent@perello.fr">
+					<a
+						href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<Button size="lg" className="min-h-[48px] text-base px-8 group">
 							{t.hero.cta}
 							<ArrowRightIcon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
@@ -959,9 +951,7 @@ function HowItWorksSection({ t }: { t: ContentType }) {
 							viewport={{ once: true }}
 							transition={{ duration: 0.4, delay: i * 0.08 }}
 						>
-							<div
-								className="flex-shrink-0 size-10 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-primary-foreground"
-							>
+							<div className="flex-shrink-0 size-10 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-primary-foreground">
 								{step.num}
 							</div>
 							<div className="pt-1.5">
@@ -1006,35 +996,22 @@ function PricingSection({ t }: { t: ContentType }) {
 							<Card
 								className={cn(
 									"relative h-full flex flex-col",
-									tier.popular &&
-										"ring-2 ring-primary shadow-lg",
+									tier.popular && "ring-2 ring-primary shadow-lg",
 								)}
 							>
 								{tier.popular && (
 									<div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-										<Badge
-											className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground"
-										>
+										<Badge className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground">
 											{t.pricing.popular}
 										</Badge>
 									</div>
 								)}
 								<CardHeader className="pb-2 pt-6">
 									<h3 className="text-base font-semibold">{tier.name}</h3>
-									<div className="mt-2 space-y-1">
-										<div className="flex items-center gap-2 flex-wrap">
-											<span className="text-2xl font-bold text-foreground">
-												{tier.earlyBirdPrice}
-											</span>
-											<Badge
-												className="shrink-0 text-[10px] px-2 py-0.5 bg-accent/20 text-accent-foreground dark:bg-accent/30"
-											>
-												{t.pricing.earlyBird} — {t.pricing.earlyBirdNote}
-											</Badge>
-										</div>
-										<p className="text-xs text-muted-foreground line-through">
-											{t.pricing.normal}: {tier.normalPrice}
-										</p>
+									<div className="mt-2">
+										<span className="text-2xl font-bold text-foreground">
+											{tier.price}
+										</span>
 									</div>
 								</CardHeader>
 								<CardContent className="flex-1 flex flex-col gap-4 pt-2">
@@ -1061,7 +1038,12 @@ function PricingSection({ t }: { t: ContentType }) {
 											</li>
 										))}
 									</ul>
-									<a href="mailto:laurent@perello.fr" className="block">
+									<a
+										href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="block"
+									>
 										<Button
 											variant={tier.popular ? "default" : "outline"}
 											size="lg"
@@ -1149,7 +1131,6 @@ function CaseStudySection({ t }: { t: ContentType }) {
 					transition={{ duration: 0.5 }}
 				>
 					<Card className="border-2 border-primary/30">
-
 						<CardContent className="pt-8 pb-8">
 							<h2 className="text-2xl sm:text-3xl font-bold mb-4">
 								{t.caseStudy.headline}
@@ -1412,7 +1393,11 @@ function CtaSection({ t }: { t: ContentType }) {
 					<p className="text-lg text-muted-foreground mb-8">
 						{t.cta.subheadline}
 					</p>
-					<a href="mailto:laurent@perello.fr">
+					<a
+						href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<Button size="lg" className="min-h-[48px] text-base px-10 group">
 							{t.cta.button}
 							<ArrowRightIcon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />

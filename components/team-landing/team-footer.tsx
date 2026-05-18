@@ -25,7 +25,7 @@ function GlobeIcon({ className }: { className?: string }) {
 
 const content = {
 	en: {
-		tagline: "Your complete AI team. Starting at EUR 490/month.",
+		tagline: "Your complete AI team. Starting at EUR 1,490/month.",
 		copyright: "Perello Consulting / ElPi Corp. All rights reserved.",
 		links: [
 			{ label: "Teams", href: "#teams" },
@@ -44,7 +44,7 @@ const content = {
 	},
 	fr: {
 		tagline:
-			"Votre \u00e9quipe IA compl\u00e8te. \u00c0 partir de 490 EUR/mois.",
+			"Votre \u00e9quipe IA compl\u00e8te. \u00c0 partir de 1\u202f490 EUR/mois.",
 		copyright:
 			"Perello Consulting / ElPi Corp. Tous droits r\u00e9serv\u00e9s.",
 		links: [
@@ -112,14 +112,6 @@ export function TeamFooter({ locale, onLocaleChange }: TeamFooterProps) {
 					{/* Contact */}
 					<div className="text-sm">
 						<p className="font-medium mb-2">{t.contact}</p>
-						<p className="text-muted-foreground">
-							<a
-								href="mailto:laurent@perello.fr"
-								className="hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
-							>
-								laurent@perello.fr
-							</a>
-						</p>
 						<p className="text-muted-foreground">
 							<a
 								href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"

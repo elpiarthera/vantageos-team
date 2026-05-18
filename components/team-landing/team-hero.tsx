@@ -1,36 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 const content = {
 	en: {
-		badge: "Early bird pricing \u2014 Limited spots",
 		headline: "Your vision.",
 		headlineSub: "Built by AI agents.",
 		subheadline:
 			"We build your SaaS app, run your dev team, or handle your marketing \u2014 all powered by AI agents supervised by senior tech.",
 		cta1: "Book a Free Call",
 		cta2: "See Pricing",
+		cta1AriaLabel: "Book a free call with VantageTeam (opens in new tab)",
 		stats: [
 			{ value: "4\u20138 wks", label: "To launch" },
-			{ value: "$2,990", label: "Starting at" },
+			{ value: "\u20ac1,490/mo", label: "Starting at" },
 			{ value: "100%", label: "Your code" },
 			{ value: "25y", label: "Experience" },
 		],
 	},
 	fr: {
-		badge: "Tarif early bird \u2014 Places limit\u00e9es",
 		headline: "Votre vision.",
 		headlineSub: "Construite par des agents IA.",
 		subheadline:
 			"On construit votre app SaaS, on g\u00e8re votre \u00e9quipe dev, ou on s\u2019occupe de votre marketing \u2014 le tout propuls\u00e9 par des agents IA supervis\u00e9s par des seniors tech.",
 		cta1: "R\u00e9server un appel gratuit",
 		cta2: "Voir les tarifs",
+		cta1AriaLabel:
+			"R\u00e9server un appel gratuit avec VantageTeam (ouvre dans un nouvel onglet)",
 		stats: [
 			{ value: "4\u20138 sem.", label: "Pour lancer" },
-			{ value: "2\u202f990\u00a0$", label: "\u00c0 partir de" },
+			{ value: "1\u202f490\u00a0\u20ac/mois", label: "\u00c0 partir de" },
 			{ value: "100%", label: "Votre code" },
 			{ value: "25\u00a0ans", label: "Exp\u00e9rience" },
 		],
@@ -69,20 +69,6 @@ export function TeamHero({ locale }: TeamHeroProps) {
 
 			<div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
 				<div className="text-center max-w-4xl mx-auto">
-					{/* Badge */}
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5 }}
-					>
-						<Badge
-							variant="secondary"
-							className="mb-6 px-5 py-2 text-sm font-medium border border-border"
-						>
-							{t.badge}
-						</Badge>
-					</motion.div>
-
 					{/* Headline */}
 					<motion.h1
 						className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6"
@@ -112,7 +98,12 @@ export function TeamHero({ locale }: TeamHeroProps) {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.3 }}
 					>
-						<a href="mailto:laurent@perello.fr">
+						<a
+							href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label={t.cta1AriaLabel}
+						>
 							<Button
 								size="lg"
 								className="min-h-touch text-base px-8 group glow-on-hover"

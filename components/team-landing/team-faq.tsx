@@ -143,7 +143,7 @@ const faqs: Record<Locale, FaqItem[]> = {
 			category: "Pricing",
 			question: "What are the setup fees?",
 			answer:
-				"One-time fees from EUR 490 to EUR 2,490 depending on your plan. Waived for the first 10 founding clients or when paying 6 months upfront.",
+				"One-time onboarding fee of EUR 990, regardless of plan. No waivers.",
 		},
 		{
 			category: "Pricing",
@@ -321,7 +321,7 @@ const faqs: Record<Locale, FaqItem[]> = {
 			category: "Tarifs",
 			question: "Quels sont les frais de mise en place ?",
 			answer:
-				"Frais uniques de 490 à 2 490 EUR selon votre formule. Offerts pour les 10 premiers clients fondateurs ou en cas de paiement de 6 mois d'avance.",
+				"Frais d'onboarding unique de 990 EUR, quel que soit le plan. Aucune dérogation.",
 		},
 		{
 			category: "Tarifs",

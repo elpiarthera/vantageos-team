@@ -93,7 +93,7 @@ function ArrowRightIcon({ className }: { className?: string }) {
 const content = {
 	en: {
 		// 1. Hero
-		badge: "Early bird pricing \u2014 5 spots per tier",
+		badge: "AI-Powered App Development",
 		heroTitle: "We Build Your App",
 		heroSubtitle:
 			"You always wanted to launch an app but never had the skills, budget, or time. We build it for you \u2014 powered by AI agents, delivered at a fraction of traditional agency cost.",
@@ -167,8 +167,6 @@ const content = {
 
 		// 4. Pricing
 		pricingTitle: "Transparent pricing. No hidden fees.",
-		pricingEarlyBird: "Early bird (5 seats)",
-		pricingNormal: "Normal price",
 		pricingPopular: "Most Popular",
 		pricingCta: "Get Started",
 		pricingContactUs: "Contact Us",
@@ -186,8 +184,7 @@ const content = {
 			{
 				key: "t1",
 				name: "T1 \u2014 Simple App",
-				earlyBird: "$2,990",
-				normal: "$4,999",
+				price: "$2,990",
 				duration: "4 weeks",
 				features: "1 core feature",
 				design: "Template + theme configurator",
@@ -202,8 +199,7 @@ const content = {
 			{
 				key: "t2",
 				name: "T2 \u2014 Standard App",
-				earlyBird: "$4,990",
-				normal: "$7,999",
+				price: "$4,990",
 				duration: "6 weeks",
 				features: "2\u20133 features",
 				design: "Template + modifications",
@@ -218,8 +214,7 @@ const content = {
 			{
 				key: "t3",
 				name: "T3 \u2014 Complex App",
-				earlyBird: "$9,990",
-				normal: "$17,990",
+				price: "$9,990",
 				duration: "8 weeks",
 				features: "Full application",
 				design: "Custom design up to 5 pages",
@@ -234,8 +229,7 @@ const content = {
 			{
 				key: "ondemand",
 				name: "On-Demand",
-				earlyBird: "From $19,990",
-				normal: "Custom quote",
+				price: "From $19,990",
 				duration: "Custom",
 				features: "Custom scope",
 				design: "Full custom design",
@@ -457,12 +451,11 @@ const content = {
 		ctaSubtitle:
 			"Book a free PRD consultation. We\u2019ll scope your project in 30 minutes \u2014 and tell you exactly which tier fits.",
 		ctaButton: "Book a Call",
-		ctaContact: "Or email directly:",
 	},
 
 	fr: {
 		// 1. Hero
-		badge: "Tarif early bird \u2014 5 places par palier",
+		badge: "D\u00e9veloppement d'application propuls\u00e9 par IA",
 		heroTitle: "On Construit Votre App",
 		heroSubtitle:
 			"Vous avez toujours voulu lancer une application, mais vous n\u2019aviez ni les comp\u00e9tences, ni le budget, ni le temps. On la construit pour vous \u2014 propuls\u00e9e par des agents IA, livr\u00e9e \u00e0 une fraction du co\u00fbt d\u2019une agence traditionnelle.",
@@ -536,8 +529,6 @@ const content = {
 
 		// 4. Pricing
 		pricingTitle: "Tarification transparente. Aucun frais cach\u00e9.",
-		pricingEarlyBird: "Early bird (5 places)",
-		pricingNormal: "Prix normal",
 		pricingPopular: "Le plus populaire",
 		pricingCta: "Commencer",
 		pricingContactUs: "Contactez-nous",
@@ -555,8 +546,7 @@ const content = {
 			{
 				key: "t1",
 				name: "T1 \u2014 App Simple",
-				earlyBird: "2\u202f990\u00a0$",
-				normal: "4\u202f999\u00a0$",
+				price: "2\u202f990\u00a0$",
 				duration: "4 semaines",
 				features: "1 fonctionnalit\u00e9 principale",
 				design: "Template + configurateur de th\u00e8me",
@@ -571,8 +561,7 @@ const content = {
 			{
 				key: "t2",
 				name: "T2 \u2014 App Standard",
-				earlyBird: "4\u202f990\u00a0$",
-				normal: "7\u202f999\u00a0$",
+				price: "4\u202f990\u00a0$",
 				duration: "6 semaines",
 				features: "2\u20133 fonctionnalit\u00e9s",
 				design: "Template + modifications",
@@ -587,8 +576,7 @@ const content = {
 			{
 				key: "t3",
 				name: "T3 \u2014 App Complexe",
-				earlyBird: "9\u202f990\u00a0$",
-				normal: "17\u202f990\u00a0$",
+				price: "9\u202f990\u00a0$",
 				duration: "8 semaines",
 				features: "Application compl\u00e8te",
 				design: "Design personnalis\u00e9 jusqu\u2019\u00e0 5 pages",
@@ -603,8 +591,7 @@ const content = {
 			{
 				key: "ondemand",
 				name: "Sur-mesure",
-				earlyBird: "D\u00e8s 19\u202f990\u00a0$",
-				normal: "Sur devis",
+				price: "D\u00e8s 19\u202f990\u00a0$",
 				duration: "Sur-mesure",
 				features: "P\u00e9rim\u00e8tre sur-mesure",
 				design: "Design enti\u00e8rement sur-mesure",
@@ -828,7 +815,6 @@ const content = {
 		ctaSubtitle:
 			"R\u00e9servez une consultation PRD gratuite. On cadre votre projet en 30 minutes \u2014 et on vous dit exactement quel palier vous correspond.",
 		ctaButton: "R\u00e9server un appel",
-		ctaContact: "Ou contactez directement\u00a0:",
 	},
 };
 
@@ -927,7 +913,11 @@ function BuildHero({ t }: { t: (typeof content)["en"] }) {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.3 }}
 				>
-					<a href="mailto:laurent@perello.fr">
+					<a
+						href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<Button
 							size="lg"
 							className="min-h-touch text-base px-8 group glow-on-hover"
@@ -1058,15 +1048,12 @@ function BuildPricing({ t }: { t: (typeof content)["en"] }) {
 							<Card
 								className={cn(
 									"relative h-full flex flex-col",
-									tier.popular &&
-										"ring-2 ring-primary shadow-lg",
+									tier.popular && "ring-2 ring-primary shadow-lg",
 								)}
 							>
 								{tier.popular && (
 									<div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-										<Badge
-											className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground"
-										>
+										<Badge className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground">
 											{t.pricingPopular}
 										</Badge>
 									</div>
@@ -1074,16 +1061,10 @@ function BuildPricing({ t }: { t: (typeof content)["en"] }) {
 
 								<CardHeader className="pb-2 pt-6">
 									<h3 className="text-base font-semibold">{tier.name}</h3>
-									<div className="mt-2 space-y-1">
+									<div className="mt-2">
 										<span className="text-2xl font-bold block text-foreground">
-											{tier.earlyBird}
+											{tier.price}
 										</span>
-										<p className="text-xs text-muted-foreground">
-											{t.pricingEarlyBird}
-										</p>
-										<p className="text-xs text-muted-foreground line-through">
-											{t.pricingNormal}: {tier.normal}
-										</p>
 									</div>
 								</CardHeader>
 
@@ -1120,7 +1101,12 @@ function BuildPricing({ t }: { t: (typeof content)["en"] }) {
 										/>
 									</ul>
 
-									<a href="mailto:laurent@perello.fr" className="block mt-auto">
+									<a
+										href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="block mt-auto"
+									>
 										<Button
 											variant={tier.popular ? "default" : "outline"}
 											size="lg"
@@ -1331,9 +1317,7 @@ function BuildPaymentTerms({ t }: { t: (typeof content)["en"] }) {
 							<ol className="space-y-2">
 								{t.paymentT1T2Items.map((item, index) => (
 									<li key={item} className="flex items-start gap-3 text-sm">
-										<span
-											className="size-6 rounded-full border-2 border-primary text-primary flex items-center justify-center shrink-0 text-xs font-bold"
-										>
+										<span className="size-6 rounded-full border-2 border-primary text-primary flex items-center justify-center shrink-0 text-xs font-bold">
 											{index + 1}
 										</span>
 										<span className="mt-0.5">{item}</span>
@@ -1346,9 +1330,7 @@ function BuildPaymentTerms({ t }: { t: (typeof content)["en"] }) {
 							<ol className="space-y-2">
 								{t.paymentT3Items.map((item, index) => (
 									<li key={item} className="flex items-start gap-3 text-sm">
-										<span
-											className="size-6 rounded-full border-2 border-primary text-primary flex items-center justify-center shrink-0 text-xs font-bold"
-										>
+										<span className="size-6 rounded-full border-2 border-primary text-primary flex items-center justify-center shrink-0 text-xs font-bold">
 											{index + 1}
 										</span>
 										<span className="mt-0.5">{item}</span>
@@ -1481,7 +1463,11 @@ function BuildCta({ t }: { t: (typeof content)["en"] }) {
 					</h2>
 					<p className="text-lg text-muted-foreground mb-10">{t.ctaSubtitle}</p>
 
-					<a href="mailto:laurent@perello.fr">
+					<a
+						href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<Button
 							size="lg"
 							className="min-h-touch text-base px-10 group glow-on-hover"
@@ -1490,16 +1476,6 @@ function BuildCta({ t }: { t: (typeof content)["en"] }) {
 							<ArrowRightIcon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
 						</Button>
 					</a>
-
-					<p className="mt-8 text-sm text-muted-foreground">
-						{t.ctaContact}{" "}
-						<a
-							href="mailto:laurent@perello.fr"
-							className="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
-						>
-							laurent@perello.fr
-						</a>
-					</p>
 				</motion.div>
 			</div>
 		</section>

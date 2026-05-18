@@ -91,7 +91,7 @@ function ArrowRightIcon({ className }: { className?: string }) {
 const content = {
 	en: {
 		hero: {
-			badge: "Agent Non-Dev Teams — Early bird pricing",
+			badge: "Agent Non-Dev Teams",
 			headline: "Marketing, SEO, Content — Handled by AI Agents",
 			subheadline:
 				"The same agent team model, applied to your non-dev needs. Specialized agents handle your recurring tasks — at a fraction of agency rates.",
@@ -134,7 +134,7 @@ const content = {
 				},
 				{
 					num: "2",
-					title: "We onboard ($490)",
+					title: "We onboard (€990)",
 					description:
 						"We review your brand, your tools, your voice, your goals. One week to get everything set up.",
 				},
@@ -155,10 +155,7 @@ const content = {
 		pricing: {
 			headline: "Agency output. Freelance budget.",
 			setupNote:
-				"Setup fee (all tiers): $490 — Onboarding includes: brand review, tool integration, voice/style calibration.",
-			earlyBird: "Early bird",
-			earlyBirdNote: "5 seats left",
-			normal: "Normal price",
+				"Onboarding fee (all tiers): €990 — Includes: brand review, tool integration, voice/style calibration.",
 			popular: "Popular",
 			getStarted: "Get Started",
 			commitment:
@@ -167,8 +164,7 @@ const content = {
 				{
 					key: "t1",
 					name: "T1 — Starter",
-					earlyBirdPrice: "$990/mo",
-					normalPrice: "$1,490/mo",
+					price: "€1,490/mo",
 					agentHours: "Up to 100h",
 					availability: "Mon-Fri, 9h-19h CET",
 					slaResponse: "4 hours",
@@ -179,8 +175,7 @@ const content = {
 				{
 					key: "t2",
 					name: "T2 — Growth",
-					earlyBirdPrice: "$1,490/mo",
-					normalPrice: "$2,490/mo",
+					price: "€2,490/mo",
 					agentHours: "Up to 200h",
 					availability: "Mon-Fri, 9h-19h CET",
 					slaResponse: "2 hours",
@@ -191,8 +186,7 @@ const content = {
 				{
 					key: "t3",
 					name: "T3 — Scale",
-					earlyBirdPrice: "$2,490/mo",
-					normalPrice: "$3,990/mo",
+					price: "€4,490/mo",
 					agentHours: "Up to 400h",
 					availability: "24/7",
 					slaResponse: "10 minutes",
@@ -495,7 +489,7 @@ const content = {
 	},
 	fr: {
 		hero: {
-			badge: "Équipes Agents Non-Dev — Tarifs early bird",
+			badge: "Équipes Agents Non-Dev",
 			headline: "Marketing, SEO, Contenu — Gérées par des Agents IA",
 			subheadline:
 				"Le même modèle d'équipe agent, appliqué à vos besoins non-dev. Des agents spécialisés gèrent vos tâches récurrentes — à une fraction du coût d'une agence.",
@@ -540,7 +534,7 @@ const content = {
 				},
 				{
 					num: "2",
-					title: "Nous faisons l'onboarding (490 $)",
+					title: "Nous faisons l'onboarding (990 €)",
 					description:
 						"Nous passons en revue votre marque, vos outils, votre voix, vos objectifs. Une semaine pour tout mettre en place.",
 				},
@@ -561,9 +555,7 @@ const content = {
 		pricing: {
 			headline: "Le rendement d'une agence. Le budget d'un freelance.",
 			setupNote:
-				"Frais d'installation (tous les plans) : 490 $ — L'onboarding comprend : revue de marque, intégration d'outils, calibrage voix/style.",
-			earlyBird: "Early bird",
-			earlyBirdNote: "5 places restantes",
+				"Frais d'onboarding (tous les plans) : 990 € — Comprend : revue de marque, intégration d'outils, calibrage voix/style.",
 			normal: "Prix normal",
 			popular: "Populaire",
 			getStarted: "Commencer",
@@ -573,8 +565,7 @@ const content = {
 				{
 					key: "t1",
 					name: "T1 — Starter",
-					earlyBirdPrice: "990 $/mois",
-					normalPrice: "1 490 $/mois",
+					price: "1 490 €/mois",
 					agentHours: "Jusqu'à 100 h",
 					availability: "Lun-Ven, 9 h-19 h CET",
 					slaResponse: "4 heures",
@@ -585,8 +576,7 @@ const content = {
 				{
 					key: "t2",
 					name: "T2 — Growth",
-					earlyBirdPrice: "1 490 $/mois",
-					normalPrice: "2 490 $/mois",
+					price: "2 490 €/mois",
 					agentHours: "Jusqu'à 200 h",
 					availability: "Lun-Ven, 9 h-19 h CET",
 					slaResponse: "2 heures",
@@ -597,8 +587,7 @@ const content = {
 				{
 					key: "t3",
 					name: "T3 — Scale",
-					earlyBirdPrice: "2 490 $/mois",
-					normalPrice: "3 990 $/mois",
+					price: "4 490 €/mois",
 					agentHours: "Jusqu'à 400 h",
 					availability: "24/7",
 					slaResponse: "10 minutes",
@@ -1050,9 +1039,7 @@ function HowItWorksSection({ t }: { t: ContentType }) {
 							viewport={{ once: true }}
 							transition={{ duration: 0.4, delay: i * 0.1 }}
 						>
-							<div
-								className="flex-shrink-0 size-10 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-primary-foreground"
-							>
+							<div className="flex-shrink-0 size-10 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-primary-foreground">
 								{step.num}
 							</div>
 							<div className="pt-1.5">
@@ -1097,35 +1084,22 @@ function PricingSection({ t }: { t: ContentType }) {
 							<Card
 								className={cn(
 									"relative h-full flex flex-col",
-									tier.popular &&
-										"ring-2 ring-primary shadow-lg",
+									tier.popular && "ring-2 ring-primary shadow-lg",
 								)}
 							>
 								{tier.popular && (
 									<div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-										<Badge
-											className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground"
-										>
+										<Badge className="px-3 py-1 text-xs font-semibold bg-primary text-primary-foreground">
 											{t.pricing.popular}
 										</Badge>
 									</div>
 								)}
 								<CardHeader className="pb-2 pt-6">
 									<h3 className="text-base font-semibold">{tier.name}</h3>
-									<div className="mt-2 space-y-1">
-										<div className="flex items-center gap-2 flex-wrap">
-											<span className="text-2xl font-bold text-foreground">
-												{tier.earlyBirdPrice}
-											</span>
-											<Badge
-												className="shrink-0 text-[10px] px-2 py-0.5 bg-accent/20 text-accent-foreground dark:bg-accent/30"
-											>
-												{t.pricing.earlyBird} — {t.pricing.earlyBirdNote}
-											</Badge>
-										</div>
-										<p className="text-xs text-muted-foreground line-through">
-											{t.pricing.normal}: {tier.normalPrice}
-										</p>
+									<div className="mt-2">
+										<span className="text-2xl font-bold text-foreground">
+											{tier.price}
+										</span>
 									</div>
 								</CardHeader>
 								<CardContent className="flex-1 flex flex-col gap-4 pt-2">
@@ -1150,7 +1124,12 @@ function PricingSection({ t }: { t: ContentType }) {
 											</li>
 										))}
 									</ul>
-									<a href="mailto:laurent@perello.fr" className="block">
+									<a
+										href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="block"
+									>
 										<Button
 											variant={tier.popular ? "default" : "outline"}
 											size="lg"
@@ -1282,7 +1261,6 @@ function ExampleSection({ t }: { t: ContentType }) {
 					transition={{ duration: 0.5 }}
 				>
 					<Card className="border-2 border-primary/30">
-
 						<CardContent className="pt-8 pb-8">
 							<h2 className="text-2xl sm:text-3xl font-bold mb-4">
 								{t.example.headline}
@@ -1416,7 +1394,11 @@ function CtaSection({ t }: { t: ContentType }) {
 					<p className="text-lg text-muted-foreground mb-8">
 						{t.cta.subheadline}
 					</p>
-					<a href="mailto:laurent@perello.fr">
+					<a
+						href="https://calendar.app.google/ZuvZW6KfAcMEz74C6"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<Button size="lg" className="min-h-[48px] text-base px-10 group">
 							{t.cta.button}
 							<ArrowRightIcon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
