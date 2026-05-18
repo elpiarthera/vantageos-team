@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Link } from "@/i18n/navigation";
 import type { Locale } from "./team-landing-page";
 
 // ─── Inline arrow icon ───────────────────────────────────────────────────────
@@ -231,12 +232,12 @@ export function ProductCards({ locale }: ProductCardsProps) {
 												<ArrowRightIcon className="ml-2 size-4" />
 											</Button>
 										) : (
-											<a href={card.href} className="block">
+											<Link href={card.href} className="block">
 												<Button size="lg" className="w-full group">
 													{card.cta}
 													<ArrowRightIcon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
 												</Button>
-											</a>
+											</Link>
 										)}
 									</div>
 								</CardContent>

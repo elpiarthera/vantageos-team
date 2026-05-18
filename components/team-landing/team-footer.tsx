@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Link } from "@/i18n/navigation";
 import type { Locale } from "./team-landing-page";
 
 function GlobeIcon({ className }: { className?: string }) {
@@ -33,8 +34,8 @@ const content = {
 			{ label: "FAQ", href: "#faq" },
 		],
 		legalLinks: [
-			{ label: "Privacy Policy", href: "/en/privacy" },
-			{ label: "Legal Notice", href: "/en/legal" },
+			{ label: "Privacy Policy", href: "/privacy" },
+			{ label: "Legal Notice", href: "/legal" },
 		],
 		contact: "Contact",
 		bookACall: "Book a call",
@@ -53,8 +54,8 @@ const content = {
 			{ label: "FAQ", href: "#faq" },
 		],
 		legalLinks: [
-			{ label: "Politique de confidentialit\u00e9", href: "/fr/privacy" },
-			{ label: "Mentions l\u00e9gales", href: "/fr/legal" },
+			{ label: "Politique de confidentialit\u00e9", href: "/privacy" },
+			{ label: "Mentions l\u00e9gales", href: "/legal" },
 		],
 		contact: "Contact",
 		bookACall: "R\u00e9server un appel",
@@ -136,13 +137,13 @@ export function TeamFooter({ locale, onLocaleChange }: TeamFooterProps) {
 						</p>
 						<div className="flex items-center gap-4">
 							{t.legalLinks.map((link) => (
-								<a
+								<Link
 									key={link.href}
 									href={link.href}
 									className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
 								>
 									{link.label}
-								</a>
+								</Link>
 							))}
 						</div>
 						<p className="text-xs text-muted-foreground">{t.lastUpdated}</p>

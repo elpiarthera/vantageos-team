@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 // ─── Inline SVG icons ────────────────────────────────────────────────────────
@@ -227,26 +228,36 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 			>
 				<div className="flex items-center justify-between h-16 md:h-20">
 					{/* Logo */}
-					<a href="/" className="flex items-center gap-2 group">
+					<Link href="/" className="flex items-center gap-2 group">
 						<div className="size-8 rounded-lg bg-foreground flex items-center justify-center transition-transform group-hover:scale-105">
 							<span className="text-background font-bold text-lg">V</span>
 						</div>
 						<span className="font-semibold text-lg tracking-tight">
 							VantageOS <span className="text-muted-foreground">Team</span>
 						</span>
-					</a>
+					</Link>
 
 					{/* Desktop Navigation */}
 					<div className="hidden md:flex items-center gap-1">
-						{links.map((link) => (
-							<a
-								key={link.href}
-								href={link.href}
-								className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
-							>
-								{link.label}
-							</a>
-						))}
+						{links.map((link) =>
+							link.href.startsWith("#") ? (
+								<a
+									key={link.href}
+									href={link.href}
+									className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
+								>
+									{link.label}
+								</a>
+							) : (
+								<Link
+									key={link.href}
+									href={link.href}
+									className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
+								>
+									{link.label}
+								</Link>
+							),
+						)}
 					</div>
 
 					{/* Desktop CTA */}
@@ -341,16 +352,27 @@ export function TeamHeader({ locale, onLocaleChange }: TeamHeaderProps) {
 						className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border"
 					>
 						<div className="px-4 py-4 space-y-1">
-							{links.map((link) => (
-								<a
-									key={link.href}
-									href={link.href}
-									className="block px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-									onClick={() => setIsMobileMenuOpen(false)}
-								>
-									{link.label}
-								</a>
-							))}
+							{links.map((link) =>
+								link.href.startsWith("#") ? (
+									<a
+										key={link.href}
+										href={link.href}
+										className="block px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+										onClick={() => setIsMobileMenuOpen(false)}
+									>
+										{link.label}
+									</a>
+								) : (
+									<Link
+										key={link.href}
+										href={link.href}
+										className="block px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+										onClick={() => setIsMobileMenuOpen(false)}
+									>
+										{link.label}
+									</Link>
+								),
+							)}
 							<div className="pt-4 space-y-2">
 								<Button
 									variant="outline"
