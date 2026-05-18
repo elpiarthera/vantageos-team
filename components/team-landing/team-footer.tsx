@@ -29,7 +29,7 @@ const content = {
 		tagline: "Your complete AI team. Starting at EUR 1,490/month.",
 		copyright: "Perello Consulting / ElPi Corp. All rights reserved.",
 		links: [
-			{ label: "Teams", href: "#teams" },
+			{ label: "Teams", href: "/teams" },
 			{ label: "Pricing", href: "#pricing" },
 			{ label: "FAQ", href: "#faq" },
 		],
@@ -49,7 +49,7 @@ const content = {
 		copyright:
 			"Perello Consulting / ElPi Corp. Tous droits r\u00e9serv\u00e9s.",
 		links: [
-			{ label: "\u00c9quipes", href: "#teams" },
+			{ label: "\u00c9quipes", href: "/teams" },
 			{ label: "Tarifs", href: "#pricing" },
 			{ label: "FAQ", href: "#faq" },
 		],
@@ -99,15 +99,25 @@ export function TeamFooter({ locale, onLocaleChange }: TeamFooterProps) {
 
 					{/* Navigation */}
 					<div className="flex flex-wrap gap-6">
-						{t.links.map((link) => (
-							<a
-								key={link.href}
-								href={link.href}
-								className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
-							>
-								{link.label}
-							</a>
-						))}
+						{t.links.map((link) =>
+							link.href.startsWith("#") ? (
+								<a
+									key={link.href}
+									href={link.href}
+									className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
+								>
+									{link.label}
+								</a>
+							) : (
+								<Link
+									key={link.href}
+									href={link.href}
+									className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring rounded"
+								>
+									{link.label}
+								</Link>
+							),
+						)}
 					</div>
 
 					{/* Contact */}

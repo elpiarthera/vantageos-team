@@ -221,24 +221,16 @@ export function ProductCards({ locale }: ProductCardsProps) {
 									</p>
 									<div className="space-y-3">
 										<p className="text-2xl font-bold">{card.price}</p>
-										{card.comingSoon ? (
+										<Link href={card.href} className="block">
 											<Button
-												variant="outline"
+												variant={card.comingSoon ? "outline" : "default"}
 												size="lg"
-												className="w-full"
-												disabled
+												className="w-full group"
 											>
 												{card.cta}
-												<ArrowRightIcon className="ml-2 size-4" />
+												<ArrowRightIcon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
 											</Button>
-										) : (
-											<Link href={card.href} className="block">
-												<Button size="lg" className="w-full group">
-													{card.cta}
-													<ArrowRightIcon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-												</Button>
-											</Link>
-										)}
+										</Link>
 									</div>
 								</CardContent>
 							</Card>
